@@ -5,7 +5,8 @@ description: This is what I am up to
 ---
 ## Equity in the San Francisco Public School Assignment
 
-<img align="left" src="../images/research/sfusd.png" width="450" height="450" style="float:left; padding-right:20px">
+<img class="center" src="../images/research/sfusd.png" width="450" height="450">
+
 
 **With whom:** Prof. Irene Lo, Riya Bery, Juan Langlois, and Qian Zhao
 
@@ -18,7 +19,8 @@ description: This is what I am up to
 ---
 ## Graphlets and Urban Morphology
 
-<img align="left" src="../images/research/graphlet.png" width="450" height="450" style="float:left; padding-right:20px">
+<img class="center" src="../images/research/graphlet.png" width="450" height="450">
+
 
 **With whom:** Prof. Trivik Verma and Dr. Juliana Gonçalves
 
@@ -31,7 +33,8 @@ description: This is what I am up to
 ---
 ## Ontologies for Underground Mass Transit
 
-<img class="center" src="../images/research/olog.png" width="900" height="450" >
+<img class="center" src="../images/research/olog.png" width="900" height="450">
+
 
 **With whom:** Prof. Debra Laefer and Sandy Zhang
 
@@ -44,7 +47,8 @@ description: This is what I am up to
 ---
 ## Knot Surgery and Integer Characterizing Slopes
 
-<img align="left" src="../images/research/knot.png" width="450" height="450" style="float:left; padding-right:20px">
+<img class="center" src="../images/research/knot.png" width="450" height="450">
+
 
 **With whom:** Prof. Kyle Hayden, Prof. Aliakbar Daemi, Sophia Chen, Christian Serio, Cecilia Wang, Anton Wu, and Kexin Wu
 
