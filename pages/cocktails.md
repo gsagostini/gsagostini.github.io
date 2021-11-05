@@ -29,7 +29,7 @@ This is the cocktail I have spent years trying to make: a variation on the typic
 
 ### Smoky Fall Punch
 
-<img align="left" src="images/cocktails/cider.JPG" width="300" height="350" style="float:left; padding-right:30px">
+<img align="left" src="../images/cocktails/cider.JPG" width="300" height="350" style="float:left; padding-right:30px">
 
 - 1 1/2 oz. of Mezcal
 - 1 1/2 oz. of Cachaça
@@ -40,6 +40,7 @@ This is the cocktail I have spent years trying to make: a variation on the typic
 - Cinnamon powder
 
 Again, shake the ingredients dry first to foam the egg white. Cachaça and Mezcal are a perfect pairing: smokyness and sweetness counterbalance each ohter in this cocktail. I used a lowball class, but i am imagining this would look very cool in a cooper mug like a Moscow Mule. Garnish with a lemon wheel, some cinnamon powder on top of the foam, a cinnamon stick, or all of those!
+
 
 ### Athens Mule
 
