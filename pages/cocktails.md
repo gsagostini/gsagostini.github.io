@@ -27,6 +27,8 @@ Below are a few of my favorite authoral drinks, which I have poorly named. Pleas
 
 This is the cocktail I have spent years trying to make: a variation on the typical yerba-mate drink from South Brazil, where I am from, the chimarrão. I don't particularly need the flavor of egg white in this cocktail, but it makes the cool foam on top which anyone from Porto Alegre knows is essential to a trustworhy chimarrão. I also would want to try to pour this on a coupe glass, without ice. Garnish with lemon peel, and maybe some yerba mate on the side of the glass.
 
+<br clear="left"/>
+
 ### Smoky Fall Punch
 
 <img align="left" src="../images/cocktails/cider.JPG" width="300" height="350" style="float:left; padding-right:30px">
@@ -42,6 +44,7 @@ This is the cocktail I have spent years trying to make: a variation on the typic
 Again, shake the ingredients dry first to foam the egg white. Cachaça and Mezcal are a perfect pairing: smokyness and sweetness counterbalance each ohter in this cocktail. I used a lowball class, but i am imagining this would look very cool in a cooper mug like a Moscow Mule. Garnish with a lemon wheel, some cinnamon powder on top of the foam, a cinnamon stick, or all of those!
 
 <br clear="left"/>
+
 ### Athens Mule
 
 <img style="float: right;" src="../images/cocktails/athens.png">
@@ -52,6 +55,8 @@ Again, shake the ingredients dry first to foam the egg white. Cachaça and Mezca
 - Ginger Beer
 
 This is a highball, no need to shake. Simply pour everything over ice and garnish with a lime wheel. Ouzo tastes like anise, which I love and many people hate.
+
+<br clear="left"/>
 
 ### Piña Queimada
 
@@ -64,6 +69,8 @@ This is a highball, no need to shake. Simply pour everything over ice and garnis
 - Pineapple juice
 
 Mezcal and pineapple are another perfect match. This Piña Colada variation has a smoky kick, and the lime juice adds some citrus freshness. Must be shaken. For a less sweet, more alcoholic version, repalce the Malibu rum with plain white rum. Also works if you replace the coconut cream with half and half (but then keep the malibu).
+
+<br clear="left"/>
 
 ### Pomegranate Mezcalita
 
