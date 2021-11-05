@@ -10,19 +10,19 @@ Mezcal (aka Mezzi) is a teenage cat at the peak of his 18 months. A tabby boy wi
 |:--:| 
 | *When I am not on my computer, it must be due to the cat on my chair* |
 
-\\
+\
 
 | ![cuddle](../images/cat/cuddle.JPG) | 
 |:--:| 
 | *A cuddler* |
 
-\\
+\
 
 | ![mittens](../images/cat/mittens.JPG) | 
 |:--:| 
 | *His mittens are simply everything* |
 
-\\
+\
 
 | ![box](../images/cat/box2.JPG) | 
 |:--:| 
