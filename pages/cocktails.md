@@ -42,6 +42,12 @@ This is the cocktail I have spent years trying to make: a variation on the typic
 Again, shake the ingredients dry first to foam the egg white. Cachaça and Mezcal are a perfect pairing: smokyness and sweetness counterbalance each ohter in this cocktail. I used a lowball class, but i am imagining this would look very cool in a cooper mug like a Moscow Mule. Garnish with a lemon wheel, some cinnamon powder on top of the foam, a cinnamon stick, or all of those!
 
 
+
+
+
+
+
+
 ### Athens Mule
 
 <img style="float: right;" src="../images/cocktails/athens.png">
