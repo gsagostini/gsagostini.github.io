@@ -3,7 +3,7 @@ layout: page
 title: Gabriel S. Agostini
 ---
 
-![Gabriel Agostini](/images/portrait.JPG "This is me when I graduated for the first time---just the beginning!")
+![Gabriel Agostini](/images/portrait.JPG "This is me when I graduated for the first time---just the beginning!"){: style="float: left"}
 
 I am an undergraduate student at Columbia University pursuing a Bachelor of Science in Applied Mathematics and a Bachelor of Arts in Urban Studies.
 
