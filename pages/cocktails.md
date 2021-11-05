@@ -12,7 +12,7 @@ Below are a few of my favorite authoral drinks, which I have poorly named. Pleas
 - Egg white creates a foam layer on top of a drink. To do that, add all ingredients (including the egg white) to a shaker without ice and shake like your life depends on it for 30 seconds. Then open the shaker, check that the egg white has foamed, add ice, and shake again. If you are making more than one drink, the foam is usually at the end, so pour half of each glass and only then complete them as opposed to filling one glass and then the other.
 - Simple syrup is very simple to make: boil 1 part water, add 1 part sugar, and mix it until it dissolves. Variations on simple syrup require another ingredient (yerba mate, coffee, rosemary leaves) to be added along with the sugar, but remember to strain it well.
 
-## Ginmarrão
+### Ginmarrão
 
 <img style="float: right;" src="../images/cocktails/ginmarrao.png">
 
@@ -27,7 +27,7 @@ Below are a few of my favorite authoral drinks, which I have poorly named. Pleas
 
 This is the cocktail I have spent years trying to make: a variation on the typical yerba-mate drink from South Brazil, where I am from, the chimarrão. I don't particularly need the flavor of egg white in this cocktail, but it makes the cool foam on top which anyone from Porto Alegre knows is essential to a trustworhy chimarrão. I also would want to try to pour this on a coupe glass, without ice. Garnish with lemon peel, and maybe some yerba mate on the side of the glass.
 
-## Smoky Fall Punch
+### Smoky Fall Punch
 
 <img style="float: right;" src="../images/cocktails/cider.png">
 
@@ -41,7 +41,7 @@ This is the cocktail I have spent years trying to make: a variation on the typic
 
 Again, shake the ingredients dry first to foam the egg white. Cachaça and Mezcal are a perfect pairing: smokyness and sweetness counterbalance each ohter in this cocktail. I used a lowball class, but i am imagining this would look very cool in a cooper mug like a Moscow Mule. Garnish with a lemon wheel, some cinnamon powder on top of the foam, a cinnamon stick, or all of those!
 
-## Athens Mule
+### Athens Mule
 
 <img style="float: right;" src="../images/cocktails/athens.png">
 
@@ -52,7 +52,7 @@ Again, shake the ingredients dry first to foam the egg white. Cachaça and Mezca
 
 This is a highball, no need to shake. Simply pour everything over ice and garnish with a lime wheel. Ouzo tastes like anise, which I love and many people hate.
 
-## Piña Queimada
+### Piña Queimada
 
 <img style="float: right;" src="../images/cocktails/pina.png">
 
@@ -64,7 +64,7 @@ This is a highball, no need to shake. Simply pour everything over ice and garnis
 
 Mezcal and pineapple are another perfect match. This Piña Colada variation has a smoky kick, and the lime juice adds some citrus freshness. Must be shaken. For a less sweet, more alcoholic version, repalce the Malibu rum with plain white rum. Also works if you replace the coconut cream with half and half (but then keep the malibu).
 
-## Pomegranate Mezcalita
+### Pomegranate Mezcalita
 
 <img style="float: right;" src="../images/cocktails/pomegranate.png">
 
