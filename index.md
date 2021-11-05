@@ -13,4 +13,7 @@ I am currently interested in computational social science, Network Science, and 
 
 You can find more about me on my [CV](/files/Agostini_CV.pdf) and check some of my code on my [GitHub](https://github.com/gsagostini).
 
+
+---
+
 My email is <agostini.gabriel@columbia.edu>
