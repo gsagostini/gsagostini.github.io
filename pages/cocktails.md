@@ -29,7 +29,7 @@ This is the cocktail I have spent years trying to make: a variation on the typic
 
 ### Smoky Fall Punch
 
-<img style="float: right;" src="../images/cocktails/cider.JPG">
+<img align="left" src="images/cocktails/cider.JPG" width="300" height="350" style="float:left; padding-right:30px">
 
 - 1 1/2 oz. of Mezcal
 - 1 1/2 oz. of Cachaça
