@@ -11,4 +11,6 @@ With my background in Mathematics, I have been exposed to rather abstract concep
 
 I am currently interested in computational social science, Network Science, and in the applications of these areas to the design of better, more equitable cities.
 
-You can find more about me on my [CV](/files/Agostini_CV.pdf)
+You can find more about me on my [CV](/files/Agostini_CV.pdf) and check some of my code on my [GitHub](https://github.com/gsagostini).
+
+My email is <agostini.gabriel@columbia.edu>
