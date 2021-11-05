@@ -14,6 +14,6 @@ Gabriel Agostini, Yushan Zhang, Debra Laefer. A Category-Theory Approach to Cons
 
 A Category-Theory Approach to Construction Ontologies in Subsurface Mass Transit, _3D GeoInfo Conference_, October 2021
 
-[Operationalizing Equity in the San Francisco Student School Assignment](https://www.youtube.com/watch?v=48FYug28Bzw&t=3531s), )Stanford Data Science for Social Good_, August 2021
+[Operationalizing Equity in the San Francisco Student School Assignment](https://www.youtube.com/watch?v=48FYug28Bzw&t=3531s), _Stanford Data Science for Social Good_, August 2021
 
 [Knot Surgery and Integer Characterizing Slopes](https://youtu.be/0LLg-Lr_me4), _Columbia University Mathematics Department_, August 2019
