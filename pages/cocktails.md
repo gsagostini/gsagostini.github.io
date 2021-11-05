@@ -22,8 +22,6 @@ Below are a few of my favorite authoral drinks, which I have poorly named. Pleas
 - 1 lemon juice (squeezed)
 - 1/2 oz. yerba-mate simple syrup (1/2 part yerba mate, 1 part sugar, 1 part water, strain well)
 - 1/2 egg white
-- [Trader Joe's Spiced Cider](https://www.clubtraderjoes.com/2012/11/trader-joes-spiced-apple-cider.html)
-- Cinnamon powder
 
 This is the cocktail I have spent years trying to make: a variation on the typical yerba-mate drink from South Brazil, where I am from, the chimarrão. I don't particularly need the flavor of egg white in this cocktail, but it makes the cool foam on top which anyone from Porto Alegre knows is essential to a trustworhy chimarrão. I also would want to try to pour this on a coupe glass, without ice. Garnish with lemon peel, and maybe some yerba mate on the side of the glass.
 
