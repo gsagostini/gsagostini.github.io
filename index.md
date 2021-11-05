@@ -3,7 +3,7 @@ layout: page
 title: Gabriel S. Agostini
 ---
 
-<img align="left" src="images/portrait.JPG" width="333" height="500" hspace=”50”>
+<img align="left" src="images/portrait.JPG" width="333" height="500" HSPACE=”50”>
 
 I am an undergraduate student at Columbia University pursuing a Bachelor of Science in Applied Mathematics and a Bachelor of Arts in Urban Studies.
 
