@@ -29,7 +29,7 @@ This is the cocktail I have spent years trying to make: a variation on the typic
 
 ### Smoky Fall Punch
 
-<img align="left" src="../images/cocktails/cider.JPG" width="300" height="350" style="float:left; padding-right:30px">
+<img align="left" src="../images/cocktails/cider.JPG" width="275" height="350" style="float:left; padding-right:30px">
 
 - 1 1/2 oz. of Mezcal
 - 1 1/2 oz. of Cachaça
@@ -45,7 +45,7 @@ Again, shake the ingredients dry first to foam the egg white. Cachaça and Mezca
 
 ### Athens Mule
 
-<img align="left" src="../images/cocktails/athens.PNG" height="350" style="float:left; padding-right:30px">
+<img align="left" src="../images/cocktails/athens.PNG" width="200" height="350" style="float:left; padding-right:30px">
 
 - 1 1/2 oz. of Tsipouroc
 - 1/2 oz. of Ouzo (optional, replace with more Tsipouroc)
