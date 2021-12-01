@@ -8,6 +8,10 @@ description: Pieces of my work that already got out there
 
 Gabriel Agostini, Yushan Zhang, Debra Laefer. A Category-Theory Approach to Construction Ontologies in Subsurface Mass Transit. _Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci._, XLVI-4/W4-2021, 125–130, 2021. [doi.org/10.5194/isprs-archives-XLVI-4-W4-2021-125-2021](https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XLVI-4-W4-2021/125/2021/)
 
+### To Appear:
+
+Gabriel Agostini. Confluences of the Past in Brasília: Another _Plano Piloto_ for Brazilian Modernist Urbanism. _Barnard and Columbia Urban Review_ No. 2. Spring 2022. Current version available [here](../files/Confluences-of-the-Past-in-Brasilia.pdf) (Dec. 1).
+
 ---
 
 ## Talks:
