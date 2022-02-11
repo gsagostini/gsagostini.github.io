@@ -3,20 +3,6 @@ layout: page
 title: Research Projects
 description: This is what I am up to
 ---
-## Equity in the San Francisco Public School Assignment
-
-<img class="center" src="../images/research/sfusd.png" width="450" height="450">
-
-
-**With whom:** Prof. Irene Lo, Riya Bery, Juan Langlois, and Qian Zhao
-
-**When:** June 2021 - current
-
-**What:** The San Francisco Unified School District (SFUSD) has partnered with the SDS DSSG team to develop a policy recommendation for how students are assigned to public elementary schools in SFUSD. This zone-based assignment policy incorporates an equity tiebreaker: a priority system to improve access to schools for historically underserved communities. In this project, we identified appropriate geographic proxies for assigning equity tiebreakers and explored the effect of the tiebreaker on improving equity of access. This project helps to inform the implementation of the equity tiebreaker in the assignment policy in the school year 2023-24.
-
-**How can I learn more:** We have presented our work during the final week of the Stanford Data Science for Social Good program, and you can watch the video [in YouTube](https://www.youtube.com/watch?v=48FYug28Bzw&t=3531s)
-
----
 ## Graphlets and Urban Morphology
 
 <img class="center" src="../images/research/graphlet.png" width="450" height="450">
@@ -26,9 +12,23 @@ description: This is what I am up to
 
 **When:** March 2020 - current
 
-**What:** Street networks encompass much of the visual identity we attribute to cities. The gridded blocks of North-American metropoles, the narrow disorganized streets of Brazilian favelas, and the coencentric circles of European historical districts carry morphological information of those cities that may reveal interesting patterns of accessibility and urban growth. Thinking of street networks as composed of small connected subgraphs---graphlets: a square block, a path of three streets, a triangle---we would like to identify building blocks of cities. This is a common technique in biological and social networks, where the graphlets (or motifs) have been shown to correlate with the function or type of the network. In our work, we explore graphlet degree distributions and graphlet correlations on street networks collected from OpenStreetMap via OSMNx in Python.
+**What:** Street networks encompass much of the visual identity we attribute to cities. The gridded blocks of North-American metropoles, the narrow disorganized streets of Brazilian favelas, and the coencentric circles of European historical districts carry morphological information of those cities that may reveal interesting patterns of accessibility and urban growth. Thinking of street networks as composed of small connected subgraphs---graphlets: a square block, a path of three streets, a triangle---we would like to identify building blocks of cities. This is a common technique in biological and social networks, where the graphlets (or motifs) have been shown to correlate with the function or type of the network. Looking at graphlets of up to 4 nodes in the street networks of New York City, we identify local structures such as gridded patches through spatial auto-correlation statistics. This methodology can be quickly applied to any city in the world, helping researchers classify local street structures and identify common urban development trends across many cities.
 
-**How can I learn more:** We are currently preparing a manuscript of our work for review, but you can view and play with the source code already on [this GitHub repository](https://github.com/gsagostini/urban-graphlets).
+**How can I learn more:** We are currently preparing a manuscript of our work for journal publication. Recently, our work got accepted for an oral presentation at the [30th GISRUK](https://gisruk.org) conference, and you can read our [extended abstract](../files/graphlets_abstract.pdf) with preliminary findings.
+
+---
+## Equity in the San Francisco Public School Assignment
+
+<img class="center" src="../images/research/sfusd.png" width="450" height="450">
+
+
+**With whom:** Prof. Irene Lo, Riya Bery, Juan Langlois, and Qian Zhao
+
+**When:** June 2021 - December 2021
+
+**What:** The San Francisco Unified School District (SFUSD) has partnered with the SDS DSSG team to develop a policy recommendation for how students are assigned to public elementary schools in SFUSD. This zone-based assignment policy incorporates an equity tiebreaker: a priority system to improve access to schools for historically underserved communities. In this project, we identified appropriate geographic proxies for assigning equity tiebreakers and explored the effect of the tiebreaker on improving equity of access. This project helps to inform the implementation of the equity tiebreaker in the assignment policy in the school year 2023-24.
+
+**How can I learn more:** We have presented our work during the final week of the Stanford Data Science for Social Good program, and you can watch the video [in YouTube](https://www.youtube.com/watch?v=48FYug28Bzw&t=3531s)
 
 ---
 ## Ontologies for Underground Mass Transit
