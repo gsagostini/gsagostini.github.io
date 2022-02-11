@@ -3,7 +3,7 @@ layout: page
 title: Gabriel S. Agostini
 ---
 
-<img align="left" src="images/portrait.JPG" width="300" height="450" style="float:left; padding-right:20px">
+<img align="center" src="images/portrait.JPG" width="200" height="300">
 
 I am an undergraduate student at Columbia University pursuing a Bachelor of Science in Applied Mathematics and a Bachelor of Arts in Urban Studies.
 
@@ -12,7 +12,6 @@ With my background in Mathematics, I have been exposed to rather abstract concep
 I am currently interested in computational social science, Network Science, and in the applications of these areas to the design of better, more equitable cities.
 
 You can find more about me on my [CV](/files/Agostini_CV.pdf) and check some of my code on my [GitHub](https://github.com/gsagostini).
-
 
 ---
 
