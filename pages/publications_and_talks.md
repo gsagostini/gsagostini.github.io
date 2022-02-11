@@ -16,6 +16,8 @@ Gabriel Agostini. [Confluences of the Past in Brasília: Another _Plano Piloto_ 
 
 ## Talks:
 
+Identifying Urban Morphology from Street Networks with Graphlet Analysis, _GIS Research UK Conference_, April 2022
+
 A Category-Theory Approach to Construction Ontologies in Subsurface Mass Transit, _3D GeoInfo Conference_, October 2021
 
 [Operationalizing Equity in the San Francisco Student School Assignment](https://www.youtube.com/watch?v=48FYug28Bzw&t=3531s), _Stanford Data Science for Social Good_, August 2021
@@ -25,4 +27,4 @@ A Category-Theory Approach to Construction Ontologies in Subsurface Mass Transit
 ---
 ## Under Review
 
-Gabriel Agostini, Juliana Gonçalves, Trivik Verma. Identifying Urban Morphology from Street Networks with Graphlet Analysis. 2022.
+Gabriel Agostini, Juliana Gonçalves, Trivik Verma. [Identifying Urban Morphology from Street Networks with Graphlet Analysis] (../files/graphlets_abstract.pdf). 2022.
