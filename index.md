@@ -2,8 +2,9 @@
 layout: page
 title: Gabriel S. Agostini
 ---
-
-<img align="center" src="images/portrait.JPG" width="200" height="300">
+<p align="center">
+  <src="images/portrait.JPG" width="200" height="300">
+</p>
 
 I am an undergraduate student at Columbia University pursuing a Bachelor of Science in Applied Mathematics and a Bachelor of Arts in Urban Studies.
 
