@@ -27,4 +27,4 @@ A Category-Theory Approach to Construction Ontologies in Subsurface Mass Transit
 ---
 ## Under Review
 
-Gabriel Agostini, Juliana Gonçalves, Trivik Verma. [Identifying Urban Morphology from Street Networks with Graphlet Analysis] (../files/graphlets_abstract.pdf). 2022.
+Gabriel Agostini, Juliana Gonçalves, Trivik Verma. [Identifying Urban Morphology from Street Networks with Graphlet Analysis](../files/graphlets_abstract.pdf). 2022.
