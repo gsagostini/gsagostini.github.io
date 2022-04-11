@@ -27,12 +27,7 @@ A Category-Theory Approach to Construction Ontologies in Subsurface Mass Transit
 [Knot Surgery and Integer Characterizing Slopes](https://youtu.be/0LLg-Lr_me4), _Columbia University Mathematics Department_, August 2019
 
 ---
-## Under Preparation
-
-Gabriel Agostini, Juliana Gonçalves, Trivik Verma. Identifying Urban Morphology from Street Networks with Graphlet Analysis (longer version). 2022.
-
----
-### Not for Publication
+## Not for Publication
 
 [Naturally Artificial: Continuity and Change in the Street Network of Rio de Janeiro](../files/rj-street-network.pdf). Paper written for the course _Colonial Cities in the Americas_ at Columbia University. Fall 2021.
 
