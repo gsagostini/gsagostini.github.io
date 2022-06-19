@@ -43,16 +43,16 @@ Again, shake the ingredients dry first to foam the egg white. Cachaça and Mezca
 
 <br clear="left"/>
 
-### Athens Mule
+### Mule Olympus
 
-<img align="left" src="../images/cocktails/athens.PNG" width="200" height="350" style="float:left; padding-right:30px">
+<img align="left" src="../images/cocktails/olympus.jpeg" width="200" height="350" style="float:left; padding-right:30px">
 
 - 1 1/2 oz. of Tsipouroc
-- 1/2 oz. of Ouzo (optional, replace with more Tsipouroc)
+- 1/2 oz. of Ouzo
 - 1/2 lime juice (squeezed)
 - Ginger Beer
 
-This is a highball, no need to shake. Simply pour everything over ice and garnish with a lime wheel. Ouzo tastes like anise, which I love (but many of my friends do not).
+This is a highball, no need to shake. Simply pour everything over ice and garnish with laurel leaves---like your own Olympic crown! M. Olympus is a cocktail to be sipped by the Greek Gods themselves, so make sure your copper mug is divinely appropriate.
 
 <br clear="left"/>
 
