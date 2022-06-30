@@ -29,6 +29,8 @@ A Category-Theory Approach to Construction Ontologies in Subsurface Mass Transit
 ---
 ## Not for Publication
 
+[Oh, F-ck all this WALKING! The Metafictional Geography of Movement in _Albert Angelo_](../files/f-allthiswalking.pdf). Paper written for the course _Postwar Fiction and Architecture_ at Columbia University. Spring 2022.
+
 [Naturally Artificial: Continuity and Change in the Street Network of Rio de Janeiro](../files/rj-street-network.pdf). Paper written for the course _Colonial Cities in the Americas_ at Columbia University. Fall 2021.
 
 [Benjamini-Schramm Convergence of Random Rooted Graphs](http://math.columbia.edu/~mmiller/TProjects/GAgostini21f.pdf). Papert written for the course _Topology_ at Columbia University. Fall 2021.
