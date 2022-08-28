@@ -43,7 +43,7 @@ This is a highball, no need to shake. Simply pour everything over ice and garnis
 
 ### Capuccino Martini
 
-<img align="left" src="../images/cocktails/capuccino.jpg" width="200" height="350" style="float:left; padding-right:30px">
+<img align="left" src="../images/cocktails/capuccino.jpg" width="200" style="float:left; padding-right:30px">
 
 - 1 1/2 oz. of Mezcal (e.g. Banhez)
 - 1/2 oz. of Bourbon (e.g. Evan Willians BIB)
@@ -57,7 +57,7 @@ A riff on the espresso martini by someone without an espresso machine. Mezcal ad
 
 ### Armenian Sidecar
 
-<img align="left" src="../images/cocktails/armenian.jpg" width="200" height="350" style="float:left; padding-right:30px">
+<img align="left" src="../images/cocktails/armenian.jpg" width="200" style="float:left; padding-right:30px">
 
 - 2 oz. Armenian ArArAt Cognac
 - 0.25 oz. of Pomegranate Liquor
