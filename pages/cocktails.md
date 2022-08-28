@@ -67,6 +67,7 @@ A riff on the espresso martini by someone without an espresso machine. Mezcal ad
 This is a cocktail I feel bad to make. Armenian cognac is so great that it is almost better to be savoured neat. But adding just a little of other (Armenian-inspired) ingredients elevates it to a riff on the classic Sidecar cocktail. The apricot notes of the cognac are balanced by a splash of pomegranate zestyness, and the walnut bitters give it a nutty finish that you could only find in the Caucasus. Date syrup can be added for a sweeter drink, depending on the sugar content of your pomegranate liquor. Stirr it very gently with ice and pour it over a large ice cube, or neat. Garnish with a dried apricot.
 
 <br clear="left"/>
+
 <!--
 ### Piña Queimada
 
@@ -80,7 +81,8 @@ This is a cocktail I feel bad to make. Armenian cognac is so great that it is al
 
 Mezcal and pineapple are another perfect match. This Piña Colada variation has a smoky kick, and the lime juice adds some citrus freshness. Must be shaken. For a less sweet, more alcoholic version, repalce the Malibu rum with plain white rum. Also works if you replace the coconut cream with half and half (but then keep the malibu).
 
-<br clear="left"/>-->
+<br clear="left"/>
+-->
 
 ### Pomegranate Mezcalita
 
