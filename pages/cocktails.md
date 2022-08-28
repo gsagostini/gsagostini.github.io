@@ -43,7 +43,7 @@ This is a highball, no need to shake. Simply pour everything over ice and garnis
 
 ### Capuccino Martini
 
-<img align="left" src="../images/cocktails/capuccino.jpeg" width="200" height="350" style="float:left; padding-right:30px">
+<img align="left" src="../images/cocktails/capuccino.jpg" width="200" height="350" style="float:left; padding-right:30px">
 
 - 1 1/2 oz. of Mezcal (e.g. Banhez)
 - 1/2 oz. of Bourbon (e.g. Evan Willians BIB)
@@ -57,7 +57,7 @@ A riff on the espresso martini by someone without an espresso machine. Mezcal ad
 
 ### Armenian Sidecar
 
-<img align="left" src="../images/cocktails/armenian.jpeg" width="200" height="350" style="float:left; padding-right:30px">
+<img align="left" src="../images/cocktails/armenian.jpg" width="200" height="350" style="float:left; padding-right:30px">
 
 - 2 oz. Armenian ArArAt Cognac
 - 0.25 oz. of Pomegranate Liquor
@@ -68,8 +68,7 @@ This is a cocktail I feel bad to make. Armenian cognac is so great that it is al
 
 <br clear="left"/>
 
-<!--
-### Piña Queimada
+<!--### Piña Queimada
 
 <img style="float: right;" src="../images/cocktails/pina.png">
 
@@ -81,12 +80,11 @@ This is a cocktail I feel bad to make. Armenian cognac is so great that it is al
 
 Mezcal and pineapple are another perfect match. This Piña Colada variation has a smoky kick, and the lime juice adds some citrus freshness. Must be shaken. For a less sweet, more alcoholic version, repalce the Malibu rum with plain white rum. Also works if you replace the coconut cream with half and half (but then keep the malibu).
 
-<br clear="left"/>
--->
+<br clear="left"/>-->
 
 ### Pomegranate Mezcalita
 
-<img style="float: right;" src="../images/cocktails/margaritas.png">
+<img style="float: right;" src="../images/cocktails/margaritas.jpg">
 
 - 1 1/2 oz. of Mezcal
 - 1/2 oz. of Pomegranate Liquor
