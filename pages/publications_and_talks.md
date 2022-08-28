@@ -18,7 +18,7 @@ Gabriel Agostini. [Confluences of the Past in Brasília: Another _Plano Piloto_ 
 
 ## Talks:
 
-Identifying Urban Morphology from Street Networks with Graphlet Analysis, _30th Annual Geographical Information Science Research UK (GISRUK)_, April 2022
+[Identifying Urban Morphology from Street Networks with Graphlet Analysis](https://youtu.be/4PyglEmb1Jw), _30th Annual Geographical Information Science Research UK (GISRUK)_, April 2022
 
 A Category-Theory Approach to Construction Ontologies in Subsurface Mass Transit, _3D GeoInfo Conference_, October 2021
 
@@ -27,10 +27,10 @@ A Category-Theory Approach to Construction Ontologies in Subsurface Mass Transit
 [Knot Surgery and Integer Characterizing Slopes](https://youtu.be/0LLg-Lr_me4), _Columbia University Mathematics Department_, August 2019
 
 ---
-## Not for Publication
+### Not for Publication
 
 [Oh, F-ck all this WALKING! The Metafictional Geography of Movement in _Albert Angelo_](../files/f-allthiswalking.pdf). Paper written for the course _Postwar Fiction and Architecture_ at Columbia University. Spring 2022.
 
 [Naturally Artificial: Continuity and Change in the Street Network of Rio de Janeiro](../files/rj-street-network.pdf). Paper written for the course _Colonial Cities in the Americas_ at Columbia University. Fall 2021.
 
-[Benjamini-Schramm Convergence of Random Rooted Graphs](http://math.columbia.edu/~mmiller/TProjects/GAgostini21f.pdf). Papert written for the course _Topology_ at Columbia University. Fall 2021.
+[Benjamini-Schramm Convergence of Random Rooted Graphs](http://math.columbia.edu/~mmiller/TProjects/GAgostini21f.pdf). Paper written for the course _Topology_ at Columbia University. Fall 2021.
