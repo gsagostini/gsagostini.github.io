@@ -14,7 +14,9 @@ Below are a few of my favorite authoral drinks, which I have poorly named. Pleas
 
 ### Smoky Fall Punch
 
-<img align="left" src="../images/cocktails/cider.JPG" width="250" style="float:left; padding-right:30px">
+<p align="center">
+  <img src="../images/cocktails/cider.JPG" width="300">
+</p>
 
 - 1 1/2 oz. of Mezcal
 - 1 1/2 oz. of Cachaça
@@ -30,7 +32,9 @@ Again, shake the ingredients dry first to foam the egg white. Cachaça and Mezca
 
 ### Mule Olympus
 
-<img align="left" src="../images/cocktails/olympus.jpeg" width="250" style="float:left; padding-right:30px">
+<p align="center">
+  <img src="../images/cocktails/olympus.jpeg" width="300">
+</p>
 
 - 1 1/2 oz. of Tsipouroc
 - 1/2 oz. of Ouzo
@@ -43,7 +47,9 @@ This is a highball, no need to shake. Simply pour everything over ice and garnis
 
 ### Capuccino Martini
 
-<img align="left" src="../images/cocktails/capuccino.jpg" width="250" style="float:left; padding-right:30px">
+<p align="center">
+  <img src="../images/cocktails/capuccino.jpg" width="300">
+</p>
 
 - 1 1/2 oz. of Mezcal (e.g. Banhez)
 - 1/2 oz. of Bourbon (e.g. Evan Willians BIB)
@@ -57,7 +63,9 @@ A riff on the espresso martini by someone without an espresso machine. Mezcal ad
 
 ### Armenian Sidecar
 
-<img align="left" src="../images/cocktails/armenian.jpg" width="250" style="float:left; padding-right:30px">
+<p align="center">
+  <img src="../images/cocktails/armenian.jpg" width="300">
+</p>
 
 - 2 oz. Armenian ArArAt Cognac
 - 0.25 oz. of Pomegranate Liquor
@@ -68,9 +76,11 @@ This is a cocktail I feel bad to make. Armenian cognac is so great that it is al
 
 <br clear="left"/>
 
-<!--### Piña Queimada
+### Piña Queimada
 
-<img style="float: right;" src="../images/cocktails/pina.png">
+<p align="center">
+  <img src="../images/cocktails/pina.jpg" width="300">
+</p>
 
 - 1 oz. of Malibu Coconut Rum
 - 1 oz. of Mezcal
@@ -78,13 +88,15 @@ This is a cocktail I feel bad to make. Armenian cognac is so great that it is al
 - Coconut cream
 - Pineapple juice
 
-Mezcal and pineapple are another perfect match. This Piña Colada variation has a smoky kick, and the lime juice adds some citrus freshness. Must be shaken. For a less sweet, more alcoholic version, repalce the Malibu rum with plain white rum. Also works if you replace the coconut cream with half and half (but then keep the malibu).
+Mezcal and pineapple are another perfect match. This Piña Colada variation has a smoky kick, and the lime juice adds some citrus freshness. Must be shaken. For a less sweet version, repalce the Malibu rum with plain white rum. Also works if you replace the coconut cream with half and half (but then keep the malibu).
 
-<br clear="left"/>-->
+<br clear="left"/>
 
 ### Pomegranate Mezcalita
 
-<img style="float: right;" src="../images/cocktails/margaritas.jpg">
+<p align="center">
+  <img src="../images/cocktails/margaritas.jpg" width="300">
+</p>
 
 - 1 1/2 oz. of Mezcal
 - 1/2 oz. of Pomegranate Liquor
@@ -96,7 +108,9 @@ Mezcal and pineapple again, but now with some pomegrante to sweeten this duo. Lo
 
 ### Ginmarrão
 
-<img style="float: right;" src="../images/cocktails/ginmarrao.png">
+<p align="center">
+  <img src="../images/cocktails/ginmarrao.png" width="300">
+</p>
 
 - 1 1/2 oz. of Mezcal
 - 1 oz. of Gin
