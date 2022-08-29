@@ -4,7 +4,7 @@ title: Taylor Swift Studies
 description: scholarship that I produced surrounding the most influential musician of our generation
 ---
 
-A Swiftie for life, I spend a significant amount of time listening to Taylor Swift's songs. I love all of her albums equally (especially the underrated debut!) but if you must know my top 3 are evermore, 1989, and Red (TV). You can also disagree with my [rankings](../images/evermore_tracks.png) for the songs in evermore, and I am always happy to defend my favorites.
+A Swiftie for life, I spend a significant amount of time listening to Taylor Swift's songs. I love all of her albums equally, but if you must know my top 3 are evermore, 1989, and Red (TV)---with folklore at a close 4th. I plan to detail my album reviews here some day. You can also disagree with my [rankings](../images/evermore_tracks.png) for the songs in evermore, and I am always happy to defend my favorites.
 
 I also spend too much time theorizing about the meaning and rationale behind Swift's songs. As a matter of fact, I have even written two papers while at Columbia discussing Taylor Swift. Because I unfortunately have not yet found a reputable journal on Taylor Swift Studies to publish my work, you can read them below---and please drop me a message if you do so and enjoy them:
 
