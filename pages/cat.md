@@ -17,7 +17,14 @@ Mezcal (or Mezzi) is a young cat at the peak of his 2 years. A tabby boy with wh
   <img src="../images/cat/box2.JPG" width="350" /> 
 </p>
 <p align="center">
-  <em> "Your package cat has been delivered. Order was left in the building mail room." </em>
+  <em> "Your package 'cat' has been delivered. Order was left in the building mail room." </em>
+</p>
+
+<p float="center" align="center">
+  <img src="../images/cat/box3.jpeg" width="350" /> 
+</p>
+<p align="center">
+  <em> I don't think this is the right way to use a box... but who am I to judge? </em>
 </p>
 
 <p float="center" align="center">
