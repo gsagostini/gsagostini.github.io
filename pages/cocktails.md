@@ -4,6 +4,12 @@ title: Mixology
 description: check out my authoral cocktails
 ---
 
+**
+
+I have decided not to update this page as frequently, and instead have started a cocktail instagram account [@tabbycocktails](https://www.instagram.com/tabbycocktails/). Recipes, stories, and cat pictures can be found there!
+
+**
+
 One of my hobbies is to make cocktails. I am a fan of the classics: [negronis](../images/cat/mezcal_and_negroni.jpg) are my all-time favorite drinks. However what I really enjoy is experimenting with new flavors and combinations. I enjoy playing with variations on drinks that add unusual spirits or attempting to create a new cocktail altogether.
 
 Below are a few of my favorite authoral drinks, which I have poorly named. Please let me know if you think of better names for them. A few general remarks:
