@@ -4,6 +4,12 @@ title: Mixology
 description: check out my authoral cocktails
 ---
 
+**
+
+I have decided not to update this page as frequently, and instead have started a cocktail instagram account [@tabbycocktails](https://www.instagram.com/tabbycocktails/). Recipes, stories, and cat pictures can be found there!
+
+**
+
 One of my hobbies is to make cocktails. I am a fan of the classics: [negronis](../images/cat/mezcal_and_negroni.jpg) are my all-time favorite drinks. However what I really enjoy is experimenting with new flavors and combinations. I enjoy playing with variations on drinks that add unusual spirits or attempting to create a new cocktail altogether.
 
 Below are a few of my favorite authoral drinks, which I have poorly named. Please let me know if you think of better names for them. A few general remarks:
@@ -120,5 +126,25 @@ Mezcal and pineapple again, but now with some pomegrante to sweeten this duo. Lo
 - 1/2 egg white
 
 This is the cocktail I have spent years trying to make: a variation on the typical yerba-mate drink from South Brazil, where I am from, the chimarrão. I don't particularly need the flavor of egg white in this cocktail, but it makes the cool foam on top which anyone from Porto Alegre knows is essential to a trustworhy chimarrão. I also would want to try to pour this on a coupe glass, without ice. Garnish with lemon peel, and maybe some yerba mate on the side of the glass.
+
+<br clear="left"/>
+
+### Rosh Hashanah Tom Collins
+
+<p align="center">
+  <img src="../images/cocktails/rosh.png" width="300">
+</p>
+<p align="center">
+  <em> Picture missing due to cocktail immediate success. Will remake it soon! </em>
+</p>
+
+- 2 1/2 oz. of Gin
+- 2 1/2 oz. of (unsweetened) Apple Cider
+- 1 lemon juice (squeezed)
+- 1 oz. honey-cinnamon simple syrup (1 part honey, 1 part water, cinnamon sticks)
+- Angostura bitters
+- Club soda
+
+I was invited to my friend's Rosh Hashanah (Jewish New Year) celebration and my task was to make a cocktail for the holiday. Thematically, apples and honey are the main characters of the Jewish New Year---for a sweet year! I wanted a cocktail that was not too sweet yet still carried those two flavors. Mix all ingredients except the soda with ice (either shaken or stirred), pour in a tall glass filled with ice and top with a splash of club soda. Garnish with a thyme spring for a grassy floral aroma. Refreshing, delicate, and on theme! I mixed all the ingredients on a big pitcher, it scales very well!
 
 <br clear="left"/>
