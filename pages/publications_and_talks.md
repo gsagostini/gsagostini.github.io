@@ -4,9 +4,9 @@ title: Publications & Talks
 description: Pieces of my work that already got out there
 ---
 
-**Gabriel Agostini**, Emma Pierson, Nikhil Garg. [A Bayesian Spatial Model to Correct Under-Reporting in Urban Crowdsourcing](https://arxiv.org/abs/2307.10700](https://arxiv.org/abs/2312.11754). To appear in The 38th Annual AAAI Conference on Artificial Intelligence (AAAI-24). **Oral presentation**
+**Gabriel Agostini**, Emma Pierson, Nikhil Garg. [A Bayesian Spatial Model to Correct Under-Reporting in Urban Crowdsourcing](https://arxiv.org/abs/2312.11754). To appear in _The 38th Annual AAAI Conference on Artificial Intelligence_ (AAAI-24). Oral presentation.
 
-Rajiv Movva, Sidhika Balachandar, Kenny Peng, **Gabriel Agostini**, Nikhil Garg, Emma Pierson. [Topics, Authors, and Institutions in Large Language Model Research: Trends from 17K arXiv Papers](https://arxiv.org/abs/2307.10700). To appear in The North American Chapter of the Association for Computational Linguistics 2024 (24NAACL).
+Rajiv Movva, Sidhika Balachandar, Kenny Peng, **Gabriel Agostini**, Nikhil Garg, Emma Pierson. [Topics, Authors, and Institutions in Large Language Model Research: Trends from 17K arXiv Papers](https://arxiv.org/abs/2307.10700). To appear in _The North American Chapter of the Association for Computational Linguistics 2024_ (24NAACL).
 
 **Gabriel Agostini**, Juliana Gonçalves, Trivik Verma. [Identifying Urban Morphology from Street Networks with Graphlet Analysis](https://doi.org/10.5281/zenodo.6407124). _30th Annual Geographical Information Science Research UK (GISRUK)_, Liverpool, United Kingdom. April 1, 2022.
 
