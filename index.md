@@ -4,7 +4,7 @@ title: Gabriel S. Agostini
 ---
 <p align="left">
   <img src="images/portrait.JPG" width="250" height="375">
-</p> <br>
+</p>
 
 I am a 1st-year PhD student in [Information Science](https://infosci.cornell.edu) at [Cornell Tech](https://tech.cornell.edu), working with [Emma Pierson](https://www.cs.cornell.edu/~emmapierson/) and [Nikhil Garg](https://gargnikhil.com) on computational social science problems. Prior to joining Cornell, I earned a Bachelor of Science in Applied Mathematics and a Bachelor of Arts in Urban Studies from Columbia University.
 
