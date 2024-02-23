@@ -4,7 +4,7 @@ title: Mezcal, the Cat
 description: check out the cutest pictures of my cat
 ---
 
-Mezcal (or Mezzi) is a young cat at the peak of his 2 years. A tabby boy with white mittens (and boots!), he loves boxes, string toys, and attention. He hates bacon. Below are some of my favorite pictures of him.
+Mezcal (or Mezzi) is a young cat at the peak of his 4 years. A tabby boy with white mittens (and boots!), he loves boxes, string toys, and attention. He hates bacon. Below are some of my favorite pictures of him.
 
 <p float="center" align="center">
   <img src="../images/cat/chair.JPG" width="350" />
