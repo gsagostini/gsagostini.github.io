@@ -12,4 +12,4 @@ I am currently working in problems involving spatial statistics, network science
 
 ---
 
-My email is <gsagostini@infosci.cornell.edu> and my 
+My email is <gsagostini@infosci.cornell.edu>
