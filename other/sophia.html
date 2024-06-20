@@ -7,32 +7,49 @@
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            font-family: Arial, sans-serif;
+            font-family: 'Brush Script MT', cursive;
+            background-color: #fdf5e6;
+            color: #333;
+        }
+        h1 {
+            font-size: 36px;
+            color: #ff69b4;
+            margin-bottom: 20px;
+            text-align: center;
         }
         button {
-          background-color: white;
-          border: 2px solid black;
-          color: black;
-          padding: 15px 32px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 16px;
-          margin: 10px;
-          cursor: pointer;
-      }
-      .button-container {
+            background-color: white;
+            border: 2px solid #ff69b4;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .button-container {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
         button:hover {
-            background-color: pink;
+            background-color: #ffb6c1;
             color: white;
             transition: background-color 0.5s, color 0.5s;
+        }
+        .decorative-line {
+            width: 80%;
+            height: 2px;
+            background-color: #ff69b4;
+            margin: 20px 0;
         }
         @media (max-width: 768px) {
             button {
@@ -40,13 +57,15 @@
                 font-size: 14px;
             }
         }
-
     </style>
 </head>
 <body>
-<div class="button-container">
-    <button onclick="window.location.href='https://tinyurl.com/sophiamackyupload'">upload your photos</button>
-    <button onclick="window.location.href='https://tinyurl.com/sophiamacky'">view all uploaded photos</button>
-</div>
+    <h1>Upload photos and videos from the wedding here!</h1>
+    <div class="decorative-line"></div>
+    <div class="button-container">
+        <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSfSsSsA1jGerLT4fuAWIm9_Hvk9q-fqW1GtQRUSvDzJHJvYgg/viewform'">upload your photos</button>
+        <button onclick="window.location.href='https://drive.google.com/drive/folders/1nBpi7kZYE4Kpio1J0jkeeQI3HFSpz9UMlBqZ_yETYAHQX7A-tvaGmytBSgQDUrQO-Aq1ZnEY'">view all uploaded photos</button>
+    </div>
+    <div class="decorative-line"></div>
 </body>
 </html>
