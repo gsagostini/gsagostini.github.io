@@ -34,6 +34,8 @@
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            font-weight: lighter;
             margin: 10px;
             cursor: pointer;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -46,13 +48,44 @@
         }
         button:hover {
             background-color: #ffe6f0;
-            color: white;
+            color: black;
         }
         .decorative-line {
             width: 80%;
             height: 2px;
             background-color: #ffadd2;
             margin: 20px 0;
+            position: relative;
+        }
+        .decorative-line::before,
+        .decorative-line::after {
+            content: '★';
+            position: absolute;
+            top: -10px;
+            font-size: 20px;
+            color: #ffadd2;
+        }
+        .decorative-line::before {
+            left: 10%;
+        }
+        .decorative-line::after {
+            right: 10%;
+        }
+        .decorative-line span {
+            position: absolute;
+            top: -10px;
+            font-size: 20px;
+            color: #ffadd2;
+        }
+        .decorative-line span:nth-child(2) {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .decorative-line span:nth-child(3) {
+            left: 25%;
+        }
+        .decorative-line span:nth-child(4) {
+            left: 75%;
         }
         @media (max-width: 768px) {
             button {
@@ -64,11 +97,21 @@
 </head>
 <body>
     <h1>Upload photos and videos from the wedding here!</h1>
-    <div class="decorative-line"></div>
+    <div class="decorative-line">
+        <span>★</span>
+        <span>✿</span>
+        <span>✿</span>
+        <span>★</span>
+    </div>
     <div class="button-container">
         <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSfSsSsA1jGerLT4fuAWIm9_Hvk9q-fqW1GtQRUSvDzJHJvYgg/viewform'">upload your photos</button>
         <button onclick="window.location.href='https://drive.google.com/drive/folders/1nBpi7kZYE4Kpio1J0jkeeQI3HFSpz9UMlBqZ_yETYAHQX7A-tvaGmytBSgQDUrQO-Aq1ZnEY'">view all uploaded photos</button>
     </div>
-    <div class="decorative-line"></div>
+    <div class="decorative-line">
+        <span>★</span>
+        <span>✿</span>
+        <span>✿</span>
+        <span>★</span>
+    </div>
 </body>
 </html>
