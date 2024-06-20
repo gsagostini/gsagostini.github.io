@@ -17,10 +17,11 @@
             background-color: #fffaf3;
             color: #333;
             margin: 0;
+            padding: 20px;
         }
         h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: 48px;
+            font-size: 36px;
             color: #ffadd2;
             margin-bottom: 20px;
             text-align: center;
@@ -29,7 +30,7 @@
             background-color: white;
             border: 2px solid #ffadd2;
             color: black;
-            padding: 15px 32px;
+            padding: 10px 20px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -45,52 +46,63 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 100%;
         }
         button:hover {
             background-color: #ffe6f0;
             color: black;
         }
         .decorative-line {
+            display: flex;
+            align-items: center;
             width: 80%;
-            height: 2px;
-            background-color: #ffadd2;
             margin: 20px 0;
             position: relative;
         }
         .decorative-line::before,
         .decorative-line::after {
-            content: '★';
-            position: absolute;
-            top: -10px;
-            font-size: 20px;
-            color: #ffadd2;
+            content: '';
+            flex-grow: 1;
+            height: 2px;
+            background-color: #ffadd2;
         }
-        .decorative-line::before {
-            left: 10%;
-        }
-        .decorative-line::after {
-            right: 10%;
-        }
-        .decorative-line span {
-            position: absolute;
-            top: -10px;
-            font-size: 20px;
-            color: #ffadd2;
-        }
-        .decorative-line span:nth-child(2) {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .decorative-line span:nth-child(3) {
-            left: 25%;
-        }
-        .decorative-line span:nth-child(4) {
-            left: 75%;
+        .diamond-ring {
+            width: 30px;
+            height: 30px;
+            background: url('https://img.icons8.com/plasticine/100/000000/diamond-ring.png') no-repeat center center;
+            background-size: contain;
+            margin: 0 10px;
         }
         @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
             button {
-                padding: 10px 20px;
+                padding: 8px 16px;
                 font-size: 14px;
+            }
+            .decorative-line {
+                width: 90%;
+            }
+            .diamond-ring {
+                width: 25px;
+                height: 25px;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+            button {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+            .decorative-line {
+                width: 95%;
+            }
+            .diamond-ring {
+                width: 20px;
+                height: 20px;
             }
         }
     </style>
@@ -98,20 +110,14 @@
 <body>
     <h1>Upload photos and videos from the wedding here!</h1>
     <div class="decorative-line">
-        <span>★</span>
-        <span>✿</span>
-        <span>✿</span>
-        <span>★</span>
+        <div class="diamond-ring"></div>
     </div>
     <div class="button-container">
         <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSfSsSsA1jGerLT4fuAWIm9_Hvk9q-fqW1GtQRUSvDzJHJvYgg/viewform'">upload your photos</button>
         <button onclick="window.location.href='https://drive.google.com/drive/folders/1nBpi7kZYE4Kpio1J0jkeeQI3HFSpz9UMlBqZ_yETYAHQX7A-tvaGmytBSgQDUrQO-Aq1ZnEY'">view all uploaded photos</button>
     </div>
     <div class="decorative-line">
-        <span>★</span>
-        <span>✿</span>
-        <span>✿</span>
-        <span>★</span>
+        <div class="diamond-ring"></div>
     </div>
 </body>
 </html>
