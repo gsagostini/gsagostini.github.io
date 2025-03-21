@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 900px; /* Increased from 800px for more width */
   margin: 0 auto;
 }
 
@@ -136,11 +136,11 @@ body {
   gap: 40px; /* Space between sections */
 }
 
-/* Two-column section header layout */
+/* Two-column section header layout with increased spacing */
 .section-header {
   display: flex;
   flex-direction: row;
-  gap: 40px;
+  gap: 70px; /* Increased from 40px to create more space between title and content */
   margin-bottom: 20px;
 }
 
@@ -150,11 +150,12 @@ body {
   margin: 0;
   width: 150px; /* Fixed width for titles */
   flex-shrink: 0; /* Prevent title from shrinking */
+  text-align: right; /* Right-align titles for better visual separation */
 }
 
 .publications-list, .talks-list {
   flex: 1;
-  max-width: 650px;
+  max-width: 700px; /* Increased from 650px to make items wider */
 }
 
 /* Publication and Talk styles */
@@ -169,6 +170,11 @@ body {
 
 .publication p, .talk p {
   margin: 5px 0;
+}
+
+/* Fix for asterisks in author names - prevent italics */
+.author-list .author-asterisk {
+  font-style: normal !important;
 }
 
 /* Style for author names */
@@ -191,17 +197,17 @@ body {
   color: #555;
 }
 
-/* Improved talks section with background */
-.talks-list {
+/* Adding background to both publications and talks sections */
+.publications-list, .talks-list {
   background-color: #f9f9f9; /* Light gray background */
   padding: 25px;
   border-radius: 8px; /* Rounded corners */
 }
 
-/* Section separator */
+/* Section separator - thicker line */
 .section-separator {
   border: 0;
-  height: 1px;
+  height: 3px; /* Increased from 1px to make it thicker */
   background: #ddd;
   margin: 40px 0; /* Adjust spacing as needed */
 }
@@ -241,6 +247,7 @@ hr {
   
   .section-title {
     width: 100%;
+    text-align: left; /* Reset text alignment for mobile */
   }
   
   .publications-list, .talks-list {
