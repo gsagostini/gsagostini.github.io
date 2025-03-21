@@ -182,6 +182,22 @@ body {
   color: #555;
 }
 
+/* Section separator */
+.section-separator {
+  border: 0;
+  height: 1px;
+  background: #ddd;
+  margin: 40px 0; /* Adjust spacing as needed */
+}
+
+/* Talks section background */
+.talks-list {
+  background-color: #f9f9f9; /* Light gray background */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  margin-top: 20px; /* Space between sections */
+}
+
 /* Publication notes styles */
 .publication-notes {
   margin-top: 10px;
