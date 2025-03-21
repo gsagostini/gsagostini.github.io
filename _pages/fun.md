@@ -59,7 +59,7 @@ permalink: /fun/
           <p>I spend too much time not only listening but analyzing Taylor Swift songs, but luckily I also produce academic research on her music. Because I unfortunately have not yet found a reputable journal on Taylor Swift Studies to publish my work, you can read the preprints below:</p>
           <ul>
             <li><a href="{{ site.baseurl }}/documents/taylorswift/CC.pdf">This essay</a>, which I wrote for my <a href="https://www.college.columbia.edu/core-curriculum/classes/contemporary-civilization">Columbia's Contemporary Civilization class</a> in 2021, investigates Swift's re-recordings and their ontological implications in Aesthetics. I use canonical texts from Western philosophy, such as Marx and Nietzsche, to support my point. </li> 
-            <li>I had been thinking about these ideas much earlier in my Swiftie carrerr, and <a href="{{ site.baseurl }}/documents/taylorswift/UW.pdf">this essay</a> from 2017 focuses on the themes of memory and repetition in Taylor Swift's music as she released <i>reputation</i>.</li> 
+            <li>I had been thinking about these ideas much earlier in my Swiftie carreer, and <a href="{{ site.baseurl }}/documents/taylorswift/UW.pdf">this essay</a> from 2017 focuses on the themes of memory and repetition in Taylor Swift's music as she released <i>reputation</i>.</li> 
           </ul>
         </div>
       </div>
