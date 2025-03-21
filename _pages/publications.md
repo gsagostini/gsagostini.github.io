@@ -5,7 +5,7 @@ permalink: /publications/
 ---
 
 <div class="container">
-  <p><em>Note: * denotes equal contribution.</em></p>
+  <p> * <em> denotes equal contribution</em></p>
 
   <div class="publications-container">
     <!-- Publications section -->
