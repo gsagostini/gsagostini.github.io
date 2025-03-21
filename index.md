@@ -2,12 +2,11 @@
 layout: page
 title: Gabriel S. Agostini
 ---
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel S. Agostini</title>
+    <title>Gabriel Agostini</title>
     <style>
         body {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -35,11 +34,11 @@ title: Gabriel S. Agostini
     <div class="container">
         <img src="images/profile_pic.png" alt="Profile Picture" class="profile-pic">
         <div class="content">
-            <h1>Gabriel S. Agostini</h1>
-            <p>I am a 3rd-year PhD student in <a href="https://infosci.cornell.edu">Information Science</a> at <a href="https://tech.cornell.edu">Cornell Tech</a>, working with <a href="https://www.cs.cornell.edu/~emmapierson/">Emma Pierson</a> and <a href="https://gargnikhil.com">Nikhil Garg</a> on Urban Data Science. Prior to joining Cornell, I earned a Bachelor of Science in Applied Mathematics and a Bachelor of Arts in Urban Studies from Columbia University.</p>
-            <h2>My Research</h2>
-            <p>With my background in Mathematics, I have been exposed to rather abstract concepts which I would like to bring into the urban planning and social sciences discussion. I believe that the rigorous description of society through Statistics, Topology, or Graph Theory can help us understand better what are inherent properties of urban space and what can be improved. I am especially drawn to studying cities of the Global South as well as underserved neighborhoods and the mathematical constraints of urbanism for these populations, and to solving problems in public policy using Machine Learning with unreliable or sparse data---unfortunately, those interests very often intersect.</p>
-            <p>I am currently working on problems involving spatial statistics, network science, and applications of these areas to the design and governance of better, more equitable cities.</p>
+            <p>I am a PhD student in <a href="https://infosci.cornell.edu">Information Science</a> at <a href="https://tech.cornell.edu">Cornell Tech</a>, working with <a href="https://people.eecs.berkeley.edu/~emmapierson/">Emma Pierson</a> and <a href="https://gargnikhil.com">Nikhil Garg</a>.</p>
+
+            <p>My research leverages spatial machine learning methods and creates novel datasets to inform more equitable urban policies. I focus on addressing challenges related to sparse and biased spatial data: specifically, how to transform coarse, crowdsourced, and irregularly collected information into actionable insights for improved city resource allocation. My recent work examines <a href="https://arxiv.org/abs/2312.11754">under-reporting bias in resident reporting</a> systems (such as New York City's 311) and analyzes <a href=LINK_TO_INFUTOR>migration patterns in the United States at scale</a> focusing in responses to natural disasters like wildfires. My methodological approach combines advanced spatial analysis techniques with computational and statistical frameworks including Bayesian optimization, hierarchical modeling, and network analysis.</p>
+
+            <p> Prior to joining Cornell, I earned a B.S. in Applied Mathematics and a B.A. in Urban Studies from Columbia University.</p>
             <hr>
             <p>My email is <a href="mailto:gsagostini@infosci.cornell.edu">gsagostini@infosci.cornell.edu</a></p>
         </div>
