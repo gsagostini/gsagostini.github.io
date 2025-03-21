@@ -1,6 +1,6 @@
-## Simple site: Easy websites with GitHub pages
+## Personal Webpage
 
-This is my personal webpage. The template was provided by [Karl Broman](https://github.com/kbroman). A full tutorial on ow to use this template is available [here](https://kbroman.org/simple_site).
+This is my personal webpage. The template was provided by [Karl Broman](https://github.com/kbroman).
 
 ---
 
