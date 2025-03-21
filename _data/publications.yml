@@ -5,6 +5,9 @@
   year: 2025
   link: "https://gsagostini.github.io/MIGRATE/"
   slides: "" # Leave empty if no slides
+  twitter: "" # Leave empty if no Twitter link
+  bluesky: "" # Leave empty if no Bluesky link
+  notes: "" # Leave empty if no notes
 
 - title: "Inequalities in Mobility Patterns: Reconciling Access and Travel in American Cities"
   authors: "Talia Kaufmann^*, Gabriel Agostini^*, Trivik Verma, Dan O'Brien"
@@ -13,14 +16,20 @@
   year: 2025
   link: ""
   slides: "" # Leave empty if no slides
-  
+  twitter: "" # Leave empty if no Twitter link
+  bluesky: "" # Leave empty if no Bluesky link
+  notes: "" # Leave empty if no notes
+
 - title: "Topics, authors, and institutions in Large Language Model research: trends from 17K arXiv papers"
-  authors: "Rajiv Movva^*, Sidhika Balachandar^*, Kenny Peng^*, **Gabriel Agostini**^*, Nikhil Garg, Emma Pierson"
+  authors: "Rajiv Movva^*, Sidhika Balachandar^*, Kenny Peng^*, Gabriel Agostini^*, Nikhil Garg, Emma Pierson"
   journal: "NAACL 2024"
   pages: 1223-1243
   year: 2024
   link: "https://arxiv.org/pdf/2307.10700"
   slides: "" # Leave empty if no slides
+  twitter: "" # Leave empty if no Twitter link
+  bluesky: "" # Leave empty if no Bluesky link
+  notes: "" # Leave empty if no notes
 
 - title: "A Bayesian spatial model to correct under-reporting in urban crowdsourcing"
   authors: "Gabriel Agostini, Emma Pierson, Nikhil Garg"
@@ -28,7 +37,9 @@
   pages: 21888-21896
   year: 2024
   link: "https://arxiv.org/abs/2312.11754"
-  slides: ""
+  slides: "" # Leave empty if no slides
+  twitter: "https://x.com/gsagostini/status/1737491820332949907"
+  bluesky: "" # Leave empty if no Bluesky link
   notes: "**Oral presentation**"
 
 - title: "Identifying Urban Morphology from Street Networks with Graphlet Analysis"
@@ -38,6 +49,9 @@
   year: 2021
   link: "https://zenodo.org/records/6407124"
   slides: "" # Leave empty if no slides
+  twitter: "" # Leave empty if no Twitter link
+  bluesky: "" # Leave empty if no Bluesky link
+  notes: "" # Leave empty if no notes
 
 - title: "A Category-Theory Approach for Construction Ontologies in Subsurface Mass Transit"
   authors: "Gabriel Agostini, Yushan Zhang, Debra Laefer"
@@ -46,3 +60,6 @@
   year: 2021
   link: "https://isprs-archives.copernicus.org/articles/XLVI-4-W4-2021/125/2021/isprs-archives-XLVI-4-W4-2021-125-2021.pdf"
   slides: "" # Leave empty if no slides
+  twitter: "" # Leave empty if no Twitter link
+  bluesky: "" # Leave empty if no Bluesky link
+  notes: "" # Leave empty if no notes
