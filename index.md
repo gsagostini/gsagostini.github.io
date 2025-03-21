@@ -4,7 +4,19 @@ title: Home
 ---
 
 <div class="container">
-  <img src="{{ site.baseurl }}/assets/images/profile_pic.png" alt="Profile Picture" class="profile-pic">
+  <div class="profile-section">
+    <img src="{{ site.baseurl }}/assets/images/profile_pic.png" alt="Profile Picture" class="profile-pic">
+    <div class="profile-links">
+      <a href="https://github.com/gsagostini" class="profile-link">
+        <img src="{{ site.baseurl }}/assets/images/github-icon.png" alt="GitHub" class="icon">
+        GitHub
+      </a>
+      <a href="https://scholar.google.com/citations?user=5PQDJ1gAAAAJ&hl" class="profile-link">
+        <img src="{{ site.baseurl }}/assets/images/scholar-icon.svg" alt="Google Scholar" class="icon">
+        Google Scholar
+      </a>
+    </div>
+  </div>
   <div class="content">
     <p>I am a PhD student in <a href="https://infosci.cornell.edu">Information Science</a> at <a href="https://tech.cornell.edu">Cornell Tech</a>, working with <a href="https://people.eecs.berkeley.edu/~emmapierson/">Emma Pierson</a> and <a href="https://gargnikhil.com">Nikhil Garg</a>.</p>
     <p>My research leverages spatial machine learning methods and creates novel datasets to inform more equitable urban policies. I focus on addressing challenges related to sparse and biased spatial data: specifically, how to transform coarse, crowdsourced, and irregularly collected information into actionable insights for improved city resource allocation. </p>
