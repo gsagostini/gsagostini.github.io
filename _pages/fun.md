@@ -11,11 +11,15 @@ permalink: /fun/
       <h2 class="section-title">Urban+</h2>
       <div class="fun-list">
         <div class="fun-item">
-          <p>I have written a lot about cities and geography during my undergrad:</p>
+          <p>I have written a lot about cities and geography during my undergrad. Here are some of my selected work in two topics!</p>
+          <p><b>Brazilian Urban Planning: </b></p>
           <ul>
             <li>In the essay <a href="{{ site.baseurl }}/documents/urban/rio.pdf">Naturally Artificial: Continuity and Change in the Street Network of Rio de Janeiro</a>, I use street network analysis on historical maps to study the change in the street layout of Rio de Janeiro during the colonial period.</li> 
             <li>In the essay <a href="{{ site.baseurl }}/documents/urban/confluences.pdf">Confluences of the Past in Brasília: Another Plano Piloto for Brazilian Modernist Urbanism</a>, I look at the eurocentric historiography that predominantly constrained Brazilian Modernism and propose alternative, de-colonial avenues for future research rooted within Brazil's own city-planning tradition. This piece was published on the <a href="https://www.bcurbanreview.com">Barnard Columbia Urban Review</a> Fall 2021 edition. I wrote <a href="{{ site.baseurl }}/documents/urban/cannibalism.pdf">a review essay</a> on the same topic.</li> 
-            <li>Looking at a similar topic with a different perspective, I discuss the dissonances between the British architectural collective <a href="https://www.archigram.net/about-archigram">Archigram</a> and modernist town planning in my essay <a href="{{ site.baseurl }}/documents/urban/archigram.pdf">The Life of Yellowing Papers</a>, focusing on the meaning of participatory urbanism in both art and real life.</li>
+          </ul>
+          <p><b>Architecture and Urban Planning through Art and Fiction: </b></p>
+          <ul>
+            <li>Still looking at modernism (and Brasília!), I discuss the dissonances between the British architectural collective <a href="https://www.archigram.net/about-archigram">Archigram</a> and modernist town planning in my essay <a href="{{ site.baseurl }}/documents/urban/archigram.pdf">The Life of Yellowing Papers</a>, focusing on the meaning of participatory urbanism in both art and real life.</li>
             <li>Continuing on the theme of British literature and architecture, I use spatial analysis and GIS to study movement in B.S. Johnson's brutalist novel Albert Angelo as detailed in the essay <a href="{{ site.baseurl }}/documents/urban/f-walking.pdf">OH, FUCK ALL THIS WALKING! The Metafictional Geography of Movement in Albert Angelo</a>. Hey, it wouldn't be brutalist enough if I didn't include the whole, uncensored, raw expletive here!</li>
           </ul>
         </div>
