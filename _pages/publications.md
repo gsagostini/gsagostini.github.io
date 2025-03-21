@@ -16,6 +16,9 @@ permalink: /publications/
         <h3>{{ pub.title }}</h3>
         <p>{{ pub.authors | highlight_author: "Gabriel Agostini" }}</p>
         <p><em>{{ pub.journal }}</em>, {{ pub.year }}{% if pub.pages %}, {{ pub.pages }}{% endif %}</p>
+        {% if pub.notes %}
+          <p class="publication-notes">{{ pub.notes | markdownify }}</p>
+        {% endif %}
         <p>
           {% if pub.link %}
             <a href="{{ pub.link }}">[link]</a>
@@ -30,9 +33,6 @@ permalink: /publications/
             <a href="{{ pub.bluesky }}">[bluesky]</a>
           {% endif %}
         </p>
-        {% if pub.notes %}
-          <p class="publication-notes">{{ pub.notes | markdownify }}</p>
-        {% endif %}
       </div>
       <hr>
     {% endfor %}
@@ -46,6 +46,9 @@ permalink: /publications/
       <div class="talk">
         <h3>{{ talk.title }}</h3>
         <p>{{ talk.venue }}, {{ talk.date }}</p>
+        {% if talk.notes %}
+          <p class="talk-notes">{{ talk.notes | markdownify }}</p>
+        {% endif %}
         <p>
           {% if talk.link %}
             <a href="{{ talk.link }}">[link]</a>
