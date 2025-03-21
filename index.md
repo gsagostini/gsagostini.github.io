@@ -9,7 +9,7 @@ title: About
     <style>
         .page-header h1, h1.title, .title {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-weight: 300; /* This makes it "light" */
+        font-weight: 300;
     }
         body {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
