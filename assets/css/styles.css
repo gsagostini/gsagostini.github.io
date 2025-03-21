@@ -1,0 +1,81 @@
+/* Global styles */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin: 40px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Header styles */
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+
+/* Name (Home link) styles */
+.name-title {
+  font-size: 28px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.name-title a {
+  text-decoration: none;
+  color: #333;
+}
+
+.name-title a:hover {
+  color: #555; /* Slightly darker on hover */
+}
+
+/* Navigation buttons container */
+.nav-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+/* Base button styles */
+.nav-button {
+  padding: 8px 15px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  color: #333;
+}
+
+/* Publications & Talks button hover effect */
+.publications-button:hover {
+  background-color: #333;
+  color: white;
+}
+
+/* Fun button hover effect */
+.fun-button:hover {
+  background-color: var(--fun-color); /* Dynamic color */
+  border-color: var(--fun-color);
+  color: white;
+}
+
+/* Fun button random colors */
+.fun-button {
+  --fun-colors: #ff5e5e, #5e5eff, #5eff5e, #ff5eff, #5effff, #ffa500; /* Add more colors if desired */
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.fun-button:hover {
+  --fun-color: var(--fun-colors); /* Randomly pick a color */
+  background-color: var(--fun-color);
+  border-color: var(--fun-color);
+  color: white;
+}
