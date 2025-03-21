@@ -99,8 +99,8 @@ body {
 }
 
 .profile-pic {
-  width: 150px; /* Updated size */
-  height: 150px; /* Updated size */
+  width: 200px; /* Updated size */
+  height: 200px; /* Updated size */
   border-radius: 50%; /* Make it circular */
   object-fit: cover; /* Ensure the image fits well */
 }
@@ -139,19 +139,23 @@ body {
 /* Publications and Talks container */
 .publications-container {
   display: flex;
-  gap: 40px; /* Space between columns */
+  flex-direction: column;
+  gap: 40px; /* Space between sections */
 }
 
-/* Column styles */
-.publications-column, .talks-column {
-  flex: 1; /* Each column takes equal space */
+/* Section header styles */
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px; /* Space between title and content */
 }
 
-/* Section titles */
 .section-title {
   font-size: 32px;
   font-weight: 500;
-  margin-bottom: 20px;
+  margin: 0;
+  width: 150px; /* Fixed width for titles */
+  text-align: left;
 }
 
 /* Publication and Talk styles */
@@ -175,4 +179,31 @@ body {
 }
 
 .publication a:hover, .talk a:hover {
-  color:
+  color: #555;
+}
+
+/* Publication notes styles */
+.publication-notes {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.publication-notes strong {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Superscript styles */
+sup {
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
+/* Horizontal rule styles */
+hr {
+  border: 0;
+  height: 1px;
+  background: #ddd;
+  margin: 20px 0;
+}
