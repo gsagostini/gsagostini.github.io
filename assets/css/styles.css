@@ -254,3 +254,37 @@ hr {
     max-width: 100%;
   }
 }
+
+/* Cat Gallery Styles */
+.cat-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Space between images */
+  margin-top: 20px;
+}
+
+.cat-image {
+  width: 200px; /* Fixed width for each image container */
+  height: 200px; /* Fixed height for each image container */
+  overflow: hidden; /* Ensures the image doesn't overflow the container */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.cat-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect */
+.cat-image:hover {
+  transform: scale(1.05); /* Slightly enlarge the image */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.cat-image:hover img {
+  transform: scale(1.1); /* Slightly zoom in on the image */
+}
