@@ -28,42 +28,9 @@ title: Gabriel S. Agostini
         .content {
             max-width: 600px;
         }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-        .name-title {
-            font-size: 24px;
-            margin: 0;
-        }
-        .name-title a {
-            text-decoration: none;
-            color: inherit;
-        }
-        .links {
-            display: flex;
-            gap: 20px;
-        }
-        .links a {
-            text-decoration: none;
-            color: #0366d6;
-        }
-        .links a:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1 class="name-title"><a href="./">Gabriel S. Agostini</a></h1>
-        <div class="links">
-            <a href="./publications">publications & talks</a>
-            <a href="./fun">fun</a>
-        </div>
-    </div>
-    
     <div class="container">
         <img src="images/profile_pic.png" alt="Profile Picture" class="profile-pic">
         <div class="content">
