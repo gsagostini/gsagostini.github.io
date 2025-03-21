@@ -11,7 +11,7 @@ permalink: /fun/
       <h2 class="section-title">Urban+</h2>
       <div class="fun-list">
         <div class="fun-item">
-          <p>I have written a lot about cities and geography during my undergrad. Here are some of my selected work in two topics!</p>
+          <p>I have written a lot about cities and geography during my undergrad. Here is some of that work:</p>
           <p><b>Brazilian Urban Planning: </b></p>
           <ul>
             <li>In the essay <a href="{{ site.baseurl }}/documents/urban/rio.pdf">Naturally Artificial: Continuity and Change in the Street Network of Rio de Janeiro</a>, I use street network analysis on historical maps to study the change in the street layout of Rio de Janeiro during the colonial period.</li> 
