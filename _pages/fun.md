@@ -34,7 +34,7 @@ permalink: /fun/
       <h2 class="section-title">Cat</h2>
       <div class="fun-list">
         <div class="fun-item">
-          <p>Mezcal is my adorable yet sometimes grudgy cat. Check out <a href="mezcal.md">pictures of him</a>.</p>
+          <p>Mezcal is my adorable yet sometimes grudgy cat. Check out <a href="{{ site.baseurl }}/mezcal/">pictures of him</a>.</p>
         </div>
       </div>
     </div>
