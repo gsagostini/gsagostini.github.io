@@ -11,8 +11,8 @@ title: Home
         <a href="https://github.com/gsagostini" class="profile-link">
           <img src="{{ site.baseurl }}/assets/images/github-icon.png" alt="GitHub" class="icon">
         </a>
-        <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" class="profile-link">
-          <img src="{{ site.baseurl }}/assets/images/scholar-icon.png" alt="Google Scholar" class="icon">
+        <a href="https://scholar.google.com/citations?user=5PQDJ1gAAAAJ" class="profile-link">
+          <img src="{{ site.baseurl }}/assets/images/scholar-icon.svg" alt="Google Scholar" class="icon">
         </a>
       </div>
     </div>
