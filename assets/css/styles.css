@@ -93,8 +93,8 @@ body {
 }
 
 .profile-pic {
-  width: 100px; /* Smaller profile picture */
-  height: 100px;
+  width: 120px; /* Smaller profile picture */
+  height: 120px;
   border-radius: 50%; /* Make it circular */
   object-fit: cover; /* Ensure the image fits well */
 }
