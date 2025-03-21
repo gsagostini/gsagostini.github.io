@@ -99,8 +99,8 @@ body {
 }
 
 .profile-pic {
-  width: 150px; /* Larger profile picture */
-  height: 150px;
+  width: 150px; /* Updated size */
+  height: 150px; /* Updated size */
   border-radius: 50%; /* Make it circular */
   object-fit: cover; /* Ensure the image fits well */
 }
@@ -136,6 +136,24 @@ body {
   flex: 1; /* Take up remaining space */
 }
 
+/* Publications and Talks container */
+.publications-container {
+  display: flex;
+  gap: 40px; /* Space between columns */
+}
+
+/* Column styles */
+.publications-column, .talks-column {
+  flex: 1; /* Each column takes equal space */
+}
+
+/* Section titles */
+.section-title {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
 /* Publication and Talk styles */
 .publication, .talk {
   margin-bottom: 20px;
@@ -157,31 +175,4 @@ body {
 }
 
 .publication a:hover, .talk a:hover {
-  color: #555;
-}
-
-/* Publication notes styles */
-.publication-notes {
-  margin-top: 10px;
-  font-size: 0.9em;
-  color: #555;
-}
-
-.publication-notes strong {
-  font-weight: bold;
-  color: #333;
-}
-
-/* Superscript styles */
-sup {
-  font-size: 0.8em;
-  vertical-align: super;
-}
-
-/* Horizontal rule styles */
-hr {
-  border: 0;
-  height: 1px;
-  background: #ddd;
-  margin: 20px 0;
-}
+  color:
