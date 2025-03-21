@@ -87,9 +87,15 @@ body {
 /* Profile section styles */
 .profile-section {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  gap: 30px; /* Space between profile picture and text */
   margin-bottom: 20px;
+}
+
+.profile-pic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Space between profile picture and buttons */
 }
 
 .profile-pic {
@@ -101,35 +107,33 @@ body {
 
 .profile-links {
   display: flex;
-  gap: 10px;
+  gap: 10px; /* Space between buttons */
 }
 
 .profile-link {
   display: flex;
   align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  padding: 8px 15px;
+  justify-content: center;
+  width: 40px; /* Fixed size for buttons */
+  height: 40px;
   border: 2px solid #333;
-  border-radius: 5px;
+  border-radius: 50%; /* Make buttons circular */
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .profile-link:hover {
   background-color: #333;
-  color: white;
 }
 
-.icon {
-  width: 20px;
+.profile-link img {
+  width: 20px; /* Icon size */
   height: 20px;
 }
 
 /* Content styles */
 .content {
-  margin-top: 20px;
+  flex: 1; /* Take up remaining space */
 }
 
 /* Publication and Talk styles */
