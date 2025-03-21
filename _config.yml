@@ -1,3 +1,4 @@
+# Site settings
 title: Gabriel S. Agostini
 description: Personal academic website
 baseurl: ""  # Empty because the site is at the root
@@ -18,3 +19,26 @@ navigation:
     url: /publications
   - name: Fun
     url: /fun
+
+# Include additional directories
+include:
+  - _pages  # Include the _pages directory for custom pages
+
+# Exclude unnecessary files from the build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .gitignore
+  - .github
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Build settings
+timezone: America/New_York  # Set your timezone
+future: true  # Show future-dated posts
