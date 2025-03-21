@@ -14,7 +14,7 @@ permalink: /publications/
     {% for pub in site.data.publications %}
       <div class="publication">
         <h3>{{ pub.title }}</h3>
-        <p>{{ pub.authors | highlight_author: "Gabriel Agostini" }}</p>
+        <p>{{ pub.authors | markdownify }}</p>
         <p><em>{{ pub.journal }}</em>, {{ pub.year }}{% if pub.pages %}, {{ pub.pages }}{% endif %}</p>
         {% if pub.notes %}
           <p class="publication-notes">{{ pub.notes | markdownify }}</p>
@@ -37,6 +37,9 @@ permalink: /publications/
       <hr>
     {% endfor %}
   </div>
+
+  <!-- Thin line separator -->
+  <hr class="section-separator">
 
   <div class="section-header">
     <h2 class="section-title">Talks</h2>
