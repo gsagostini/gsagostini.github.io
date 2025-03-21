@@ -3,15 +3,15 @@ layout: page
 title: Publications & Talks
 ---
 
-## Publications
+* denotes equal contribution.
 
-* denotes equal contribution
+## Publications
 
 {% for pub in site.data.publications %}
   <div class="publication">
     <h3>{{ pub.title }}</h3>
-    <p>{{ pub.authors }}</p>
-    <p><em>{{ pub.journal }}</em>, {{ pub.year }}</p>
+    <p>{{ pub.authors | highlight_author: "Gabriel S. Agostini" }}</p>
+    <p><em>{{ pub.journal }}</em>, {{ pub.year }}{% if pub.pages %}, {{ pub.pages }}{% endif %}</p>
     <p>
       {% if pub.link %}
         <a href="{{ pub.link }}">[link]</a>
@@ -20,6 +20,9 @@ title: Publications & Talks
         <a href="{{ pub.slides }}">[slides]</a>
       {% endif %}
     </p>
+    {% if pub.notes %}
+      <p class="publication-notes">{{ pub.notes | markdownify }}</p>
+    {% endif %}
   </div>
   <hr>
 {% endfor %}
