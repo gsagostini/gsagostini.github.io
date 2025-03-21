@@ -238,23 +238,6 @@ hr {
   margin: 20px 0;
 }
 
-/* Responsive adjustments for mobile */
-@media (max-width: 768px) {
-  .section-header {
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .section-title {
-    width: 100%;
-    text-align: left; /* Reset text alignment for mobile */
-  }
-  
-  .publications-list, .talks-list {
-    max-width: 100%;
-  }
-}
-
 /* Cat Gallery Styles */
 .cat-gallery {
   display: flex;
@@ -287,4 +270,39 @@ hr {
 
 .cat-image:hover img {
   transform: scale(1.1); /* Slightly zoom in on the image */
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .profile-section {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align items */
+    gap: 20px; /* Adjust gap for mobile */
+  }
+
+  .profile-pic-container {
+    order: -1; /* Move the profile picture to the top */
+  }
+
+  .content {
+    text-align: center; /* Center-align text */
+  }
+
+  .profile-links {
+    justify-content: center; /* Center-align links */
+  }
+
+  .section-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .section-title {
+    width: 100%;
+    text-align: left; /* Reset text alignment for mobile */
+  }
+
+  .publications-list, .talks-list {
+    max-width: 100%;
+  }
 }
