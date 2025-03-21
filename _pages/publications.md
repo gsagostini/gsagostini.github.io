@@ -15,7 +15,8 @@ permalink: /publications/
         {% for pub in site.data.publications %}
           <div class="publication">
             <h3>{{ pub.title }}</h3>
-            <p>{{ pub.authors | markdownify }}</p>
+            <!-- Replace asterisks with HTML entities to prevent markdown processing -->
+            <p class="author-list">{{ pub.authors | replace: '*', '<span class="author-asterisk">*</span>' }}</p>
             <p><em>{{ pub.journal }}</em>, {{ pub.year }}{% if pub.pages %}, {{ pub.pages }}{% endif %}</p>
             {% if pub.notes %}
               <p class="publication-notes">{{ pub.notes | markdownify }}</p>
@@ -50,6 +51,8 @@ permalink: /publications/
         {% for talk in site.data.talks %}
           <div class="talk">
             <h3>{{ talk.title }}</h3>
+            <!-- Replace asterisks with HTML entities to prevent markdown processing -->
+            <p class="author-list">{{ talk.authors | replace: '*', '<span class="author-asterisk">*</span>' }}</p>
             <p>{{ talk.venue }}, {{ talk.date }}</p>
             {% if talk.notes %}
               <p class="talk-notes">{{ talk.notes | markdownify }}</p>
