@@ -1,10 +1,10 @@
 # Site settings
-title: Gabriel S. Agostini
+title: Gabriel Agostini
 description: Personal academic website
 baseurl: ""  # Empty because the site is at the root
 url: "https://gsagostini.github.io"  # Your GitHub Pages URL
 author:
-  name: Gabriel S. Agostini
+  name: Gabriel Agostini
   email: gsagostini@infosci.cornell.edu
 
 # Plugins (optional, but useful)
