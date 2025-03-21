@@ -1,9 +1,10 @@
 ---
 layout: page
 title: Publications & Talks
+permalink: /publications/
 ---
 
-* denotes equal contribution.
+*Note: * denotes equal contribution.*
 
 ## Publications
 
