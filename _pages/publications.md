@@ -4,15 +4,17 @@ title: Publications & Talks
 permalink: /publications/
 ---
 
-* *denotes equal contribution.*
+*Note: * denotes equal contribution.*
 
 <div class="publications-container">
-  <div class="publications-column">
+  <div class="section-header">
     <h2 class="section-title">Publications</h2>
+  </div>
+  <div class="publications-list">
     {% for pub in site.data.publications %}
       <div class="publication">
         <h3>{{ pub.title }}</h3>
-        <p>{{ pub.authors | highlight_author: "Gabriel S. Agostini" }}</p>
+        <p>{{ pub.authors | highlight_author: "Gabriel Agostini" }}</p>
         <p><em>{{ pub.journal }}</em>, {{ pub.year }}{% if pub.pages %}, {{ pub.pages }}{% endif %}</p>
         <p>
           {% if pub.link %}
@@ -36,8 +38,10 @@ permalink: /publications/
     {% endfor %}
   </div>
 
-  <div class="talks-column">
+  <div class="section-header">
     <h2 class="section-title">Talks</h2>
+  </div>
+  <div class="talks-list">
     {% for talk in site.data.talks %}
       <div class="talk">
         <h3>{{ talk.title }}</h3>
