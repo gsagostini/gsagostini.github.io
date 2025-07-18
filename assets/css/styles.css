@@ -56,20 +56,18 @@ body {
 
 /* Publications & Talks button hover effect */
 .publications-button:hover {
-  background-color: #333;
+  background-color: #81a38b;
   color: white;
 }
 
-/* Fun button hover effect and random colors */
+/* Fun button hover effect */
 .fun-button {
   --fun-colors: #ff5e5e, #5e5eff, #5eff5e, #ff5eff, #5effff, #ffa500; /* Add more colors if desired */
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 .fun-button:hover {
-  --fun-color: var(--fun-colors); /* Randomly pick a color */
-  background-color: var(--fun-color);
-  border-color: var(--fun-color);
+  background-color: #81a38b;
   color: white;
 }
 
