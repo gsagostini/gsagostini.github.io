@@ -35,6 +35,7 @@ permalink: /fun/
       <div class="fun-list">
         <div class="fun-item">
           <p>Mezcal is my adorable yet sometimes grudgy cat. Check out <a href="{{ site.baseurl }}/mezcal/">pictures of him</a>.</p>
+          <p><b>Important clarification: </b> The cat in my profile picture is not Mezcal. That is Scotty, one of my feline godchildren. Mezcal would be extremely upset if I tried to put him on my shoulders. I have tried.</p>
         </div>
       </div>
     </div>
