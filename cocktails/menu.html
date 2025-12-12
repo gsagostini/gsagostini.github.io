@@ -1,184 +1,77 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Holiday Cocktail Menu</title>
+<meta charset="utf-8" />
+<title>Holiday Drinks Menu</title>
 
-  <!-- Basic festive styling -->
-  <style>
-    :root{
-      --bg:#0b1221;
-      --card:#0f1724;
-      --accent:#f6d365;
-      --accent2:#ff8c94;
-      --text:#f7f7fb;
-      --muted:#c9d1d9;
-      --glass: rgba(255,255,255,0.04);
-    }
-    html,body{height:100%;margin:0;font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;}
-    body{
-      background: radial-gradient(circle at 10% 10%, rgba(255,140,148,0.06), transparent 10%),
-                  linear-gradient(180deg,#071022 0%, var(--bg) 100%);
-      color:var(--text);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:32px;
-      box-sizing:border-box;
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    font-weight: 300;
+  }
 
-    .menu-card{
-      width:100%;
-      max-width:760px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03));
-      border-radius:14px;
-      box-shadow: 0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
-      padding:28px;
-      border:1px solid rgba(255,255,255,0.03);
-      backdrop-filter: blur(6px);
-    }
+  .button {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    padding: 14px 28px;
+    font-size: 20px;
+    border: 1px solid #000;
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+    transition: background 0.5s;
+  }
 
-    header{
-      display:flex;
-      align-items:center;
-      gap:16px;
-      margin-bottom:20px;
-    }
-    .logo{
-      width:64px;height:64px;border-radius:10px;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      display:flex;align-items:center;justify-content:center;
-      font-weight:700;color:#2b1b0f;font-size:22px;
-      box-shadow: 0 6px 18px rgba(255,140,148,0.12);
-    }
-    h1{margin:0;font-size:20px;letter-spacing:0.6px;}
-    p.lead{margin:4px 0 0;color:var(--muted);font-size:14px;}
+  /* Hover animation: cycling festive gradient */
+  .button:hover {
+    animation: festive 1.2s infinite alternate;
+    color: white;
+    border-color: transparent;
+  }
 
-    .controls{
-      margin-top:18px;
-      display:flex;
-      gap:12px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
+  @keyframes festive {
+    0%   { background: forestgreen; }
+    50%  { background: crimson; }
+    100% { background: forestgreen; }
+  }
 
-    button.cta{
-      background: linear-gradient(90deg,var(--accent),var(--accent2));
-      color:#2b1b0f;
-      border:0;padding:10px 16px;border-radius:10px;
-      font-weight:600;cursor:pointer;
-      box-shadow: 0 6px 18px rgba(255,140,148,0.14);
-    }
-    button.cta:focus{outline:3px solid rgba(255,216,180,0.18);}
+  ul {
+    margin-top: 40px;
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+</style>
 
-    .link-area{
-      display:none;
-      margin-top:16px;
-      padding:14px;
-      border-radius:10px;
-      background:var(--glass);
-      border:1px dashed rgba(255,255,255,0.03);
-    }
-
-    .spirit-list{
-      margin-top:20px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent 30%);
-      padding:14px;
-      border-radius:10px;
-      color:var(--muted);
-      font-size:15px;
-    }
-    .spirit-list h2{margin:0 0 6px 0;color:var(--text);font-size:16px;}
-    .spirit-list ul{margin:8px 0 0 20px;padding:0;}
-    .spirit-list li{margin:6px 0;line-height:1.45;}
-
-    footer{margin-top:18px;color:rgba(255,255,255,0.07);font-size:12px;}
-
-    /* small animation for the chevron */
-    .chev{display:inline-block;transition:transform .25s ease}
-    .open .chev{transform:rotate(180deg)}
-  </style>
 </head>
 <body>
-  <main class="menu-card" role="main" aria-labelledby="title">
-    <header>
-      <div class="logo" aria-hidden="true">❄️</div>
-      <div>
-        <h1 id="title">Holiday Cocktail Menu</h1>
-        <p class="lead">Click below to open the Holiday drinks PDF — happy sipping! 🎄</p>
-      </div>
-    </header>
 
-    <div class="controls">
-      <!-- Button toggles visibility of the link area -->
-      <button id="togglePdf" class="cta" aria-expanded="false" aria-controls="pdfLink">
-        Show Holiday Drinks Menu <span class="chev" aria-hidden="true">▾</span>
-      </button>
+<button class="button" onclick="window.open('menu.pdf', '_blank')">
+  Holiday Drinks Menu
+</button>
 
-      <!-- Extra quick open link (same target) -->
-      <a id="quickOpen" href="menu.pdf" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-weight:600;">
-        Open PDF directly
-      </a>
-    </div>
+<ul>
+  <li><em>Or, try a glass of any Holiday spirit! We recommend:</em></li>
+  <br>
+  <li>Kummel (cumin liqueur)</li>
+  <li>Nux Alpina Nocino</li>
+  <li>St. Elizabeth Allspice Dram</li>
+  <li>Peppermint Schnapps</li>
+  <li>Gingerbread amaro</li>
+  <li>Douglas fir eau-de-vie</li>
+  <li>Becherovka</li>
+  <li>Crème de cacao</li>
+</ul>
 
-    <!-- Hidden area that becomes visible when button clicked -->
-    <div id="pdfLink" class="link-area" role="region" aria-hidden="true">
-      <p style="margin:0 0 8px 0;color:var(--text);font-weight:600">Holiday Drinks Menu (PDF)</p>
-      <p style="margin:0 0 12px 0;color:var(--muted)">The PDF is expected to live in the same folder as this file and be named <code>menu.pdf</code>.</p>
-      <a href="menu.pdf" target="_blank" rel="noopener" style="display:inline-block;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--accent);text-decoration:none;font-weight:600;border:1px solid rgba(255,255,255,0.02);">
-        Open Holiday Menu (menu.pdf)
-      </a>
-    </div>
-
-    <!-- Festive recommended spirits list -->
-    <section class="spirit-list" aria-labelledby="try-title">
-      <h2 id="try-title">Or, try a glass of any Holiday spirit! we recommend:</h2>
-      <ul>
-        <li><strong>Kummel</strong> — cumin liqueur</li>
-        <li><strong>Nux Alpina Nocino</strong> — walnut liqueur</li>
-        <li><strong>St. Elizabeth Allspice Dram</strong> — warm allspice & spice dram</li>
-        <li><strong>Peppermint Schnapps</strong> — minty, fun after-dinner sip</li>
-        <li><strong>Gingerbread Amaro</strong> — spicy-sweet, cookie-like bitterness</li>
-        <li><strong>Douglas Fir Eau-de-Vie</strong> — resinous, pine-forward brandy</li>
-        <li><strong>Becherovka</strong> — herbal Czech bitters with warming spice</li>
-        <li><strong>Crème de Cacao</strong> — chocolatey, dessert-friendly</li>
-      </ul>
-    </section>
-
-    <footer>
-      Tip: commit both this `index.html` and `menu.pdf` to the same GitHub repo folder. On GitHub Pages or when browsing the repo, clicking the PDF link opens the file directly.
-    </footer>
-  </main>
-
-  <!-- Tiny JS for toggling -->
-  <script>
-    (function(){
-      const btn = document.getElementById('togglePdf');
-      const panel = document.getElementById('pdfLink');
-      const chev = btn.querySelector('.chev');
-
-      btn.addEventListener('click', function(){
-        const isOpen = panel.style.display === 'block';
-        if(isOpen){
-          panel.style.display = 'none';
-          panel.setAttribute('aria-hidden','true');
-          btn.setAttribute('aria-expanded','false');
-          btn.classList.remove('open');
-          chev.textContent = '▾';
-        } else {
-          panel.style.display = 'block';
-          panel.setAttribute('aria-hidden','false');
-          btn.setAttribute('aria-expanded','true');
-          btn.classList.add('open');
-          chev.textContent = '▴';
-        }
-      });
-
-      // Make link-area accessible on page load if user prefers reduced motion or wants it visible
-      // (keeps initial experience simple)
-      panel.style.display = 'none';
-    })();
-  </script>
 </body>
 </html>
