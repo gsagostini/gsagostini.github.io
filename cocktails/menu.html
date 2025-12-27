@@ -11,15 +11,16 @@
     background: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
     text-align: center;
     font-weight: 300;
+    padding: 60px 24px;
+    min-height: 100vh;
+    box-sizing: border-box;
   }
 
   .headline {
-    font-size: 44px;
+    font-size: clamp(32px, 5vw, 44px);
     font-weight: 300;
     letter-spacing: 0.5px;
     margin-bottom: 24px;
@@ -29,7 +30,7 @@
   }
 
   .intro {
-    max-width: 720px;
+    max-width: 760px;
     font-size: 18px;
     line-height: 1.7;
     margin-bottom: 28px;
@@ -37,6 +38,7 @@
 
   ul {
     max-width: 760px;
+    width: 100%;
     list-style: disc;
     padding-left: 20px;
     font-size: 18px;
@@ -46,17 +48,35 @@
   }
 
   ul ul {
-    list-style: lower-roman;
-    margin-top: 10px;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 12px;
   }
 
   li {
-    margin-bottom: 14px;
+    margin-bottom: 18px;
   }
 
-  em strong {
+  .drink {
+    margin-top: 12px;
+    padding-left: 12px;
+  }
+
+  .drink-name {
     font-style: italic;
     font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .ingredients {
+    margin-left: 12px;
+    font-size: 16.5px;
+    line-height: 1.6;
+  }
+
+  .ingredients span {
+    display: block;
   }
 
   a {
@@ -79,7 +99,7 @@
 </div>
 
 <div class="intro">
-  As you should know, make yourself at home. If you think we might have anything and can't find it… we most likely do; let me know.
+  As you should know, make yourself at home. If you think we might have anything and can’t find it… we most likely do; let me know.
 </div>
 
 <ul>
@@ -103,36 +123,51 @@
   </li>
 
   <li>
-    Pull out the KitchenAid (she is a bit clunky to get out, btw — you will need to remove the coffee
+    Pull out the KitchenAid (she is a bit clunky to get out — you will need to remove the coffee
     grinder and the food processor; let me know if you want a demo or help) and bake! You can use the
-    dough hook (pro tip: first mix with the paddle until everything is a ball, then dough hook only
-    on speeds 1 and 2) to perfect your bread making. I have red bean paste and black sesame paste in
-    the fridge! I also have a KitchenAid ice cream maker attachment in the cupboard — you need to
-    chill it for one day in the fridge before using, but then you can make your own tasty gelato!
+    dough hook (pro tip: first mix with the paddle until everything is a ball, then dough hook only on
+    speeds 1 and 2) to perfect your bread making. I have red bean paste and black sesame paste in the
+    fridge! I also have a KitchenAid ice cream maker attachment in the cupboard — you need to chill
+    it for one day in the fridge before using, but then you can make your own tasty gelato!
   </li>
 
   <li>
     Get wasted — but not too much that you forget to feed Mezzi! While we have a vast collection, I
     think you might be interested in these three recipes curated for you:
-    <ul>
-      <li>
-        <em><strong>Eggnog</strong></em>: It’s in a bottle in the fridge; shake and pour. Garnish with
-        some freshly grated nutmeg.
-      </li>
-      <li>
-        <em><strong>Pumpkin Spice Russian</strong></em>: 1–1.5 oz of pumpkin spice syrup (fridge,
-        bottom shelf), 1.5 oz vodka, shake and pour over ice, top with 0.5 oz heavy cream. By the way,
-        we may need to throw away the heavy cream that has already been opened in the fridge…
-      </li>
-      <li>
-        <em><strong>Lowri’s Perfect Singapore Sling</strong></em>: 1.5 oz dry gin (e.g. Bombay Dry),
-        1/4 oz B&B (Benedictine & brandy liqueur, bottom of fireplace), 1/4 oz dry curaçao (for sweeter,
-        use Mandarine Napoleon), 1/2 oz cherry liqueur (Luxardo Sangue Morlacco — dark red, not too
-        sweet; please try neat!), 3 oz pineapple juice (Dole cans in fridge bottom shelf),
-        1/2–1 oz lime or lemon juice (to taste), Angostura bitters. Optional: swap the cherry liqueur
-        for elderberry or açaí liqueur.
-      </li>
-    </ul>
+
+    <div class="drink">
+      <span class="drink-name">Eggnog</span>
+      <div class="ingredients">
+        <span>• In a bottle in the fridge</span>
+        <span>• Shake and pour</span>
+        <span>• Garnish with freshly grated nutmeg</span>
+      </div>
+    </div>
+
+    <div class="drink">
+      <span class="drink-name">Pumpkin Spice Russian</span>
+      <div class="ingredients">
+        <span><strong>1–1.5 oz</strong> pumpkin spice syrup (fridge, bottom shelf)</span>
+        <span><strong>1.5 oz</strong> vodka</span>
+        <span>Shake and pour over ice</span>
+        <span>Top with <strong>0.5 oz</strong> heavy cream</span>
+        <span><em>(We may need to throw away the opened heavy cream…)</em></span>
+      </div>
+    </div>
+
+    <div class="drink">
+      <span class="drink-name">Lowri’s Perfect Singapore Sling</span>
+      <div class="ingredients">
+        <span><strong>1.5 oz</strong> dry gin (e.g. Bombay Dry)</span>
+        <span><strong>1/4 oz</strong> B&amp;B — Benedictine &amp; brandy liqueur (bottom of fireplace)</span>
+        <span><strong>1/4 oz</strong> dry curaçao (for sweeter, use Mandarine Napoleon)</span>
+        <span><strong>1/2 oz</strong> cherry liqueur (Luxardo Sangue Morlacco — dark red, not too sweet; please try neat!)</span>
+        <span><strong>3 oz</strong> pineapple juice (Dole cans in fridge bottom shelf)</span>
+        <span><strong>1/2–1 oz</strong> lime or lemon juice (to taste)</span>
+        <span>Angostura bitters</span>
+        <span><em>Optional:</em> swap cherry liqueur for elderberry or açaí liqueur</span>
+      </div>
+    </div>
   </li>
 </ul>
 
