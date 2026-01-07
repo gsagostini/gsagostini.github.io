@@ -123,7 +123,7 @@ permalink: /fun/
   <aside class="fun-sidebar">
     <h2 class="section-title">Books</h2>
 
-    {{ site.data.goodreads.widget | raw }}
+    {% include goodreads.html %}
 
   </aside>
 
