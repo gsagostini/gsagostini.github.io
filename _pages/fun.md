@@ -115,9 +115,9 @@ permalink: /fun/
       <div class="goodreads-section">
         <p>
           When it comes to books, I am a fierce reviewer #2.
-          Follow me on
-          <a href="https://www.goodreads.com/user/show/156196841" target="_blank">Goodreads</a>.
-          Click a cover to read more:
+          Check my
+          <a href="https://www.goodreads.com/user/show/156196841" target="_blank">Goodreads</a> profile to follow my literary criticism.
+          Here are some recent additions to my shelf–click on a cover to read more!
         </p>
 
         <div class="goodreads-grid">
