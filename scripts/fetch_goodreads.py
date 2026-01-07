@@ -16,7 +16,7 @@ GOODREADS_FEED_URL = (
 
 MAX_BOOKS = 15
 
-OUTPUT_PATH = Path("_data/goodreads.json")
+OUTPUT_PATH = Path("_data/goodreads_books.json")
 
 # ======================
 # Fetch feed
