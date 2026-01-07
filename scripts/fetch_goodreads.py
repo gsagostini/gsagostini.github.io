@@ -47,7 +47,7 @@ for entry in feed.entries[:MAX_BOOKS]:
         "author": author,
         "link": entry.get("link", ""),
         "cover": cover,
-        "rating": rating,
+        "rating": entry.user_rating,
         "read_date": read_date,
         "review": review
     })
