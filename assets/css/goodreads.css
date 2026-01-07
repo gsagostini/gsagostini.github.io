@@ -1,11 +1,9 @@
-/* Goodreads grid */
 .goodreads-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
   gap: 1rem;
 }
 
-/* Book cover */
 .goodreads-book {
   position: relative;
   display: block;
@@ -22,16 +20,17 @@
   transform: scale(1.05);
 }
 
-/* Popup card */
+/* Floating popup */
 .goodreads-popup {
   position: absolute;
   top: 0;
-  left: 110%;
-  width: 340px;
+  left: calc(100% + 14px); /* OUTSIDE the cover */
+  width: 320px;
 
   background: #fffef8;
   border-radius: 10px;
-  padding: 16px 18px;
+  padding: 14px 16px;
+
   box-shadow: 0 12px 40px rgba(0,0,0,0.18);
   z-index: 20;
 
@@ -40,29 +39,27 @@
   transition: opacity 0.2s ease;
 }
 
-/* Show popup */
+/* Show on hover */
 .goodreads-book:hover .goodreads-popup {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Typography */
+/* Typography inside popup */
 .goodreads-popup h4 {
   margin: 0 0 4px;
-  font-size: 1.05rem;
-  font-weight: 500;
+  font-size: 1rem;
 }
 
 .goodreads-popup .author {
   font-style: italic;
-  opacity: 0.8;
+  opacity: 0.85;
   margin-bottom: 6px;
 }
 
 .goodreads-popup .stars {
   color: #f2b01e;
   margin-bottom: 6px;
-  letter-spacing: 1px;
 }
 
 .goodreads-popup .date {
@@ -72,20 +69,18 @@
 }
 
 .goodreads-popup .review {
-  max-height: 180px;
-  overflow-y: auto;
-  font-size: 0.85rem;
-  line-height: 1.4;
+  max-height: 160px;
+  overflow: hidden;
 }
 
-/* IMPORTANT: kill blue links */
 .goodreads-popup,
 .goodreads-popup * {
-  color: #333 !important;
+  color: #333;
+  text-decoration: none;
 }
 
 .goodreads-popup a {
-  color: inherit !important;
+  color: #333;
   text-decoration: none;
 }
 
