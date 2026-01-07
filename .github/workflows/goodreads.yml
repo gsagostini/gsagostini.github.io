@@ -2,7 +2,7 @@ name: Update Goodreads Books
 
 on:
   schedule:
-    - cron: "0 7 * * 1"   # every Monday
+    - cron: "0 7 * * *"   # every day 7am
   workflow_dispatch:
 
 jobs:
