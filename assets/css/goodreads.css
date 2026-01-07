@@ -66,3 +66,24 @@
 .goodreads-popup .review {
   margin-top: 6px;
 }
+
+/* Limit popup height + allow scrolling */
+.goodreads-popup {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+/* Optional: nicer scrolling on modern browsers */
+.goodreads-popup::-webkit-scrollbar {
+  width: 6px;
+}
+
+.goodreads-popup::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.goodreads-popup::-webkit-scrollbar-track {
+  background: transparent;
+}
+
