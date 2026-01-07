@@ -1,6 +1,6 @@
-/* =========================================================
-   GLOBAL BASE
-   ========================================================= */
+/* =========================
+   GLOBAL STYLES
+========================= */
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -8,7 +8,6 @@ body {
   margin: 40px;
   line-height: 1.6;
   background-color: #fcfcf2;
-  color: #333;
 }
 
 .container {
@@ -16,15 +15,9 @@ body {
   margin: 0 auto;
 }
 
-/* Hide default Jekyll navbar */
-.navbar,
-.navbar-inner {
-  display: none;
-}
-
-/* =========================================================
+/* =========================
    HEADER / NAV
-   ========================================================= */
+========================= */
 
 .header-nav {
   display: flex;
@@ -58,27 +51,38 @@ body {
   padding: 8px 15px;
   border: 2px solid #333;
   border-radius: 5px;
-  background: transparent;
   text-decoration: none;
   font-weight: 500;
+  background-color: transparent;
   color: #333;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  transition: all 0.3s ease;
 }
 
-.nav-button:hover {
+.publications-button:hover,
+.fun-button:hover {
   background-color: #81a38b;
   color: white;
 }
 
-/* =========================================================
-   PROFILE (HOMEPAGE ONLY)
-   ========================================================= */
+.navbar,
+.navbar-inner {
+  display: none;
+}
+
+/* =========================
+   HOME PAGE PROFILE
+========================= */
 
 .profile-section {
   display: flex;
   gap: 30px;
   margin-bottom: 20px;
-  align-items: flex-start;
+}
+
+.profile-pic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profile-pic {
@@ -88,17 +92,14 @@ body {
   object-fit: cover;
 }
 
-/* IMPORTANT:
-   Scope icon sizing ONLY to profile area
-*/
-.profile-pic-container {
+.profile-links {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   gap: 10px;
+  margin-top: 10px;
 }
 
-.profile-pic-container .profile-link {
+.profile-link {
   width: 40px;
   height: 40px;
   border: 2px solid #333;
@@ -106,28 +107,23 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.25s ease;
 }
 
-.profile-pic-container .profile-link:hover {
-  background-color: #333;
-}
-
-.profile-pic-container .profile-link img {
+.profile-link img {
   width: 20px;
   height: 20px;
 }
 
-/* =========================================================
-   SHARED SECTION LAYOUT (PUBLICATIONS / FUN / TALKS)
-   ========================================================= */
+.content {
+  flex: 1;
+}
 
-/*
-  CRITICAL RULE:
-  Only section headers DIRECTLY under .container
-  get the two-column layout.
-*/
-.container > .section-header {
+/* =========================
+   GLOBAL SECTION LAYOUT
+   (Publications, Fun, etc.)
+========================= */
+
+.section-header {
   display: flex;
   gap: 70px;
   margin-bottom: 20px;
@@ -135,49 +131,34 @@ body {
 }
 
 .section-title {
-  width: 150px;
-  flex-shrink: 0;
-  text-align: right;
   font-size: 32px;
   font-weight: 500;
   margin: 0;
+  width: 150px;
+  text-align: right;
+  flex-shrink: 0;
 }
 
-.section-content,
+.section-separator {
+  border: 0;
+  height: 3px;
+  background: #ddd;
+  margin: 40px 0;
+}
+
+/* Content boxes */
 .publications-list,
 .talks-list,
 .fun-list {
-  flex: 1;
-  max-width: 700px;
   background-color: #dce8d8;
   padding: 25px;
   border-radius: 8px;
+  flex: 1;
 }
 
-/* =========================================================
-   FUN PAGE ONLY
-   ========================================================= */
-
-.fun-container {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: 3rem;
-  align-items: start;
-}
-
-.fun-left,
-.fun-right {
-  min-width: 0;
-}
-
-/* Goodreads should never blow up layout */
-.goodreads-section {
-  max-width: 100%;
-}
-
-/* =========================================================
+/* =========================
    LINKS
-   ========================================================= */
+========================= */
 
 a {
   color: #333;
@@ -188,20 +169,27 @@ a:hover {
   color: #555;
 }
 
-/* =========================================================
-   SEPARATORS
-   ========================================================= */
+/* =========================
+   FUN PAGE — ONLY LAYOUT
+========================= */
 
-.section-separator {
-  border: 0;
-  height: 3px;
-  background: #ddd;
-  margin: 40px 0;
+/* Two-column PAGE layout only */
+.fun-container {
+  display: block;
 }
 
-/* =========================================================
+/* Goodreads is just another section */
+.goodreads-section {
+  background-color: #dce8d8;
+  padding: 25px;
+  border-radius: 8px;
+  flex: 1;
+  max-width: 100%;
+}
+
+/* =========================
    MOBILE
-   ========================================================= */
+========================= */
 
 @media (max-width: 768px) {
   body {
@@ -213,17 +201,17 @@ a:hover {
     align-items: center;
   }
 
-  .container > .section-header {
+  .content {
+    text-align: center;
+  }
+
+  .section-header {
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
   }
 
   .section-title {
     width: 100%;
     text-align: left;
-  }
-
-  .fun-container {
-    grid-template-columns: 1fr;
   }
 }
