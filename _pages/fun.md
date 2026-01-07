@@ -66,8 +66,12 @@ permalink: /fun/
     <div class="fun-list">
       <div class="fun-item">
         <p>
-          Mezcal is my adorable yet sometimes grudgy cat.
-          <a href="{{ site.baseurl }}/mezcal/">Pictures of him</a>.
+          Mezcal is my adorable yet sometimes grudgy cat. Check out some
+          <a href="{{ site.baseurl }}/mezcal/">pictures of him</a>.
+        </p>
+        <p>
+          <b>Important clarification: </b>
+          The cat in my profile picture is not Mezcal. That is Scotty, one of my feline godchildren. Mezcal would be extremely upset if I tried to put him on my shoulders. I have tried.
         </p>
       </div>
     </div>
@@ -81,9 +85,12 @@ permalink: /fun/
     <div class="fun-list">
       <div class="fun-item">
         <p>
-          I'm an amateur mixologist and enjoy creating themed cocktail menus.
-          Follow my cocktail adventures on
+          I'm an amateur mixologist and enjoy creating themed cocktail menus. Follow my cocktail adventures on
           <a href="https://www.instagram.com/tabbycocktails/">Instagram</a>.
+          Check out my
+          <a href="{{ site.baseurl }}/documents/cocktails/pumpkin.pdf">Pumpkin Party menu</a>
+          (which is a yearly holiday I celebrate) and my
+          <a href="{{ site.baseurl }}/documents/cocktails/oscars.pdf">Oscars 2025 menu</a>.
         </p>
       </div>
     </div>
@@ -97,8 +104,24 @@ permalink: /fun/
     <div class="fun-list">
       <div class="fun-item">
         <p>
-          I spend too much time analyzing Taylor Swift songs and writing about them academically.
+          I spend too much time not only listening but analyzing Taylor Swift songs. I also produce academic research on her music. Because I unfortunately have not yet found a reputable journal on Taylor Swift Studies to publish my work, you can read the preprints below:
         </p>
+        <ul>
+          <li>
+            <a href="{{ site.baseurl }}/documents/taylorswift/CC.pdf">This essay</a>,
+            which I wrote for my
+            <a href="https://www.college.columbia.edu/core-curriculum/classes/contemporary-civilization">
+              Columbia's Contemporary Civilization class
+            </a>
+            in 2021, investigates Swift's re-recordings and their ontological implications in Aesthetics. I use canonical texts from Western philosophy, such as Marx and Nietzsche, to support my point.
+          </li>
+          <li>
+            I had been thinking about these ideas much earlier in my Swiftie career, and
+            <a href="{{ site.baseurl }}/documents/taylorswift/UW.pdf">this essay</a>
+            from 2017 focuses on the themes of memory and repetition in Taylor Swift's music as she released <i>reputation</i>.
+          </li>
+        </ul>
+
       </div>
     </div>
   </div>
