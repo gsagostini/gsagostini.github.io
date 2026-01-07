@@ -1,92 +1,68 @@
+/* Grid */
 .goodreads-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 16px;
 }
 
 .goodreads-book {
   position: relative;
-  display: block;
+  display: inline-block;
 }
 
 .goodreads-book img {
   width: 100%;
-  border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-  transition: transform 0.2s ease;
+  height: auto;
+  display: block;
+  border-radius: 4px;
 }
 
-.goodreads-book:hover img {
-  transform: scale(1.05);
-}
-
-/* Floating popup */
+/* Popup container */
 .goodreads-popup {
   position: absolute;
   top: 0;
-  left: calc(100% + 14px); /* OUTSIDE the cover */
-  width: 320px;
-
-  background: #fffef8;
-  border-radius: 10px;
-  padding: 14px 16px;
-
-  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
-  z-index: 20;
-
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
+  left: 110%;
+  width: 260px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  z-index: 1000;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
-/* Show on hover */
-.goodreads-book:hover .goodreads-popup {
-  opacity: 1;
-  pointer-events: auto;
+/* Flip to left if needed */
+.goodreads-popup.left {
+  left: auto;
+  right: 110%;
 }
 
-/* Typography inside popup */
-.goodreads-popup h4 {
-  margin: 0 0 4px;
+/* Remove ALL underlines in popup */
+.goodreads-popup,
+.goodreads-popup a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+/* Typography */
+.goodreads-popup h3 {
+  margin: 0 0 4px 0;
   font-size: 1rem;
+  font-weight: 600;
 }
 
 .goodreads-popup .author {
   font-style: italic;
-  opacity: 0.85;
   margin-bottom: 6px;
 }
 
-.goodreads-popup .stars {
-  color: #f2b01e;
+.goodreads-popup .meta {
+  font-size: 0.8rem;
   margin-bottom: 6px;
-}
-
-.goodreads-popup .date {
-  font-size: 0.75rem;
-  opacity: 0.6;
-  margin-bottom: 8px;
+  color: #555;
 }
 
 .goodreads-popup .review {
-  max-height: 160px;
-  overflow: hidden;
-}
-
-.goodreads-popup,
-.goodreads-popup * {
-  color: #333;
-  text-decoration: none;
-}
-
-.goodreads-popup a {
-  color: #333;
-  text-decoration: none;
-}
-
-/* Mobile: disable hover UI */
-@media (max-width: 768px) {
-  .goodreads-popup {
-    display: none !important;
-  }
+  margin-top: 6px;
 }
