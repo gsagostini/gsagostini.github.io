@@ -9,8 +9,9 @@ from pathlib import Path
 # ======================
 
 GOODREADS_FEED_URL = (
-    "https://www.goodreads.com/review/list/156196841-gabriel-agostini.rss"
-    "?shelf=read&sort=date_read"
+    "https://www.goodreads.com/review/list_rss/156196841"
+    "?key=IE7KV2goTvy3dH87fVMVx5Ziq9vI-6_nynALgkymn6yT3YYP"
+    "&shelf=read"
 )
 
 MAX_BOOKS = 15
