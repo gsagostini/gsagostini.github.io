@@ -28,6 +28,9 @@ permalink: /publications/
               {% if pub.slides %}
                 <a href="{{ pub.slides }}">[slides]</a>
               {% endif %}
+              {% if pub.poster %}
+                <a href="{{ pub.poster }}">[poster]</a>
+              {% endif %}
               {% if pub.twitter %}
                 <a href="{{ pub.twitter }}">[twitter]</a>
               {% endif %}
