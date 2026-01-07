@@ -140,14 +140,15 @@ permalink: /fun/
       <div class="fun-list">
         <div class="fun-item">
           <p>
-            Follow me on
-            <a href="https://www.goodreads.com/">Goodreads</a>
-            to check out my career as a literary critic.
+            When it comes to books, I am a fierce reviewer #2. Follow me on
+            <a href="https://www.goodreads.com/review/list/156196841-gabriel-agostini?page=1&shelf=read&sort=date_read">Goodreads</a>
+            to check out my career as a literary critic. Here are some recently read ones:
           </p>
 
-          <div style="max-width: 420px; margin: 1.5rem 0 0 0;">
-            {% include goodreads.html %}
-          </div>
+        <div style="margin: 1.5rem 0 0 0;">
+          {% include goodreads-books.html %}
+        </div>
+
         </div>
       </div>
     </div>
