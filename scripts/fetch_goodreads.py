@@ -1,96 +1,67 @@
 import feedparser
 import json
-import re
 from bs4 import BeautifulSoup
-from pathlib import Path
+from datetime import datetime
 
-# ======================
-# Configuration
-# ======================
-
-GOODREADS_FEED_URL = (
-    "https://www.goodreads.com/review/list_rss/156196841"
-    "?key=IE7KV2goTvy3dH87fVMVx5Ziq9vI-6_nynALgkymn6yT3YYP"
-    "&shelf=read"
-)
-
+FEED_URL = "https://www.goodreads.com/review/list_rss/156196841?key=IE7KV2goTvy3dH87fVMVx5Ziq9vI-6_nynALgkymn6yT3YYP&shelf=read"
+OUTPUT_PATH = "_data/goodreads_books.json"
 MAX_BOOKS = 15
 
-OUTPUT_PATH = Path("_data/goodreads_books.json")
-
-# ======================
-# Fetch feed
-# ======================
-
-feed = feedparser.parse(GOODREADS_FEED_URL)
+feed = feedparser.parse(FEED_URL)
 
 books = []
 
-# ======================
-# Parse entries
-# ======================
-
 for entry in feed.entries[:MAX_BOOKS]:
-    soup = BeautifulSoup(entry.summary, "html.parser")
+    # --- Parse summary HTML ---
+    soup = BeautifulSoup(entry.get("summary", ""), "html.parser")
 
-    # ------------------
-    # Extract author
-    # ------------------
-    author = "Unknown"
-    for line in soup.get_text("\n").split("\n"):
-        line = line.strip()
-        if line.lower().startswith("author:"):
-            author = line.replace("author:", "").strip()
-            break
+    # --- Cover image ---
+    img = soup.find("img")
+    cover = img["src"] if img else ""
 
-    # ------------------
-    # Extract review text
-    # ------------------
-    review_text = ""
-
-    # Goodreads puts "review:" label in plain text
-    full_text = soup.get_text("\n")
-    parts = re.split(r"\breview:\b", full_text, flags=re.IGNORECASE)
-
-    if len(parts) > 1:
-        review_text = parts[1].strip()
-
-    # ------------------
-    # Extract cover image
-    # ------------------
-    cover = ""
-    if hasattr(entry, "media_thumbnail"):
-        try:
-            cover = entry.media_thumbnail[0]["url"]
-        except (KeyError, IndexError):
-            pass
-
-    # ------------------
-    # Extract rating
-    # ------------------
+    # --- Rating ---
     rating = ""
-    for line in full_text.split("\n"):
-        line = line.strip()
-        if line.lower().startswith("rating:"):
-            rating = line.replace("rating:", "").strip()
-            break
+    if "rating" in entry:
+        rating = entry.rating
+    else:
+        # fallback: try to find stars text
+        text = soup.get_text(" ", strip=True)
+        if "Rating:" in text:
+            rating = text.split("Rating:")[1].strip()[0]
+
+    # --- Review text ---
+    # Remove images and strong labels
+    for tag in soup(["img", "strong"]):
+        tag.decompose()
+
+    review_text = soup.get_text("\n", strip=True)
+
+    # Goodreads often repeats title/author boilerplate — clean it
+    review_lines = [
+        line.strip()
+        for line in review_text.splitlines()
+        if line.strip() and not line.lower().startswith("rating")
+    ]
+
+    review = "\n".join(review_lines)
+
+    # --- Author ---
+    author = (
+        entry.get("book_author")
+        or entry.get("author")
+        or "Unknown"
+    )
 
     books.append({
-        "title": entry.title,
+        "title": entry.get("title", ""),
         "author": author,
-        "link": entry.link,
+        "link": entry.get("link", ""),
         "cover": cover,
         "rating": rating,
-        "review": review_text
+        "review": review
     })
 
-# ======================
-# Write JSON
-# ======================
-
-OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-
 with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-    json.dump(books, f, ensure_ascii=False, indent=2)
+    json.dump(books, f, indent=2, ensure_ascii=False)
 
-print(f"Wrote {len(books)} books to {OUTPUT_PATH}")
+print(f"Updated {len(books)} books at {datetime.utcnow().isoformat()}")
