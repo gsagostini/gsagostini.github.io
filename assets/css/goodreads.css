@@ -1,12 +1,14 @@
+/* Goodreads grid */
 .goodreads-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 18px;
-  max-width: 900px;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 1rem;
 }
 
+/* Book cover */
 .goodreads-book {
   position: relative;
+  display: block;
 }
 
 .goodreads-book img {
@@ -20,61 +22,76 @@
   transform: scale(1.05);
 }
 
-/* Hover card */
-.goodreads-popover {
+/* Popup card */
+.goodreads-popup {
   position: absolute;
   top: 0;
   left: 110%;
-  width: 320px;
-  background: #fffdf7;
+  width: 340px;
+
+  background: #fffef8;
   border-radius: 10px;
-  padding: 14px 16px;
+  padding: 16px 18px;
   box-shadow: 0 12px 40px rgba(0,0,0,0.18);
-  z-index: 10;
-  font-size: 0.85rem;
-  line-height: 1.35;
+  z-index: 20;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
 }
 
-.goodreads-popover h4 {
+/* Show popup */
+.goodreads-book:hover .goodreads-popup {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Typography */
+.goodreads-popup h4 {
   margin: 0 0 4px;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  font-weight: 500;
 }
 
-.goodreads-popover .author {
+.goodreads-popup .author {
   font-style: italic;
-  opacity: 0.85;
+  opacity: 0.8;
   margin-bottom: 6px;
 }
 
-.goodreads-popover .stars {
+.goodreads-popup .stars {
   color: #f2b01e;
   margin-bottom: 6px;
+  letter-spacing: 1px;
 }
 
-.goodreads-popover .date {
+.goodreads-popup .date {
   font-size: 0.75rem;
   opacity: 0.6;
   margin-bottom: 8px;
 }
 
-.goodreads-popover .review {
-  max-height: 140px;
-  overflow: hidden;
+.goodreads-popup .review {
+  max-height: 180px;
+  overflow-y: auto;
+  font-size: 0.85rem;
+  line-height: 1.4;
 }
 
+/* IMPORTANT: kill blue links */
 .goodreads-popup,
 .goodreads-popup * {
-  color: inherit;
+  color: #333 !important;
 }
 
 .goodreads-popup a {
-  color: inherit;
-  text-decoration: underline;
+  color: inherit !important;
+  text-decoration: none;
 }
 
 /* Mobile: disable hover UI */
 @media (max-width: 768px) {
-  .goodreads-popover {
+  .goodreads-popup {
     display: none !important;
   }
 }
