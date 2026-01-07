@@ -62,6 +62,16 @@
   overflow: hidden;
 }
 
+.goodreads-popup,
+.goodreads-popup * {
+  color: inherit;
+}
+
+.goodreads-popup a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 /* Mobile: disable hover UI */
 @media (max-width: 768px) {
   .goodreads-popover {
