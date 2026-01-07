@@ -2,6 +2,7 @@ import feedparser
 import json
 from bs4 import BeautifulSoup
 from datetime import datetime
+import re
 
 FEED_URL = "https://www.goodreads.com/review/list_rss/156196841?key=IE7KV2goTvy3dH87fVMVx5Ziq9vI-6_nynALgkymn6yT3YYP&shelf=read"
 OUTPUT_PATH = "_data/goodreads_books.json"
@@ -12,45 +13,33 @@ feed = feedparser.parse(FEED_URL)
 books = []
 
 for entry in feed.entries[:MAX_BOOKS]:
-    # --- Parse summary HTML ---
     soup = BeautifulSoup(entry.get("summary", ""), "html.parser")
 
     # --- Cover image ---
     img = soup.find("img")
     cover = img["src"] if img else ""
 
-    # --- Rating ---
-    rating = ""
-    if "rating" in entry:
-        rating = entry.rating
-    else:
-        # fallback: try to find stars text
-        text = soup.get_text(" ", strip=True)
-        if "Rating:" in text:
-            rating = text.split("Rating:")[1].strip()[0]
+    # --- Raw text ---
+    text = soup.get_text("\n", strip=True)
 
-    # --- Review text ---
-    # Remove images and strong labels
-    for tag in soup(["img", "strong"]):
-        tag.decompose()
+    # --- Split metadata vs review ---
+    review = ""
+    if "review:" in text.lower():
+        review = re.split(r"review:\s*", text, flags=re.IGNORECASE, maxsplit=1)[1].strip()
 
-    review_text = soup.get_text("\n", strip=True)
+    # --- Metadata extraction ---
+    def extract_field(label):
+        pattern = rf"{label}:\s*(.+)"
+        match = re.search(pattern, text, re.IGNORECASE)
+        return match.group(1).strip() if match else ""
 
-    # Goodreads often repeats title/author boilerplate — clean it
-    review_lines = [
-        line.strip()
-        for line in review_text.splitlines()
-        if line.strip() and not line.lower().startswith("rating")
-    ]
+    author = extract_field("author") or entry.get("book_author") or "Unknown"
+    rating = extract_field("average rating")
+    read_date = extract_field("read at")
 
-    review = "\n".join(review_lines)
-
-    # --- Author ---
-    author = (
-        entry.get("book_author")
-        or entry.get("author")
-        or "Unknown"
-    )
+    # Normalize rating (keep integer if possible)
+    if rating:
+        rating = rating.split()[0]
 
     books.append({
         "title": entry.get("title", ""),
@@ -58,6 +47,7 @@ for entry in feed.entries[:MAX_BOOKS]:
         "link": entry.get("link", ""),
         "cover": cover,
         "rating": rating,
+        "read_date": read_date,
         "review": review
     })
 
