@@ -9,7 +9,7 @@ from pathlib import Path
 # ======================
 
 GOODREADS_FEED_URL = (
-    "https://www.goodreads.com/review/list/156196841-gabriel-agostini"
+    "https://www.goodreads.com/review/list/156196841-gabriel-agostini.rss"
     "?shelf=read&sort=date_read"
 )
 
