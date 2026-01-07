@@ -1,46 +1,95 @@
 import feedparser
 import json
+import re
 from bs4 import BeautifulSoup
+from pathlib import Path
 
-FEED_URL = "https://www.goodreads.com/review/list_rss/156196841?shelf=read"
-OUTPUT = "_data/goodreads_books.json"
+# ======================
+# Configuration
+# ======================
+
+GOODREADS_FEED_URL = (
+    "https://www.goodreads.com/review/list/156196841-gabriel-agostini"
+    "?shelf=read&sort=date_read"
+)
+
 MAX_BOOKS = 15
 
-def get_author(entry):
-    if hasattr(entry, "authors") and entry.authors:
-        return entry.authors[0].get("name", "Unknown")
-    if hasattr(entry, "dc_creator"):
-        return entry.dc_creator
-    if hasattr(entry, "author"):
-        return entry.author
-    return "Unknown"
+OUTPUT_PATH = Path("_data/goodreads.json")
 
-feed = feedparser.parse(FEED_URL)
+# ======================
+# Fetch feed
+# ======================
+
+feed = feedparser.parse(GOODREADS_FEED_URL)
+
 books = []
 
+# ======================
+# Parse entries
+# ======================
+
 for entry in feed.entries[:MAX_BOOKS]:
-    soup = BeautifulSoup(entry.description, "html.parser")
+    soup = BeautifulSoup(entry.summary, "html.parser")
 
-    cover = soup.find("img")
-    cover_url = cover["src"] if cover else ""
+    # ------------------
+    # Extract author
+    # ------------------
+    author = "Unknown"
+    for line in soup.get_text("\n").split("\n"):
+        line = line.strip()
+        if line.lower().startswith("author:"):
+            author = line.replace("author:", "").strip()
+            break
 
-    rating_tag = soup.find("span", class_="staticStars")
-    rating = rating_tag["title"][0] if rating_tag else ""
+    # ------------------
+    # Extract review text
+    # ------------------
+    review_text = ""
 
-    review = soup.find("div", class_="reviewText")
-    review_text = review.get_text(strip=True) if review else ""
-    book = {
+    # Goodreads puts "review:" label in plain text
+    full_text = soup.get_text("\n")
+    parts = re.split(r"\breview:\b", full_text, flags=re.IGNORECASE)
+
+    if len(parts) > 1:
+        review_text = parts[1].strip()
+
+    # ------------------
+    # Extract cover image
+    # ------------------
+    cover = ""
+    if hasattr(entry, "media_thumbnail"):
+        try:
+            cover = entry.media_thumbnail[0]["url"]
+        except (KeyError, IndexError):
+            pass
+
+    # ------------------
+    # Extract rating
+    # ------------------
+    rating = ""
+    for line in full_text.split("\n"):
+        line = line.strip()
+        if line.lower().startswith("rating:"):
+            rating = line.replace("rating:", "").strip()
+            break
+
+    books.append({
         "title": entry.title,
-        "author": get_author(entry),
+        "author": author,
         "link": entry.link,
-        "cover": entry.get("book_large_image_url")
-                 or entry.get("book_medium_image_url")
-                 or entry.get("book_small_image_url"),
-        "rating": entry.get("user_rating"),
-        "review": entry.get("summary", "").strip()
-    }
+        "cover": cover,
+        "rating": rating,
+        "review": review_text
+    })
 
-    books.append(book)
+# ======================
+# Write JSON
+# ======================
 
-with open(OUTPUT, "w", encoding="utf-8") as f:
-    json.dump(books, f, indent=2, ensure_ascii=False)
+OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+    json.dump(books, f, ensure_ascii=False, indent=2)
+
+print(f"Wrote {len(books)} books to {OUTPUT_PATH}")
