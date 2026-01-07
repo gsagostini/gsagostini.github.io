@@ -134,24 +134,32 @@ permalink: /fun/
     <!-- Separator between sections -->
     <hr class="section-separator">
 
-    <!-- Books section -->
-    <div class="section-header">
-      <h2 class="section-title">Books</h2>
-      <div class="fun-list">
-        <div class="fun-item">
-          <p>
-            When it comes to books, I am a fierce reviewer #2. Follow me on
-            <a href="https://www.goodreads.com/review/list/156196841-gabriel-agostini?page=1&shelf=read&sort=date_read">Goodreads</a>
-            to check out my career as a literary critic. Here are some recently read ones:
-          </p>
+<div class="goodreads-section">
+  <p>
+    When it comes to books, I am a fierce reviewer #2.
+    Follow me on <a href="https://www.goodreads.com/user/show/156196841" target="_blank">Goodreads</a> to see all my literary criticism. Here are some recent additions to my shelf---click to read more:
+  </p>
 
-        <div style="margin: 1.5rem 0 0 0;">
-          {% include goodreads-books.html %}
-        </div>
+  <div class="goodreads-grid">
+    {% for book in site.data.goodreads_books %}
+      <a
+        href="{{ book.link }}"
+        class="goodreads-book"
+        target="_blank"
+        data-title="{{ book.title | escape }}"
+        data-author="{{ book.author | escape }}"
+        data-rating="{{ book.rating }}"
+        data-date="{{ book.read_date }}"
+        data-review="{{ book.review | strip_newlines | escape }}"
+      >
+        <img src="{{ book.cover }}" alt="{{ book.title }}">
+      </a>
+    {% endfor %}
+  </div>
+</div>
 
-        </div>
-      </div>
-    </div>
+<link rel="stylesheet" href="/assets/css/goodreads.css">
+<script src="/assets/js/goodreads.js"></script>
 
   </div>
 </div>
