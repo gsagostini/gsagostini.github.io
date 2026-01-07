@@ -18,6 +18,7 @@ for entry in feed.entries[:MAX_BOOKS]:
     # --- Cover image ---
     img = soup.find("img")
     cover = img["src"] if img else ""
+    cover = cover.replace("_SX50_", "_SX318_").replace("_SY75_", "_SY475_")
 
     # --- Raw text ---
     text = soup.get_text("\n", strip=True)
