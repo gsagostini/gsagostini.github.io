@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/goodreads.css">
+
+<div class="books-grid">
+  {% for book in site.data.goodreads_books %}
+    <a
+      href="{{ book.url }}"
+      class="book-card"
+      target="_blank"
+      rel="noopener"
+    >
+      <img src="{{ book.cover }}" alt="{{ book.title }} cover">
+
+      <div class="book-overlay">
+        <h4>{{ book.title }}</h4>
+        {% if book.rating %}
+          <div class="book-rating">{{ book.rating }}★</div>
+        {% endif %}
+        {% if book.review %}
+          <p>{{ book.review | truncate: 140 }}</p>
+        {% endif %}
+      </div>
+    </a>
+  {% endfor %}
+</div>
