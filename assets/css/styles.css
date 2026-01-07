@@ -4,11 +4,11 @@ body {
   font-weight: 300;
   margin: 40px;
   line-height: 1.6;
-  background-color: #fcfcf2; /* near white */
+  background-color: #fcfcf2;
 }
 
 .container {
-  max-width: 900px; /* Increased from 800px for more width */
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -33,16 +33,15 @@ body {
 }
 
 .name-title a:hover {
-  color: #555; /* Slightly darker on hover */
+  color: #555;
 }
 
-/* Navigation buttons container */
+/* Navigation buttons */
 .nav-buttons {
   display: flex;
   gap: 15px;
 }
 
-/* Base button styles */
 .nav-button {
   padding: 8px 15px;
   border: 2px solid #333;
@@ -54,92 +53,49 @@ body {
   color: #333;
 }
 
-/* Publications & Talks button hover effect */
-.publications-button:hover {
-  background-color: #81a38b;
-  color: white;
-}
-
-/* Fun button hover effect */
-.fun-button {
-  --fun-colors: #ff5e5e, #5e5eff, #5eff5e, #ff5eff, #5effff, #ffa500; /* Add more colors if desired */
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-}
-
+.publications-button:hover,
 .fun-button:hover {
   background-color: #81a38b;
   color: white;
 }
 
-/* Hide the default navbar */
-.navbar, .navbar-inner {
+.navbar,
+.navbar-inner {
   display: none;
 }
 
-/* Profile section styles */
+/* Profile */
 .profile-section {
   display: flex;
-  gap: 30px; /* Space between profile picture and text */
+  gap: 30px;
   margin-bottom: 20px;
 }
 
-.profile-pic-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px; /* Space between profile picture and buttons */
-}
-
 .profile-pic {
-  width: 200px; /* Updated size */
-  height: 200px; /* Updated size */
-  border-radius: 50%; /* Make it circular */
-  object-fit: cover; /* Ensure the image fits well */
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.profile-links {
-  display: flex;
-  gap: 10px; /* Space between buttons */
+/* ===== FUN PAGE LAYOUT (NEW, IMPORTANT) ===== */
+
+.fun-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: start;
 }
 
-.profile-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px; /* Fixed size for buttons */
-  height: 40px;
-  border: 2px solid #333;
-  border-radius: 50%; /* Make buttons circular */
-  text-decoration: none;
-  transition: all 0.3s ease;
+.fun-left,
+.fun-right {
+  min-width: 0;
 }
 
-.profile-link:hover {
-  background-color: #333;
-}
-
-.profile-link img {
-  width: 20px; /* Icon size */
-  height: 20px;
-}
-
-/* Content styles */
-.content {
-  flex: 1; /* Take up remaining space */
-}
-
-/* Publications and Talks container */
-.publications-container {
-  display: flex;
-  flex-direction: column;
-  gap: 40px; /* Space between sections */
-}
-
-/* Two-column section header layout with increased spacing */
+/* Section headers */
 .section-header {
   display: flex;
-  flex-direction: row;
-  gap: 70px; /* Increased from 40px to create more space between title and content */
+  gap: 70px;
   margin-bottom: 20px;
 }
 
@@ -147,148 +103,50 @@ body {
   font-size: 32px;
   font-weight: 500;
   margin: 0;
-  width: 150px; /* Fixed width for titles */
-  flex-shrink: 0; /* Prevent title from shrinking */
-  text-align: right; /* Right-align titles for better visual separation */
+  width: 150px;
+  text-align: right;
+  flex-shrink: 0;
 }
 
-.publications-list, .talks-list {
-  flex: 1;
-  max-width: 700px; /* Increased from 650px to make items wider */
-}
-
-/* Publication and Talk styles */
-.publication, .talk {
-  margin-bottom: 20px;
-}
-
-.publication h3, .talk h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.publication p, .talk p {
-  margin: 5px 0;
-}
-
-/* Fix for asterisks in author names - prevent italics */
-.author-list .author-asterisk {
-  font-style: normal !important;
-}
-
-/* Style for author names */
-.publication p strong, .talk p strong {
-  font-weight: 600;
-  color: #333;
-}
-
-/* Style for links */
-.publication a, .talk a {
-  display: inline-block;
-  margin-right: 10px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-
-.publication a:hover, .talk a:hover {
-  color: #555;
-}
-
-/* Adding background to both publications and talks sections */
-.publications-list, .talks-list {
-  background-color: #dce8d8; /* Light sage background */
-  padding: 25px;
-  border-radius: 8px; /* Rounded corners */
-}
-
-/* Section separator - thicker line */
 .section-separator {
   border: 0;
-  height: 3px; /* Increased from 1px to make it thicker */
+  height: 3px;
   background: #ddd;
-  margin: 40px 0; /* Adjust spacing as needed */
+  margin: 40px 0;
 }
 
-/* Publication notes styles */
-.publication-notes, .talk-notes {
-  margin-top: 10px;
-  font-size: 0.9em;
+/* Lists */
+.publications-list,
+.talks-list,
+.fun-list {
+  background-color: #dce8d8;
+  padding: 25px;
+  border-radius: 8px;
+}
+
+/* Links */
+a {
+  color: #333;
+  text-decoration: underline;
+}
+
+a:hover {
   color: #555;
 }
 
-.publication-notes strong {
-  font-weight: bold;
-  color: #333;
+/* Goodreads container should never escape */
+.goodreads-section {
+  max-width: 100%;
 }
 
-/* Superscript styles */
-sup {
-  font-size: 0.8em;
-  vertical-align: super;
-}
-
-/* Horizontal rule styles */
-hr {
-  border: 0;
-  height: 1px;
-  background: #ddd;
-  margin: 20px 0;
-}
-
-/* Cat Gallery Styles */
-.cat-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px; /* Space between images */
-  margin-top: 20px;
-}
-
-.cat-image {
-  width: 200px; /* Fixed width for each image container */
-  height: 200px; /* Fixed height for each image container */
-  overflow: hidden; /* Ensures the image doesn't overflow the container */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-}
-
-.cat-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image covers the container without distortion */
-  transition: transform 0.3s ease; /* Smooth hover effect */
-}
-
-/* Hover effect */
-.cat-image:hover {
-  transform: scale(1.05); /* Slightly enlarge the image */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
-}
-
-.cat-image:hover img {
-  transform: scale(1.1); /* Slightly zoom in on the image */
-}
-
-/* Responsive adjustments for mobile */
+/* Mobile */
 @media (max-width: 768px) {
-  .profile-section {
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center-align items */
-    gap: 20px; /* Adjust gap for mobile */
+  body {
+    margin: 20px;
   }
 
-  .profile-pic-container {
-    order: -1; /* Move the profile picture to the top */
-  }
-
-  .content {
-    text-align: center; /* Center-align text */
-  }
-
-  .profile-links {
-    justify-content: center; /* Center-align links */
+  .fun-container {
+    grid-template-columns: 1fr;
   }
 
   .section-header {
@@ -298,10 +156,6 @@ hr {
 
   .section-title {
     width: 100%;
-    text-align: left; /* Reset text alignment for mobile */
-  }
-
-  .publications-list, .talks-list {
-    max-width: 100%;
+    text-align: left;
   }
 }
