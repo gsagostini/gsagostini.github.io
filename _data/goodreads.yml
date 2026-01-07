@@ -1,0 +1,243 @@
+      <!-- Show static HTML/CSS as a placeholder in case js is not enabled - javascript include will override this if things work -->
+      <style type="text/css" media="screen">
+  .gr_custom_container_1767792814 {
+    /* customize your Goodreads widget container here*/
+    border: 2px solid gray;
+    border-radius:10px;
+    padding: 10px 5px 10px 5px;
+    background-color: #FFFFFF;
+    color: #000000;
+    width: 300px
+  }
+  .gr_custom_header_1767792814 {
+    /* customize your Goodreads header here*/
+    border-bottom: 1px solid gray;
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 150%
+  }
+  .gr_custom_each_container_1767792814 {
+    /* customize each individual book container here */
+    width: 100%;
+    clear: both;
+    margin-bottom: 10px;
+    overflow: auto;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #aaa;
+  }
+  .gr_custom_book_container_1767792814 {
+    /* customize your book covers here */
+    overflow: hidden;
+    height: 60px;
+      float: left;
+      margin-right: 4px;
+      width: 39px;
+  }
+  .gr_custom_author_1767792814 {
+    /* customize your author names here */
+    font-size: 10px;
+  }
+  .gr_custom_tags_1767792814 {
+    /* customize your tags here */
+    font-size: 10px;
+    color: gray;
+  }
+  .gr_custom_rating_1767792814 {
+    /* customize your rating stars here */
+    float: right;
+  }
+</style>
+
+      <div id="gr_custom_widget_1767792814">
+          <div class="gr_custom_container_1767792814">
+    <h2 class="gr_custom_header_1767792814">
+    <a style="text-decoration: none;" rel="nofollow" href="https://www.goodreads.com/review/list/156196841-gabriel-agostini?shelf=read&amp;utm_medium=api&amp;utm_source=custom_widget">Gabriel&#39;s latest reviews</a>
+    </h2>
+      <div class="gr_custom_each_container_1767792814">
+          <div class="gr_custom_book_container_1767792814">
+            <a title="A Hora da Estrela" rel="nofollow" href="https://www.goodreads.com/review/show/8233093496?utm_medium=api&amp;utm_source=custom_widget"><img alt="A Hora da Estrela" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1732627143l/221975405._SX50_.jpg" /></a>
+          </div>
+          <div class="gr_custom_rating_1767792814">
+            <span class=" staticStars notranslate" title="really liked it"><img alt="really liked it" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /></span>
+          </div>
+          <div class="gr_custom_title_1767792814">
+            <a rel="nofollow" href="https://www.goodreads.com/review/show/8233093496?utm_medium=api&amp;utm_source=custom_widget">A Hora da Estrela</a>
+          </div>
+          <div class="gr_custom_author_1767792814">
+            by <a rel="nofollow" href="https://www.goodreads.com/author/show/86098.Clarice_Lispector">Clarice Lispector</a>
+          </div>
+          <div class="gr_custom_review_1767792814">
+            The Hour of the Star is a gripping short novella with a particularly existentialist and ontological vein of metafictional material. This is metafiction for poets, I’d say. Baby’s first metafiction, even. 
+
+I was baby, 9 years ago, when I...
+          </div>
+      </div>
+      <div class="gr_custom_each_container_1767792814">
+          <div class="gr_custom_book_container_1767792814">
+            <a title="O Senhor Embaixador" rel="nofollow" href="https://www.goodreads.com/review/show/8169148458?utm_medium=api&amp;utm_source=custom_widget"><img alt="O Senhor Embaixador" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1392812673l/20871089._SY75_.jpg" /></a>
+          </div>
+          <div class="gr_custom_rating_1767792814">
+            <span class=" staticStars notranslate" title="it was ok"><img alt="it was ok" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /></span>
+          </div>
+          <div class="gr_custom_title_1767792814">
+            <a rel="nofollow" href="https://www.goodreads.com/review/show/8169148458?utm_medium=api&amp;utm_source=custom_widget">O Senhor Embaixador</a>
+          </div>
+          <div class="gr_custom_author_1767792814">
+            by <a rel="nofollow" href="https://www.goodreads.com/author/show/3376364.Erico_Verissimo">Erico Verissimo</a>
+          </div>
+          <div class="gr_custom_review_1767792814">
+            While my least favorite work by Erico Veríssimo thus far—have I reached the frontiers of his literary production?!—, Senhor Embaixador artfully consolidates the author’s career by amalgamating the introspective character-driven narrative...
+          </div>
+      </div>
+      <div class="gr_custom_each_container_1767792814">
+          <div class="gr_custom_book_container_1767792814">
+            <a title="Swing Time" rel="nofollow" href="https://www.goodreads.com/review/show/8133408526?utm_medium=api&amp;utm_source=custom_widget"><img alt="Swing Time" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1478784450l/32938068._SY75_.jpg" /></a>
+          </div>
+          <div class="gr_custom_rating_1767792814">
+            <span class=" staticStars notranslate" title="really liked it"><img alt="really liked it" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /></span>
+          </div>
+          <div class="gr_custom_title_1767792814">
+            <a rel="nofollow" href="https://www.goodreads.com/review/show/8133408526?utm_medium=api&amp;utm_source=custom_widget">Swing Time</a>
+          </div>
+          <div class="gr_custom_author_1767792814">
+            by <a rel="nofollow" href="https://www.goodreads.com/author/show/2522.Zadie_Smith">Zadie Smith</a>
+          </div>
+          <div class="gr_custom_review_1767792814">
+            I was not expecting to like Swing Time as much as the rest of her work, and maybe I do think this is Zadie Smith’s second-to-last best novel (that’s how I rate Zadie Smith: except for The Fraud, all of her other novels are her best ones)...
+          </div>
+      </div>
+      <div class="gr_custom_each_container_1767792814">
+          <div class="gr_custom_book_container_1767792814">
+            <a title="Pan" rel="nofollow" href="https://www.goodreads.com/review/show/7925252216?utm_medium=api&amp;utm_source=custom_widget"><img alt="Pan" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1732310574l/220687903._SY75_.jpg" /></a>
+          </div>
+          <div class="gr_custom_rating_1767792814">
+            <span class=" staticStars notranslate" title="liked it"><img alt="liked it" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /></span>
+          </div>
+          <div class="gr_custom_title_1767792814">
+            <a rel="nofollow" href="https://www.goodreads.com/review/show/7925252216?utm_medium=api&amp;utm_source=custom_widget">Pan</a>
+          </div>
+          <div class="gr_custom_author_1767792814">
+            by <a rel="nofollow" href="https://www.goodreads.com/author/show/57924268.Michael_Clune">Michael Clune</a>
+          </div>
+          <div class="gr_custom_review_1767792814">
+            Pan is what I expected Catcher in the Rye to be like, based off how people who liked Catcher in the Rye describe Catcher in the Rye. I did not like Catcher in the Rye. I liked  Pan, at least until the second half when the novel devolved ...
+          </div>
+      </div>
+      <div class="gr_custom_each_container_1767792814">
+          <div class="gr_custom_book_container_1767792814">
+            <a title="The Fight for Manod" rel="nofollow" href="https://www.goodreads.com/review/show/6759001450?utm_medium=api&amp;utm_source=custom_widget"><img alt="The Fight for Manod" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1476816614l/7827941._SY75_.jpg" /></a>
+          </div>
+          <div class="gr_custom_rating_1767792814">
+            <span class=" staticStars notranslate" title="really liked it"><img alt="really liked it" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /></span>
+          </div>
+          <div class="gr_custom_title_1767792814">
+            <a rel="nofollow" href="https://www.goodreads.com/review/show/6759001450?utm_medium=api&amp;utm_source=custom_widget">The Fight for Manod</a>
+          </div>
+          <div class="gr_custom_author_1767792814">
+            by <a rel="nofollow" href="https://www.goodreads.com/author/show/54235.Raymond_Williams">Raymond Williams</a>
+          </div>
+          <div class="gr_custom_review_1767792814">
+            The drama in urban planning! Truly an episode of parks and rec but make it soapy. Maybe a mandatory read for anyone in planning/policy. Like, am I the only one who loves this sentence:
+
+“It's been in and out of every department, council,...
+          </div>
+      </div>
+      <div class="gr_custom_each_container_1767792814">
+          <div class="gr_custom_book_container_1767792814">
+            <a title="O Filho de Mil Homens" rel="nofollow" href="https://www.goodreads.com/review/show/7859308764?utm_medium=api&amp;utm_source=custom_widget"><img alt="O Filho de Mil Homens" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1318456871l/12395665._SY75_.jpg" /></a>
+          </div>
+          <div class="gr_custom_rating_1767792814">
+            <span class=" staticStars notranslate" title="liked it"><img alt="liked it" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /></span>
+          </div>
+          <div class="gr_custom_title_1767792814">
+            <a rel="nofollow" href="https://www.goodreads.com/review/show/7859308764?utm_medium=api&amp;utm_source=custom_widget">O Filho de Mil Homens</a>
+          </div>
+          <div class="gr_custom_author_1767792814">
+            by <a rel="nofollow" href="https://www.goodreads.com/author/show/2326716.Valter_Hugo_M_e">Valter Hugo Mãe</a>
+          </div>
+          <div class="gr_custom_review_1767792814">
+             The Son of a Thousand Men  is a book I didn’t enjoy mostly because I don’t think it is for me, but found beautiful and whose importance and novelty I acknowledge.
+
+The novel follows a group of people in a not-named coastal village in Po...
+          </div>
+      </div>
+      <div class="gr_custom_each_container_1767792814">
+          <div class="gr_custom_book_container_1767792814">
+            <a title="Giovanni's Room" rel="nofollow" href="https://www.goodreads.com/review/show/7819879908?utm_medium=api&amp;utm_source=custom_widget"><img alt="Giovanni's Room" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1706994357l/207079590._SY75_.jpg" /></a>
+          </div>
+          <div class="gr_custom_rating_1767792814">
+            <span class=" staticStars notranslate" title="liked it"><img alt="liked it" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /></span>
+          </div>
+          <div class="gr_custom_title_1767792814">
+            <a rel="nofollow" href="https://www.goodreads.com/review/show/7819879908?utm_medium=api&amp;utm_source=custom_widget">Giovanni's Room</a>
+          </div>
+          <div class="gr_custom_author_1767792814">
+            by <a rel="nofollow" href="https://www.goodreads.com/author/show/10427.James_Baldwin">James Baldwin</a>
+          </div>
+          <div class="gr_custom_review_1767792814">
+             Giovanni’s Room  is the first work I’ve read fully by James Baldwin. It is a beautiful novel that plays with the idea of beauty and its dangers to a closeted queer man. But to me, this beauty ends up a tad too superficial and evasive. H...
+          </div>
+      </div>
+      <div class="gr_custom_each_container_1767792814">
+          <div class="gr_custom_book_container_1767792814">
+            <a title="A Visit from the Goon Squad" rel="nofollow" href="https://www.goodreads.com/review/show/6692697188?utm_medium=api&amp;utm_source=custom_widget"><img alt="A Visit from the Goon Squad" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1444112253l/9549746._SY75_.jpg" /></a>
+          </div>
+          <div class="gr_custom_rating_1767792814">
+            <span class=" staticStars notranslate" title="it was amazing"><img alt="it was amazing" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /></span>
+          </div>
+          <div class="gr_custom_title_1767792814">
+            <a rel="nofollow" href="https://www.goodreads.com/review/show/6692697188?utm_medium=api&amp;utm_source=custom_widget">A Visit from the Goon Squad</a>
+          </div>
+          <div class="gr_custom_author_1767792814">
+            by <a rel="nofollow" href="https://www.goodreads.com/author/show/49625.Jennifer_Egan">Jennifer Egan</a>
+          </div>
+          <div class="gr_custom_review_1767792814">
+            a visit from the goon squad  is an information dump as well as a commentary on the increasingly many moments of our lives we are confronted with information. In 13 intertwined short stories—they aren’t chapters on a novel, but they also ...
+          </div>
+      </div>
+      <div class="gr_custom_each_container_1767792814">
+          <div class="gr_custom_book_container_1767792814">
+            <a title="Perfection" rel="nofollow" href="https://www.goodreads.com/review/show/7717265532?utm_medium=api&amp;utm_source=custom_widget"><img alt="Perfection" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1739869485l/214988449._SX50_.jpg" /></a>
+          </div>
+          <div class="gr_custom_rating_1767792814">
+            <span class=" staticStars notranslate" title="really liked it"><img alt="really liked it" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /></span>
+          </div>
+          <div class="gr_custom_title_1767792814">
+            <a rel="nofollow" href="https://www.goodreads.com/review/show/7717265532?utm_medium=api&amp;utm_source=custom_widget">Perfection</a>
+          </div>
+          <div class="gr_custom_author_1767792814">
+            by <a rel="nofollow" href="https://www.goodreads.com/author/show/4465561.Vincenzo_Latronico">Vincenzo Latronico</a>
+          </div>
+          <div class="gr_custom_review_1767792814">
+            Vincenzo Latronico’s Perfection renewed my trust in the lyrical avenue of contemporary fiction. The novel is a beautifully poetic portrayal of a freelancing web designers couple navigating loneliness, ageing, boredom, the beaurocracy of ...
+          </div>
+      </div>
+      <div class="gr_custom_each_container_1767792814">
+          <div class="gr_custom_book_container_1767792814">
+            <a title="The Autograph Man" rel="nofollow" href="https://www.goodreads.com/review/show/7697837804?utm_medium=api&amp;utm_source=custom_widget"><img alt="The Autograph Man" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388292766l/3710._SY75_.jpg" /></a>
+          </div>
+          <div class="gr_custom_rating_1767792814">
+            <span class=" staticStars notranslate" title="really liked it"><img alt="really liked it" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /></span>
+          </div>
+          <div class="gr_custom_title_1767792814">
+            <a rel="nofollow" href="https://www.goodreads.com/review/show/7697837804?utm_medium=api&amp;utm_source=custom_widget">The Autograph Man</a>
+          </div>
+          <div class="gr_custom_author_1767792814">
+            by <a rel="nofollow" href="https://www.goodreads.com/author/show/2522.Zadie_Smith">Zadie Smith</a>
+          </div>
+          <div class="gr_custom_review_1767792814">
+             The Autograph Man , Zadie Smith’s least critically-acclaimed work by far, puts forward a tight narrative about the unsatisfactory nature of fame and self-fulfillment that weaves together themes of religion, stardom, grief, placemaking, ...
+          </div>
+      </div>
+  <br style="clear: both"/>
+  <center>
+    <a rel="nofollow" href="https://www.goodreads.com/"><img alt="goodreads.com" style="border:0" src="https://s.gr-assets.com/images/widget/widget_logo.gif" /></a>
+  </center>
+  <noscript>
+    Share <a rel="nofollow" href="https://www.goodreads.com/">book reviews</a> and ratings with Gabriel, and even join a <a rel="nofollow" href="https://www.goodreads.com/group">book club</a> on Goodreads.
+  </noscript>
+  </div>
+
+      </div>
+      <script src="https://www.goodreads.com/review/custom_widget/156196841.Gabriel's%20latest%20reviews?cover_position=left&cover_size=small&num_books=10&order=d&shelf=read&show_author=1&show_cover=1&show_rating=1&show_review=1&show_tags=0&show_title=1&sort=date_read&widget_bg_color=FFFFFF&widget_bg_transparent=&widget_border_width=2&widget_id=1767792814&widget_text_color=000000&widget_title_size=large&widget_width=medium" type="text/javascript" charset="utf-8"></script>
