@@ -4,9 +4,66 @@ title: Fun
 permalink: /fun/
 ---
 
-<div class="container">
-  <div class="fun-container">
-    <!-- Urban+ section -->
+<style>
+/* === Layout for Fun page === */
+.fun-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.fun-sidebar {
+  position: sticky;
+  top: 2rem;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .fun-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .fun-sidebar {
+    position: static;
+    margin-top: 2rem;
+  }
+}
+
+/* === Lighter Goodreads widget styling (overrides defaults) === */
+.gr_custom_container_1767792814 {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+.gr_custom_header_1767792814 {
+  border-bottom: 1px solid #eee;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+.gr_custom_each_container_1767792814 {
+  border-bottom: 1px solid #eee;
+}
+
+.gr_custom_author_1767792814 {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.gr_custom_review_1767792814 {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #444;
+}
+</style>
+
+<div class="container fun-layout">
+
+  <!-- MAIN CONTENT -->
+  <div class="fun-main">
+
     <div class="section-header">
       <h2 class="section-title">Urban+</h2>
       <div class="fun-list">
@@ -19,55 +76,55 @@ permalink: /fun/
           </ul>
           <p><b>Architecture and Urban Planning through Art and Fiction: </b></p>
           <ul>
-            <li>Still looking at modernism (and Brasília!), I discuss the dissonances between the British architectural collective <a href="https://www.archigram.net/about-archigram">Archigram</a> and modernist town planning in my essay <a href="{{ site.baseurl }}/documents/urban/archigram.pdf">The Life of Yellowing Papers</a>, focusing on the meaning of participatory urbanism in both art and real life.</li>
-            <li>Continuing on the theme of British literature and architecture, I use spatial analysis and GIS to study movement in B.S. Johnson's brutalist novel Albert Angelo as detailed in the essay <a href="{{ site.baseurl }}/documents/urban/f-walking.pdf">OH, FUCK ALL THIS WALKING! The Metafictional Geography of Movement in Albert Angelo</a>. Hey, it wouldn't be brutalist enough if I didn't include the whole, uncensored, raw expletive here!</li>
+            <li>Still looking at modernism (and Brasília!), I discuss the dissonances between the British architectural collective <a href="https://www.archigram.net/about-archigram">Archigram</a> and modernist town planning in my essay <a href="{{ site.baseurl }}/documents/urban/archigram.pdf">The Life of Yellowing Papers</a>.</li>
+            <li>Continuing on the theme of British literature and architecture, I use spatial analysis and GIS to study movement in B.S. Johnson's brutalist novel Albert Angelo as detailed in the essay <a href="{{ site.baseurl }}/documents/urban/f-walking.pdf">OH, FUCK ALL THIS WALKING! The Metafictional Geography of Movement in Albert Angelo</a>.</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- Separator between sections -->
     <hr class="section-separator">
 
-    <!-- Cat section -->
     <div class="section-header">
       <h2 class="section-title">Cat</h2>
       <div class="fun-list">
         <div class="fun-item">
           <p>Mezcal is my adorable yet sometimes grudgy cat. Check out <a href="{{ site.baseurl }}/mezcal/">pictures of him</a>.</p>
-          <p><b>Important clarification: </b> The cat in my profile picture is not Mezcal. That is Scotty, one of my feline godchildren. Mezcal would be extremely upset if I tried to put him on my shoulders. I have tried.</p>
+          <p><b>Important clarification:</b> The cat in my profile picture is not Mezcal.</p>
         </div>
       </div>
     </div>
 
-    <!-- Separator between sections -->
     <hr class="section-separator">
 
-    <!-- Cocktails section -->
     <div class="section-header">
       <h2 class="section-title">Cocktails</h2>
       <div class="fun-list">
         <div class="fun-item">
-          <p>I'm an amateur mixologist and enjoy creating themed cocktail menus. Follow my cocktail adventures on <a href="https://www.instagram.com/tabbycocktails/">Instagram</a>. Check out my <a href="{{ site.baseurl }}/documents/cocktails/pumpkin.pdf">Pumpkin Party menu</a> (which is a yearly holiday I celebrate) and my <a href="{{ site.baseurl }}/documents/cocktails/oscars.pdf">Oscars 2025 menu</a>.</p>
+          <p>I'm an amateur mixologist and enjoy creating themed cocktail menus. Follow my cocktail adventures on <a href="https://www.instagram.com/tabbycocktails/">Instagram</a>.</p>
         </div>
       </div>
     </div>
 
-    <!-- Separator between sections -->
     <hr class="section-separator">
 
-    <!-- Taylor Swift section -->
     <div class="section-header">
       <h2 class="section-title">Taylor Swift</h2>
       <div class="fun-list">
         <div class="fun-item">
-          <p>I spend too much time not only listening but analyzing Taylor Swift songs. I also produce academic research on her music. Because I unfortunately have not yet found a reputable journal on Taylor Swift Studies to publish my work, you can read the preprints below:</p>
-          <ul>
-            <li><a href="{{ site.baseurl }}/documents/taylorswift/CC.pdf">This essay</a>, which I wrote for my <a href="https://www.college.columbia.edu/core-curriculum/classes/contemporary-civilization">Columbia's Contemporary Civilization class</a> in 2021, investigates Swift's re-recordings and their ontological implications in Aesthetics. I use canonical texts from Western philosophy, such as Marx and Nietzsche, to support my point. </li> 
-            <li>I had been thinking about these ideas much earlier in my Swiftie carreer, and <a href="{{ site.baseurl }}/documents/taylorswift/UW.pdf">this essay</a> from 2017 focuses on the themes of memory and repetition in Taylor Swift's music as she released <i>reputation</i>.</li> 
-          </ul>
+          <p>I spend too much time analyzing Taylor Swift songs. You can read the preprints below:</p>
         </div>
       </div>
     </div>
+
   </div>
+
+  <!-- SIDEBAR -->
+  <aside class="fun-sidebar">
+    <h2 class="section-title">Books</h2>
+
+    {{ site.data.goodreads.widget | raw }}
+
+  </aside>
+
 </div>
