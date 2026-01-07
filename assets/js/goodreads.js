@@ -6,11 +6,18 @@ document.addEventListener("DOMContentLoaded", () => {
       popup = document.createElement("div");
       popup.className = "goodreads-popup";
 
+      const rating = parseInt(book.dataset.rating, 10);
+      const maxStars = 5;
+
+      const stars = Number.isFinite(rating)
+        ? "★".repeat(rating) + "☆".repeat(maxStars - rating)
+        : "—";
+
       popup.innerHTML = `
         <h3>${book.dataset.title}</h3>
         <div class="author">${book.dataset.author}</div>
         <div class="meta">
-          ⭐ ${book.dataset.rating || "—"}<br>
+          <span class="goodreads-rating">${stars}</span><br>
           ${book.dataset.date || ""}
         </div>
         <div class="review">${book.dataset.review || ""}</div>
