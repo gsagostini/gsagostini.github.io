@@ -1,26 +1,32 @@
-document.querySelectorAll(".goodreads-book").forEach(book => {
-  let popover;
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".goodreads-book").forEach(book => {
+    let popup;
 
-  book.addEventListener("mouseenter", () => {
-    const rating = parseFloat(book.dataset.rating || "0");
-    const stars =
-      "★".repeat(Math.round(rating)) +
-      "☆".repeat(5 - Math.round(rating));
+    book.addEventListener("mouseenter", () => {
+      popup = document.createElement("div");
+      popup.className = "goodreads-popup";
 
-    popover = document.createElement("div");
-    popover.className = "goodreads-popover";
-    popover.innerHTML = `
-      <h4>${book.dataset.title}</h4>
-      <div class="author">${book.dataset.author}</div>
-      <div class="stars">${stars}</div>
-      <div class="date">Read: ${book.dataset.date}</div>
-      <div class="review">${book.dataset.review}</div>
-    `;
+      popup.innerHTML = `
+        <h3>${book.dataset.title}</h3>
+        <div class="author">${book.dataset.author}</div>
+        <div class="meta">
+          ⭐ ${book.dataset.rating || "—"}<br>
+          ${book.dataset.date || ""}
+        </div>
+        <div class="review">${book.dataset.review || ""}</div>
+      `;
 
-    book.appendChild(popover);
-  });
+      book.appendChild(popup);
 
-  book.addEventListener("mouseleave", () => {
-    if (popover) popover.remove();
+      // Flip popup if it overflows viewport
+      const rect = popup.getBoundingClientRect();
+      if (rect.right > window.innerWidth) {
+        popup.classList.add("left");
+      }
+    });
+
+    book.addEventListener("mouseleave", () => {
+      if (popup) popup.remove();
+    });
   });
 });
