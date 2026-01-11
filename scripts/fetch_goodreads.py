@@ -20,13 +20,16 @@ for entry in feed.entries[:MAX_BOOKS]:
     cover = img["src"] if img else ""
     cover = cover.replace("_SX50_", "_SX318_").replace("_SY75_", "_SY475_")
 
-    # --- Raw text ---
+    # --- Raw text (unchanged, still used for metadata) ---
     text = soup.get_text("\n", strip=True)
 
-    # --- Split metadata vs review ---
+    # --- Review (HTML-preserving, minimal change) ---
     review = ""
-    if "review:" in text.lower():
-        review = re.split(r"review:\s*", text, flags=re.IGNORECASE, maxsplit=1)[1].strip()
+    summary_html = entry.get("summary", "")
+    if "review:" in summary_html.lower():
+        review = re.split(r"(?i)<b>\s*review:\s*</b>", summary_html, maxsplit=1)[1].strip()
+    #if "review:" in text.lower():
+    #    review = re.split(r"review:\s*", text, flags=re.IGNORECASE, maxsplit=1)[1].strip()
 
     # --- Metadata extraction ---
     def extract_field(label):
