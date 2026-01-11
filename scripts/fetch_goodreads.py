@@ -20,14 +20,18 @@ for entry in feed.entries[:MAX_BOOKS]:
     cover = img["src"] if img else ""
     cover = cover.replace("_SX50_", "_SX318_").replace("_SY75_", "_SY475_")
 
-    # --- Raw text (unchanged, still used for metadata) ---
+    # --- Raw text ---
     text = soup.get_text("\n", strip=True)
 
-    # --- Review (HTML-preserving, minimal change) ---
+    # --- Review (HTML-preserving) ---
     review = ""
     summary_html = entry.get("summary", "")
-    if "review:" in summary_html.lower():
-        review = re.split(r"(?i)<b>\s*review:\s*</b>", summary_html, maxsplit=1)[1].strip()
+    
+    split_review = re.split(r"(?i)(?:<b>|<strong>)?\s*review:\s*(?:</b>|</strong>)?", summary_html, maxsplit=1)
+    if len(split_review) > 1:
+        review = split_review[1]
+        # Cut off at the next metadata block
+        review = re.split(r"(?i)<br\s*/?>\s*(?:<b>|<strong>)\s*(?:rating|read at|shelves|average rating)\s*:?", review, maxsplit=1)[0].strip()
     #if "review:" in text.lower():
     #    review = re.split(r"review:\s*", text, flags=re.IGNORECASE, maxsplit=1)[1].strip()
 
