@@ -53,13 +53,16 @@ permalink: /fun/
               OH, FUCK ALL THIS WALKING! The Metafictional Geography of Movement in Albert Angelo
             </a>.
           </li>
+          <li>
+            What happens when data is returned to the real world via art? I am currently producing a short film about urban data in collaboration with New York based multimedia artist <a href="https://mysterioussubmarine.com">Tianyi Sun</a> through Cornell Tech's <a href="https://backslash.org">Backslash Fellowship</a>---which pairs PhD students with artists engaged with new technologies. We are working on <a href="https://backslash.org/artist/tianyi-sun">BADWIZARD</a>, an experimental piece about how an urban dataset of complaints and requests fabricates a shared civic memory among citizens and data scientists.
+          </li>
         </ul>
       </div>
     </div>
   </div>
 
   <hr class="section-separator">
-
+  
   <!-- Cat section -->
   <div class="section-header">
     <h2 class="section-title">Cat</h2>
