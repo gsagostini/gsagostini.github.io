@@ -1,0 +1,13 @@
+{%- comment -%}
+  The date cell of a dated row (news, talks), shown exactly as typed in the YAML.
+  Usage: {% include date.html date=item.date %}
+  "Aug 2026" also gets a machine-readable <time datetime="2026-08">; text that is not a
+  month + year ("Fall 2026") stays a plain <span>.
+{%- endcomment -%}
+{%- assign shown = include.date | append: "" -%}
+{%- assign iso = include.date | date: "%Y-%m" | append: "" -%}
+{%- if iso != shown and iso.size == 7 and shown.size > 4 -%}
+<time class="date" datetime="{{ iso }}">{{ shown }}</time>
+{%- else -%}
+<span class="date">{{ shown }}</span>
+{%- endif -%}

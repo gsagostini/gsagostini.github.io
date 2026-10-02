@@ -1,17 +1,172 @@
-<!DOCTYPE html>
-<html lang="en">
+{%- comment -%}
+  Root layout: the sticky profile sidebar (photo, name, role, the contact bubbles, the menu),
+  then the page content and the footer. Every page uses it, directly or through home.html / fun.html / mezcal.html.
+
+  Look & feel come from _config.yml → style:
+    font    → <html data-font>      original | inter | source         (assets/css/presets.css)
+    accent  → <html data-accent>    a preset name, or any hex colour (applied by head.html)
+    bg      → <html data-bg>        cream | white | gray | cool | stone | sand | mint | blush, or any hex colour
+    profile → <html data-profile>   left | centered                    (assets/css/main.css)
+    bubbles → <html data-bubbles>   row-below | 2-3 | 3-3 | 2-3-pill | row | row-cv
+    theme   → light | dark | auto (auto follows the visitor's system setting); a visitor's own toggle choice wins
+    toggle  → <html data-toggle>    where the dark-mode button sits: corner | top | bubbles | menu | bottom | none
+  Preview any look without editing: ?font=inter  ?accent=forest  ?bg=white  ?profile=centered  ?bubbles=2-3
+                                    ?theme=dark  ?toggle=menu
+
+  Menu: the homepage menu lists its sections; pages with `nav: fun` in their front matter (Fun, Mezcal)
+  get "← Home" + the Fun sections (_data/fun.yml), with `nav_current` marking the page itself.
+{%- endcomment -%}
+{%- assign font = site.style.font | default: "source" -%}
+{%- assign accent = site.style.accent | default: "red" | append: "" -%}
+{%- assign bg = site.style.bg | default: "cream" | append: "" -%}
+{%- assign profile = site.style.profile | default: "left" -%}
+{%- assign bubbles = site.style.bubbles | default: "row-below" -%}
+{%- assign theme = site.style.theme | default: "light" -%}
+{%- assign toggle = site.style.toggle | default: "corner" -%}
+{%- assign is_home = false -%}
+{%- if page.layout == "home" -%}{%- assign is_home = true -%}{%- endif -%}
+{%- if is_home -%}{%- assign home = "" -%}{%- else -%}{%- assign home = "/" | relative_url -%}{%- endif -%}
+{%- assign fun_url = "/fun/" | relative_url -%}
+{%- assign cv_url = site.author.cv | relative_url -%}
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}" data-font="{{ font }}"{% unless accent contains '#' %} data-accent="{{ accent }}"{% endunless %}{% if bg contains '#' %} data-bg="custom" style="--bg: {{ bg }}"{% elsif bg != 'cream' %} data-bg="{{ bg }}"{% endif %} data-profile="{{ profile }}" data-bubbles="{{ bubbles }}" data-theme="{% if theme == 'dark' %}dark{% else %}light{% endif %}" data-theme-default="{{ theme }}" data-toggle="{{ toggle }}">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }} | {{ site.title }}</title>
-  <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/assets/images/favicon.ico">
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
+{% include head.html %}
 </head>
-<body>
-  {% include header.html %}
-  <div class="container">
-    {{ content }}
+<body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="page" id="top">
+  <div class="rail">
+    <header class="profile">
+      <div class="portrait">
+        {%- if site.author.photo %}
+        <img class="avatar" src="{{ site.author.photo | relative_url }}" alt="{{ site.author.photo_alt | escape }}" width="236" height="236">
+        {%- endif %}
+        <div class="bubbles" role="group" aria-label="Profiles and contact">
+          <ul class="brow">
+            {%- for p in site.profiles limit: 2 %}
+            <li class="bi bi--{{ p.icon }}"><a class="bubble" href="{{ p.url | escape }}" aria-label="{{ p.name | escape }}" title="{{ p.name | escape }}" rel="me">{% include icon.html name=p.icon %}</a></li>
+            {%- endfor %}
+            {%- if site.author.cv %}
+            <li class="bi bi--cv"><a class="bubble" href="{{ cv_url | escape }}" aria-label="CV (PDF)" title="CV (PDF)">{% include icon.html name="cv" %}</a></li>
+            {%- endif %}
+          </ul>
+          <ul class="brow">
+            {%- for p in site.profiles offset: 2 %}
+            <li class="bi bi--{{ p.icon }}"><a class="bubble" href="{{ p.url | escape }}" aria-label="{{ p.name | escape }}" title="{{ p.name | escape }}" rel="me">{% include icon.html name=p.icon %}</a></li>
+            {%- endfor %}
+            {%- if site.author.email %}
+            <li class="bi bi--email"><a class="bubble" href="mailto:{{ site.author.email }}" aria-label="Email" title="Email: {{ site.author.email }}">{% include icon.html name="mail" %}</a></li>
+            {%- endif %}
+            <li class="bi bi--theme tt-slot tt--bubbles"><button class="bubble theme-toggle" type="button" aria-pressed="false" aria-label="Dark mode" title="Dark mode">{% include icon.html name="moon" %}{% include icon.html name="sun" %}</button></li>
+          </ul>
+        </div>
+        {%- if site.author.cv %}
+        <a class="cv-pill" href="{{ cv_url | escape }}">{% include icon.html name="cv" %}<span>CV</span></a>
+        {%- endif %}
+      </div>
+      <div class="identity">
+        {%- if is_home %}
+        <h1 class="name" data-heading>{{ site.author.name }}</h1>
+        {%- else %}
+        <p class="name" data-heading>{{ site.author.name }}</p>
+        {%- endif %}
+        {%- if site.author.role %}
+        <p class="role">{{ site.author.role }}</p>
+        {%- endif %}
+        {%- if site.author.affiliation %}
+        <p class="affil">{{ site.author.affiliation }}</p>
+        {%- endif %}
+      </div>
+    </header>
+
+    {%- if page.nav == "fun" %}
+    {%- if page.url == "/fun/" -%}{%- assign base = "" -%}{%- else -%}{%- assign base = fun_url -%}{%- endif %}
+    <nav class="toc" aria-label="Fun page">
+      <ul>
+        <li class="toc-home"><a href="{{ '/' | relative_url }}">{% include icon.html name="arrow-left" %}Home</a></li>
+        {%- for s in site.data.fun.sections %}
+        <li><a href="{{ base }}#{{ s.id }}"{% if page.nav_current == s.id %} class="is-active" aria-current="page"{% endif %}>{{ s.title }}</a></li>
+        {%- endfor %}
+        <li class="tt-slot tt--menu"><button class="toc-btn theme-toggle" type="button" aria-pressed="false">Dark mode{% include icon.html name="moon" %}{% include icon.html name="sun" %}</button></li>
+      </ul>
+    </nav>
+    {%- else %}
+    <nav class="toc" aria-label="Sections">
+      <ul>
+        <li><a href="{{ home }}#about">About</a></li>
+        {%- if site.data.news.size > 0 %}
+        <li><a href="{{ home }}#news">News</a></li>
+        {%- endif %}
+        {%- if site.data.publications.size > 0 %}
+        <li><a href="{{ home }}#publications">Publications</a></li>
+        {%- endif %}
+        {%- if site.data.talks.size > 0 %}
+        <li><a href="{{ home }}#talks">Talks</a></li>
+        {%- endif %}
+        <li><a href="{{ fun_url }}">Fun{% include icon.html name="arrow-up-right" %}</a></li>
+        <li class="tt-slot tt--menu"><button class="toc-btn theme-toggle" type="button" aria-pressed="false">Dark mode{% include icon.html name="moon" %}{% include icon.html name="sun" %}</button></li>
+      </ul>
+    </nav>
+    {%- endif %}
   </div>
-  <script src="{{ site.baseurl }}/assets/js/scripts.js"></script>
+
+  <main id="main">
+{{ content }}
+    <div class="tt-slot tt--top tt-float"><button class="bubble theme-toggle" type="button" aria-pressed="false" aria-label="Dark mode" title="Dark mode">{% include icon.html name="moon" %}{% include icon.html name="sun" %}</button></div>
+  </main>
+  <div class="tt-slot tt--corner tt-float"><button class="bubble theme-toggle" type="button" aria-pressed="false" aria-label="Dark mode" title="Dark mode">{% include icon.html name="moon" %}{% include icon.html name="sun" %}</button></div>
+  <div class="tt-slot tt--bottom tt-float"><button class="bubble theme-toggle" type="button" aria-pressed="false" aria-label="Dark mode" title="Dark mode">{% include icon.html name="moon" %}{% include icon.html name="sun" %}</button></div>
+</div>
+{%- if page.nav == "fun" %}
+
+<script src="{{ '/assets/js/fun.js' | relative_url }}"></script>
+{%- elsif is_home %}
+
+<script>
+/* Optional enhancement: mark the section currently in view in the sidebar nav. The page works without it. */
+(() => {
+  const nav = document.querySelector('.toc');
+  if (!nav || !('IntersectionObserver' in window)) return;
+  const list = nav.querySelector('ul');
+  const links = new Map([...nav.querySelectorAll('a[href^="#"]')].map(a => [a.hash.slice(1), a]));
+  let current = null;
+  const activate = (id) => {
+    if (id === current) return;
+    current = id;
+    links.forEach((a, key) => {
+      const on = key === id;
+      a.classList.toggle('is-active', on);
+      on ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current');
+    });
+    const a = links.get(id);
+    if (a && list.scrollWidth > list.clientWidth) {
+      list.scrollTo({ left: a.offsetLeft - (list.clientWidth - a.offsetWidth) / 2, behavior: 'smooth' });
+    }
+  };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) activate(e.target.id); });
+  }, { rootMargin: '-30% 0px -65% 0px' });
+  activate(links.keys().next().value);
+  links.forEach((_, id) => { const s = document.getElementById(id); if (s) io.observe(s); });
+})();
+</script>
+{%- endif %}
+
+<script>
+/* Dark-mode toggle: flips <html data-theme> and remembers the choice in this browser (head.html applies it
+   before the page paints). Every placement's button stays in sync, including when the theme changes elsewhere. */
+(() => {
+  const h = document.documentElement, buttons = [...document.querySelectorAll('.theme-toggle')];
+  const sync = () => buttons.forEach((b) => b.setAttribute('aria-pressed', String(h.dataset.theme === 'dark')));
+  buttons.forEach((b) => b.addEventListener('click', () => {
+    h.dataset.theme = h.dataset.theme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('theme', h.dataset.theme); } catch (e) {}
+  }));
+  new MutationObserver(sync).observe(h, { attributes: true, attributeFilter: ['data-theme'] });
+  sync();
+})();
+</script>
 </body>
 </html>

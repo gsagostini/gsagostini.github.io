@@ -1,0 +1,553 @@
+/* Fun + Mezcal pages (body.fun). Copied from the approved mockup mockups/fun-scroll-v3/fun.css. */
+/* =========================================================================
+   ===== FUN =====   Fun-page option F1b "Grouped & calm (v2)"
+   Everything below is specific to the Fun page and scoped under body.fun, so it drops
+   into the Jekyll theme next to the (unchanged) homepage chrome as one block. Colours and
+   type come only from the shared tokens; every piece of text is var(--text) (captions,
+   chips, buttons, the slideshow counter, the Goodreads popover and the phone sheet included).
+   ========================================================================= */
+.fun {
+  --fun-radius: 10px;       /* teaser + slideshow frames */
+  --cover-radius: 4px;      /* book covers, menu pages */
+  --pop-w: 23rem;
+  --leading-tight: calc(var(--leading) - .2);
+  /* plain fallbacks for browsers without color-mix(): no shadow, solid scrim */
+  --shadow: 0 0 0 1px var(--rule);
+  --shadow-lift: 0 0 0 1px var(--rule-strong);
+  --shadow-page: 0 0 0 1px var(--rule-strong);
+  --dim: transparent;
+}
+@supports (color: color-mix(in srgb, red 50%, white)) {
+  .fun {
+    --shadow: 0 1px 2px color-mix(in srgb, var(--shadow-ink) 7%, transparent),
+              0 14px 36px -10px color-mix(in srgb, var(--shadow-ink) 26%, transparent);
+    --shadow-lift: 0 2px 4px color-mix(in srgb, var(--shadow-ink) 10%, transparent),
+                   0 10px 22px -8px color-mix(in srgb, var(--shadow-ink) 30%, transparent);
+    /* a sheet of paper on the page: hairline + a soft contact shadow */
+    --shadow-page: 0 0 0 1px color-mix(in srgb, var(--shadow-ink) 9%, transparent),
+                   0 1px 2px color-mix(in srgb, var(--shadow-ink) 8%, transparent),
+                   0 8px 20px -10px color-mix(in srgb, var(--shadow-ink) 30%, transparent);
+    --dim: color-mix(in srgb, var(--shadow-ink) 45%, transparent);
+  }
+}
+
+/* ---- Base additions for this page's own elements ---------------------------- */
+.fun button { font: inherit; color: inherit; }
+.fun figure { margin: 0; }
+.fun button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.fun .visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+
+/* ---- Rail nav: "← Home" first, then this page's groups ------------------------ */
+.fun .toc a svg { width: 15px; height: 15px; }
+@media (min-width: 980px) {
+  .fun .toc .toc-home { margin-bottom: clamp(2px, .8vh, 10px); }
+  .fun .toc .toc-home a { gap: 12px; }
+  .fun .toc .toc-home a::before { content: none; }   /* the arrow takes the dash's place */
+  .fun .toc .toc-home svg { width: 18px; height: 18px; margin: 0 2px 0 0; transition: transform .3s var(--ease); }
+  .fun .toc .toc-home a:hover svg { transform: translateX(-4px); }
+  html[data-profile="centered"] .fun .toc .toc-home a { gap: 6px; }
+  html[data-profile="centered"] .fun .toc .toc-home svg { width: 16px; height: 16px; margin: 0; }
+}
+/* the Fun nav has one item more than the homepage's: on short screens its rows give a few px
+   back, so the sticky rail still fits without scrolling (checked at 1280x720 and 1366x768) */
+@media (min-width: 980px) and (max-height: 820px) {
+  .fun .toc a { min-height: clamp(26px, 3.8vh, 38px); line-height: 1.5; }
+  /* the centered look adds a short rule above the nav: take that room back here */
+  html[data-profile="centered"] .fun .toc .toc-home { margin-bottom: 0; }
+  html[data-profile="centered"] .fun .toc::before { margin-bottom: clamp(8px, 1.4vh, 18px); }
+}
+
+/* Short laptop windows. The rail's bottom padding only has to leave room for the last link's focus ring,
+   so it gives 16px back. With two rows of bubbles (or the CV pill) the nav rows tighten as well, and on the
+   very shortest windows that rail scrolls away with the page (as B2's rail does below 640px) rather than
+   hiding its last links behind a scrollbar of its own. The default row-below rail stays sticky and whole in
+   both looks at every height (checked 1024-1920 wide, 641-1200 tall, all three fonts). */
+@media (min-width: 980px) {
+  .fun .rail { padding-bottom: var(--sp-2); }
+}
+@media (min-width: 980px) and (max-height: 712px) {
+  html[data-bubbles^="2-3"] .fun .toc a, html[data-bubbles="3-3"] .fun .toc a { min-height: 24px; line-height: 1.3; }
+  html[data-profile="centered"][data-bubbles^="2-3"] .fun .toc::before,
+  html[data-profile="centered"][data-bubbles="3-3"] .fun .toc::before { margin-bottom: 6px; }
+}
+@media (min-width: 980px) and (max-height: 660px) {
+  html[data-bubbles="2-3-pill"] .fun .rail { position: static; max-height: none; overflow: visible; }
+}
+
+/* phones + tablets: when the tabs overflow the sticky bar, the edge with more tabs fades out
+   (fun.js sets data-more; the mask colour is irrelevant, only its opacity counts) */
+@media (max-width: 979.98px) {
+  .fun .toc ul[data-more="end"] {
+    -webkit-mask-image: linear-gradient(to right, var(--ink) calc(100% - 44px), transparent);
+            mask-image: linear-gradient(to right, var(--ink) calc(100% - 44px), transparent);
+  }
+  .fun .toc ul[data-more="start"] {
+    -webkit-mask-image: linear-gradient(to left, var(--ink) calc(100% - 44px), transparent);
+            mask-image: linear-gradient(to left, var(--ink) calc(100% - 44px), transparent);
+  }
+  .fun .toc ul[data-more="both"] {
+    -webkit-mask-image: linear-gradient(to right, transparent, var(--ink) 44px, var(--ink) calc(100% - 44px), transparent);
+            mask-image: linear-gradient(to right, transparent, var(--ink) 44px, var(--ink) calc(100% - 44px), transparent);
+  }
+}
+
+/* ---- Page head ------------------------------------------------------------ */
+.fun .fun-head { padding-block: var(--sp-6) var(--sp-7); }
+.fun .page-title {
+  font-family: var(--font-head);
+  font-weight: var(--weight-head);
+  font-size: var(--name-size);
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+}
+.fun .fun-lede { margin-top: var(--sp-3); max-width: 62ch; color: var(--muted); text-wrap: pretty; }
+
+.fun .sec-intro { margin-bottom: var(--sp-6); }
+
+/* small "label ↗ / →" links (captions, More photos, Goodreads profile) */
+.fun .cap-link {
+  position: relative;
+  display: inline-flex; align-items: center; gap: 4px;
+  color: var(--accent);
+  font-weight: var(--weight-strong);
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .22em;
+  transition: text-decoration-color .15s var(--ease);
+}
+.fun .cap-link:hover { text-decoration-color: currentColor; }
+.fun .cap-link::after { content: ""; position: absolute; inset: -10px -6px; }   /* ≥ 44px tap target, same layout */
+.fun .cap-link svg { width: 15px; height: 15px; }
+
+/* round icon buttons, the same family as the profile bubbles */
+.fun .round-btn {
+  display: grid; place-items: center;
+  width: 40px; height: 40px; padding: 0;
+  border: var(--bubble-border) solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: color .18s var(--ease), border-color .18s var(--ease), background-color .18s var(--ease), opacity .18s var(--ease);
+}
+.fun .round-btn svg { width: 20px; height: 20px; }
+.fun .round-btn:hover:not(:disabled), .fun .round-btn:focus-visible {
+  background: var(--accent); border-color: var(--accent); color: var(--accent-ink);
+}
+.fun .round-btn:disabled { opacity: .3; cursor: default; }
+
+/* ---- Art & film: BADWIZARD (lite YouTube embed) ------------------------------ */
+.fun .film-title { font-weight: var(--weight-strong); letter-spacing: .06em; line-height: var(--leading-tight); }
+.fun .film-sub { color: var(--muted); line-height: var(--leading-tight); }
+.fun .film-text { margin-top: var(--sp-5); }
+
+.fun .teaser { margin-top: var(--sp-4); }
+.fun .teaser-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--fun-radius);
+  overflow: hidden;
+  background: var(--ink);
+}
+.fun .teaser-poster, .fun .teaser-frame iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+.fun .teaser-poster { object-fit: cover; transition: transform .7s var(--ease); }
+.fun .teaser-play, .fun .teaser-fallback {
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  padding: 0; border: 0; border-radius: 0;
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none;
+}
+.fun .teaser-pill {
+  display: inline-flex; align-items: center; gap: 10px;
+  min-height: 52px; padding: 0 24px 0 18px;
+  border-radius: 999px;
+  background: var(--accent); color: var(--accent-ink);
+  font-weight: var(--weight-strong);
+  box-shadow: var(--shadow);
+  transition: transform .25s var(--ease);
+}
+.fun .teaser-pill svg { width: 22px; height: 22px; }
+.fun .teaser-play:hover .teaser-pill { transform: scale(1.05); }
+.fun .teaser-frame:hover .teaser-poster { transform: scale(1.015); }
+.fun .teaser-play:focus-visible { outline: none; }
+.fun .teaser-play:focus-visible .teaser-pill { outline: 3px solid var(--accent-ink); outline-offset: 3px; }
+.fun .teaser:has(.teaser-play:focus-visible) .teaser-frame { outline: 2px solid var(--accent); outline-offset: 3px; }
+.fun .teaser-cap {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  gap: var(--sp-1) var(--sp-4);
+  margin-top: var(--sp-3);
+  color: var(--muted);
+}
+.fun .film-links { margin-top: var(--sp-5); }
+
+/* ---- Urban+ · Taylor Swift: a clean typographic list of essays (no images) ---- */
+.fun .essays { display: grid; gap: var(--sp-6); }
+.fun .essay { max-width: 62ch; }
+.fun .essay-title { font-weight: var(--weight-strong); line-height: var(--leading-tight); text-wrap: pretty; }
+.fun .essay-title a {
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .2em;
+  transition: color .15s var(--ease), text-decoration-color .15s var(--ease);
+}
+.fun .essay-title a:hover { color: var(--accent); text-decoration-color: currentColor; }
+.fun .essay-blurb { margin-top: 6px; text-wrap: pretty; }
+.fun .essay-meta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 2px var(--sp-4);
+  margin-top: 6px;
+  color: var(--muted);
+}
+.fun .essay-file {
+  position: relative;
+  display: inline-flex; align-items: center; gap: 5px;
+  color: inherit; text-decoration: none;
+  font-variant-numeric: lining-nums;
+  transition: color .15s var(--ease);
+}
+.fun .essay-file::after { content: ""; position: absolute; inset: -7px -4px; }   /* 44px tap target, same layout */
+.fun .essay-file svg { width: 15px; height: 15px; }
+.fun .essay:has(.essay-title a:hover) .essay-file, .fun .essay-file:hover { color: var(--accent); }
+.fun .essay-badge { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); }
+.fun .essay-badge svg { width: 17px; height: 17px; }
+
+/* ---- Life · Mezcal: one photo at a time ------------------------------------- */
+/* The track is a native scroll-snap strip (swipe, trackpad and scrollbar work without JS);
+   fun.js adds prev/next, the counter, the dots and the arrow keys. No autoplay. */
+.fun .show { margin-top: var(--sp-5); }
+.fun .show-frame {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--fun-radius);
+  overflow: hidden;
+  background: var(--surface);
+  isolation: isolate;
+}
+.fun .show-track {
+  display: flex;
+  height: 100%;
+  overflow-x: auto; overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin; scrollbar-color: var(--rule-strong) transparent;
+}
+.fun .show.is-enhanced .show-track { scrollbar-width: none; }
+.fun .show.is-enhanced .show-track::-webkit-scrollbar { display: none; }
+.fun .slide {
+  position: relative;
+  flex: 0 0 100%;
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;   /* a quick swipe still moves one photo */
+}
+.fun .slide-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  user-select: none; -webkit-user-drag: none;
+}
+/* portrait photos: shown whole, over a soft blurred copy of themselves (never cropped) */
+.fun .slide--whole .slide-img { object-fit: contain; }
+.fun .slide-soft {
+  position: absolute; inset: -12%;
+  width: 124%; height: 124%; max-width: none;
+  object-fit: cover;
+  filter: blur(26px) saturate(1.05);
+  opacity: .55;
+}
+.fun .show-track:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+@supports selector(:has(a)) {
+  .fun .show-track:focus-visible { outline: none; }
+  .fun .show-frame:has(.show-track:focus-visible) { outline: 2px solid var(--accent); outline-offset: 3px; }
+}
+
+.fun .show-bar {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: var(--sp-3) var(--sp-5);
+  margin-top: var(--sp-3);
+}
+.fun .show-controls { display: flex; align-items: center; gap: var(--sp-2); color: var(--ink); }
+.fun .show-count {
+  min-width: 3.4em; margin-inline: var(--sp-2) var(--sp-1);
+  color: var(--muted);
+  font-variant-numeric: tabular-nums lining-nums;
+  white-space: nowrap;
+}
+.fun .show-cur { color: var(--ink); font-weight: var(--weight-strong); }
+.fun .show-dots { display: flex; align-items: center; }
+.fun .show-dot {
+  display: grid; place-items: center;
+  width: 22px; height: 40px; padding: 0;
+  border: 0; background: transparent;
+  cursor: pointer;
+}
+.fun .show-dot::before {
+  content: ""; width: 8px; height: 8px;
+  border: 1.5px solid var(--muted);
+  border-radius: 50%;
+  transition: background-color .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease);
+}
+.fun .show-dot:hover::before { border-color: var(--ink); transform: scale(1.2); }
+.fun .show-dot[aria-current="true"]::before { background: var(--accent); border-color: var(--accent); transform: scale(1.2); }
+.fun .show-dot:focus-visible { outline: none; }
+.fun .show-dot:focus-visible::before { outline: 2px solid var(--accent); outline-offset: 3px; }
+.fun .show-more { margin-left: auto; }
+
+/* "Click on the titles to read." under an essay section's intro: the titles are the only links */
+.fun .click-hint { color: var(--muted); }
+
+/* ---- Mezcal: three photos in a row, then "More photos" (the Mezcal page has them all) ---- */
+.fun .cat-photos {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-3);
+  margin: var(--sp-5) 0 0; padding: 0; list-style: none;
+}
+.fun .cat-photos img {
+  display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover;
+  border-radius: var(--fun-radius); background: var(--surface);
+}
+.fun .cat-more { margin-top: var(--sp-3); }
+
+/* the Scotty clarification: a quiet hairline-left aside */
+.fun .note {
+  max-width: 62ch;
+  margin-top: var(--sp-6);
+  padding: 2px 0 2px var(--sp-4);
+  border-left: 2px solid var(--rule-strong);
+  color: var(--muted);
+}
+.fun .note b { color: var(--ink); font-weight: var(--weight-strong); }
+
+/* ---- Cocktails: the two full first pages, natural aspect ratios ------- */
+/* build.py sizes the two columns by each page's own pixel width, so both pages share one scale:
+   the portrait page stands taller than the landscape one, bottoms on one line, nothing cropped. */
+.fun .menus {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));   /* replaced by the page widths (inline style) */
+  grid-template-rows: auto auto;
+  gap: var(--sp-3) var(--sp-5);
+  margin-top: var(--sp-5);
+}
+.fun .menus > li { display: grid; grid-row: span 2; grid-template-rows: subgrid; }
+.fun .menu {
+  grid-row: span 2;
+  display: grid; grid-template-rows: subgrid;
+  color: inherit; text-decoration: none;
+  border-radius: var(--cover-radius);
+}
+.fun .menu-page {
+  align-self: end;
+  width: 100%; height: auto;
+  border-radius: var(--cover-radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-page);
+  transition: transform .22s var(--ease), box-shadow .22s var(--ease);
+}
+.fun .menu-text { align-self: start; display: grid; line-height: var(--leading-tight); }
+.fun .menu-title { font-weight: var(--weight-strong); transition: color .15s var(--ease); }
+.fun .menu-note { color: var(--muted); text-wrap: pretty; }
+.fun .menu-meta { display: inline-flex; align-items: center; gap: 5px; margin-top: 2px; color: var(--muted); }
+.fun .menu-meta svg { width: 15px; height: 15px; }
+.fun .menu:hover .menu-page { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+.fun .menu:hover .menu-title, .fun .menu:hover .menu-meta { color: var(--accent); }
+.fun .menu:focus-visible { outline: none; }
+.fun .menu:focus-visible .menu-page { outline: 2px solid var(--accent); outline-offset: 3px; }
+.fun .menu:focus-visible .menu-title { color: var(--accent); }
+
+/* ---- Books: the Goodreads shelf (G1) ---------------------------------------- */
+.fun .shelf {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--sp-5) var(--sp-3);
+  margin-top: var(--sp-5);
+}
+.fun .book { position: relative; }
+.fun .book-cover {
+  position: relative;
+  display: block;
+  aspect-ratio: 2 / 3;
+  border-radius: var(--cover-radius);
+  background: var(--surface);
+  box-shadow: 0 0 0 1px var(--rule);
+  transition: transform .22s var(--ease), box-shadow .22s var(--ease);
+}
+.fun .book-cover img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: var(--cover-radius);
+}
+.fun .book-cover:hover, .fun .book.is-open .book-cover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+.fun .book-cover:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+/* graceful when a cover fails to load: title + author on a quiet tile */
+.fun .book-fallback {
+  position: absolute; inset: 0;
+  display: none; flex-direction: column; justify-content: flex-end; gap: var(--sp-1);
+  padding: var(--sp-3);
+  overflow: hidden;
+  border-radius: var(--cover-radius);
+  background: var(--surface);
+  color: var(--muted);
+  line-height: var(--leading-tight);
+}
+.fun .book-fallback-title {
+  color: var(--ink); font-weight: var(--weight-strong);
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; overflow: hidden;
+}
+.fun .book.is-broken img { visibility: hidden; }
+.fun .book.is-broken .book-fallback { display: flex; }
+.fun .shelf-foot { margin-top: var(--sp-6); }
+
+/* the popover: anchored beside the cover, kept inside the viewport by fun.js */
+.fun .pop {
+  position: absolute; z-index: 30; left: 0; top: 0;
+  display: flex; flex-direction: column;
+  width: min(var(--pop-w), calc(100vw - 2 * var(--sp-4)));
+  max-height: min(29rem, calc(100vh - 2 * var(--sp-4)));
+  max-height: min(29rem, calc(100dvh - 2 * var(--sp-4)));
+  padding: var(--sp-4) var(--sp-4) var(--sp-3);
+  border: 1px solid var(--rule-strong);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+.fun .pop[hidden] { display: none; }
+.fun .pop:not([hidden]) { animation: fun-pop-in .16s var(--ease); }
+@keyframes fun-pop-in { from { opacity: 0; transform: translateY(4px); } }
+.fun .pop-head { display: grid; gap: 0; }
+.fun .pop-title { font-weight: var(--weight-strong); line-height: var(--leading-tight); text-wrap: pretty; }
+.fun .pop-author { color: var(--muted); font-style: italic; line-height: var(--leading-tight); }
+.fun .pop-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 var(--sp-2); margin-top: var(--sp-1); color: var(--muted); }
+.fun .stars { color: var(--accent); letter-spacing: .1em; white-space: nowrap; }
+.fun .stars-off { color: var(--rule-strong); }
+.fun .pop-review {
+  flex: 1 1 auto; min-height: 4em;
+  overflow-y: auto; overscroll-behavior: contain;
+  margin-top: var(--sp-3);
+  padding: var(--sp-3) var(--sp-2) 0 0;
+  border-top: 1px solid var(--rule);
+  line-height: var(--leading-tight);
+  scrollbar-width: thin; scrollbar-color: var(--rule-strong) transparent;
+}
+/* the lowest visible line fades into the panel while there is more to read: a hint that the review
+   scrolls (a sticky overlay rather than a mask, so the focus ring is never masked away). It rests in its
+   own space after the text, so at the end of the review the last line is fully legible. */
+.fun .pop-review::after {
+  content: ""; display: block;
+  position: sticky; bottom: 0;
+  height: 2em;
+  background: linear-gradient(to bottom, transparent, var(--bg) 85%);
+  pointer-events: none;
+}
+.fun .pop-review p + p { margin-top: .65em; }
+.fun .pop-review:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+.fun .pop-review a { color: var(--accent); text-decoration-color: var(--accent-line); text-underline-offset: .22em; }
+.fun .pop-link {
+  display: inline-flex; align-items: center; gap: 4px; align-self: flex-start;
+  min-height: 36px; margin-top: var(--sp-1);
+  color: var(--accent);
+  font-weight: var(--weight-strong);
+  text-decoration: none;
+}
+.fun .pop-link:hover { text-decoration: underline; text-underline-offset: .22em; text-decoration-thickness: 1px; }
+.fun .pop-link svg { width: 15px; height: 15px; }
+
+/* ---- The phone bottom sheet (touch taps on a cover) -------------------------- */
+/* a full-viewport <dialog>; its own background is the scrim, so no ::backdrop colour is needed */
+.fun .overlay {
+  position: fixed; inset: 0;
+  width: 100%; height: 100%; max-width: none; max-height: none;
+  margin: 0; padding: 0; border: 0;
+  background: transparent; color: var(--ink);
+  overflow: hidden;
+}
+.fun .overlay::backdrop { background: transparent; }
+@keyframes fun-fade-in { from { opacity: 0; } }
+
+.fun .sheet { background: var(--dim); }
+.fun .sheet[open] { display: flex; flex-direction: column; justify-content: flex-end; animation: fun-fade-in .2s var(--ease); }
+.fun .sheet-panel {
+  position: relative;
+  display: flex; flex-direction: column;
+  width: 100%; max-width: 40rem; max-height: 86vh; max-height: 86dvh;
+  margin-inline: auto;
+  padding: var(--sp-2) var(--gutter) calc(var(--sp-4) + env(safe-area-inset-bottom));
+  border-radius: 16px 16px 0 0;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  animation: fun-sheet-in .28s var(--ease);
+}
+@keyframes fun-sheet-in { from { transform: translateY(40%); opacity: .4; } }
+.fun .sheet-grip { position: relative; width: 40px; height: 4px; margin: 2px auto var(--sp-4); border-radius: 2px; background: var(--rule-strong); }
+.fun .sheet-grip::before { content: ""; position: absolute; inset: -10px -60px -12px; }   /* a thumb-sized drag handle */
+/* the grip and the head are the sheet's drag handles (fun.js): the browser must not claim that gesture as a scroll */
+.fun .sheet-grip, .fun .sheet .pop-head { touch-action: none; }
+.fun .sheet-close { position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; color: var(--ink); }
+.fun .sheet-body { display: flex; flex-direction: column; min-height: 0; flex: 1 1 auto; }
+.fun .sheet .pop-head {
+  grid-template-columns: 64px minmax(0, 1fr);
+  column-gap: var(--sp-4);
+  padding-right: 52px;   /* clear of the close button */
+}
+.fun .sheet .pop-head > :not(.pop-cover) { grid-column: 2; }
+.fun .sheet .pop-cover {
+  grid-column: 1; grid-row: 1 / span 3;
+  width: 64px; aspect-ratio: 2 / 3; height: auto;
+  object-fit: cover;
+  border-radius: var(--cover-radius);
+  box-shadow: 0 0 0 1px var(--rule);
+}
+.fun .sheet .pop-review { margin-top: var(--sp-4); }
+.fun .sheet .pop-link {
+  justify-content: center; align-self: stretch;
+  min-height: 48px; margin-top: var(--sp-3);
+  border: var(--bubble-border) solid var(--ink);
+  border-radius: 999px;
+  color: var(--ink);
+  transition: background-color .15s var(--ease), border-color .15s var(--ease), color .15s var(--ease);
+}
+.fun .sheet .pop-link:hover, .fun .sheet .pop-link:active { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); text-decoration: none; }
+
+/* =========================================================================
+   FUN · breakpoints
+   ========================================================================= */
+@media (max-width: 599.98px) {
+  .fun .essays { gap: 28px; }
+  .fun .show-bar { gap: var(--sp-2) var(--sp-4); }
+  .fun .show-more { margin-left: 0; }   /* on its own line under the controls: flush left */
+  .fun .show-dot { width: 20px; }
+  .fun .menus { column-gap: var(--sp-4); }
+}
+/* narrow phones: the dots give way to the counter, so the bar stays one tidy line */
+@media (max-width: 379.98px) {
+  .fun .show-dots { display: none; }
+}
+@media (min-width: 600px) {
+  .fun .shelf { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--sp-5) var(--sp-4); }
+}
+@media (min-width: 980px) {
+  .fun .fun-head { padding-top: 0; }
+  .fun .page-title { margin-top: -.28em; }   /* cap height meets the top of the photo (as B2) */
+}
+
+/* Mezcal page on phones: prev · next · count · one dot per photo must fit one line (or wrap with many photos) */
+@media (max-width: 599.98px) {
+  .fun .show-controls { flex-wrap: wrap; row-gap: 0; }
+  .fun .show-dot { width: 18px; }
+}
+/* essay titles are the only links to the essays: a faint resting underline marks them */
+.fun .essay-title a { text-decoration-color: var(--rule-strong); }
+
+/* Cocktail menus: just the covers (no captions) — each cover is the link to its PDF; bottoms aligned */
+.fun .menus { grid-template-rows: auto; align-items: end; }
+.fun .menus > li, .fun .menu { display: block; grid-row: auto; }
+.fun .menu-page { display: block; }

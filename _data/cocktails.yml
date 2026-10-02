@@ -1,0 +1,17 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  COCKTAIL MENUS on the Fun page · newest first
+#
+#  To add a menu: put the PDF in documents/cocktails/ and add these lines here.
+#  The page shows only the cover; `title` is its label for screen readers and the hover tooltip
+#  (`note` is not shown anywhere at the moment).
+#  The cover (the PDF's first page) is rendered automatically by
+#  .github/workflows/menu-thumbnails.yml into assets/images/menus/<same name>.jpg
+# ─────────────────────────────────────────────────────────────────────────────
+
+- title: Pumpkin Party
+  note: a yearly holiday I celebrate
+  pdf: /documents/cocktails/pumpkin.pdf
+
+- title: Oscars 2025
+  note: a drink for each Best Picture nominee
+  pdf: /documents/cocktails/oscars.pdf

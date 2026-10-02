@@ -1,0 +1,143 @@
+---
+layout: default
+---
+{%- comment -%}
+  The Fun page (/fun/): one block per section of _data/fun.yml, in that file's order.
+  Film (lite YouTube teaser) · Urban+ and Taylor Swift (essays, linked by their titles) · Books (the Goodreads
+  shelf from _data/goodreads_books.json, refreshed daily by .github/workflows/goodreads.yml) · Mezcal (three
+  photos + "More photos" → /mezcal/) · Cocktails (_data/cocktails.yml; covers rendered by menu-thumbnails.yml).
+  Styles: assets/css/fun.css · behaviour: assets/js/fun.js (the page also works without it).
+{%- endcomment -%}
+{%- assign fun = site.data.fun -%}
+{%- for s in fun.sections %}
+    <section class="section" id="{{ s.id }}" aria-labelledby="{{ s.id }}-title">
+      {%- if forloop.first %}
+      <h1 class="visually-hidden">{{ page.title }}</h1>
+      {%- endif %}
+      <div class="section-head"><h2 class="section-title" id="{{ s.id }}-title" data-heading>{{ s.title }}</h2></div>
+{%- case s.id -%}
+
+{%- when "film" -%}
+{%- assign v = s.video %}
+      <article class="film" aria-labelledby="film-title">
+        <h3 class="film-title" id="film-title">{{ s.name }}</h3>
+        <p class="film-sub">{{ s.subtitle }}</p>
+        <figure class="teaser" data-embed="https://www.youtube-nocookie.com/embed/{{ v.id }}?rel=0&amp;modestbranding=1&amp;autoplay=1" data-title="{{ v.title | escape }}">
+          <div class="teaser-frame">
+            <img class="teaser-poster" src="https://i.ytimg.com/vi/{{ v.id }}/maxresdefault.jpg" alt="" width="1280" height="720" decoding="async">
+            <button class="teaser-play js-only" type="button" aria-label="Play teaser: {{ v.title | escape }} (loads YouTube)">
+              <span class="teaser-pill">{% include icon.html name="play" %}<span>Play teaser</span></span>
+            </button>
+            <noscript><a class="teaser-fallback" href="https://www.youtube.com/watch?v={{ v.id }}"><span class="teaser-pill">{% include icon.html name="play" %}<span>Watch the teaser on YouTube</span></span></a></noscript>
+          </div>
+          <figcaption class="teaser-cap">
+            <span>Teaser · {{ v.channel }}</span>
+            <a class="cap-link" href="https://www.youtube.com/watch?v={{ v.id }}">Watch on YouTube{% include icon.html name="arrow-up-right" %}</a>
+          </figcaption>
+        </figure>
+        <div class="prose film-text"><p>{{ s.html }}</p></div>
+        {%- if s.links.size > 0 %}
+        <ul class="pills film-links" aria-label="{{ s.name }} links">
+          {%- for l in s.links %}
+          <li><a class="pill" href="{{ l.url | escape }}">{{ l.label }}</a></li>
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+      </article>
+
+{%- when "urban" %}
+      <div class="prose sec-intro"><p>{{ s.intro }}</p><p class="click-hint">{{ fun.click_hint }}</p></div>
+      {%- for g in s.groups %}
+      <div class="group">
+        <h3 class="group-title">{{ g.title }}</h3>
+        <ol class="essays">
+          {%- for e in g.essays %}
+          <li class="essay">
+            <h4 class="essay-title"><a href="{{ e.url | relative_url }}">{{ e.title }}</a></h4>
+            <p class="essay-blurb prose">{{ e.html }}</p>
+          </li>
+          {%- endfor %}
+        </ol>
+      </div>
+      {%- endfor %}
+
+{%- when "swift" %}
+      <div class="prose sec-intro"><p>{{ s.intro }}</p><p class="click-hint">{{ fun.click_hint }}</p></div>
+      <ol class="essays">
+        {%- for e in s.essays %}
+        <li class="essay">
+          <h3 class="essay-title"><a href="{{ e.url | relative_url }}">{{ e.title }}</a></h3>
+          <p class="essay-blurb prose">{{ e.html }}</p>
+        </li>
+        {%- endfor %}
+      </ol>
+
+{%- when "books" %}
+      <div class="prose"><p>{{ s.intro }}</p></div>
+      <ul class="shelf" aria-label="Recent additions to my Goodreads shelf">
+        {%- for b in site.data.goodreads_books %}
+        {%- assign r = b.rating | plus: 0 -%}
+        {%- assign off = 5 | minus: r -%}
+        {%- comment -%} Goodreads reviews are HTML with <br /> line breaks: a blank line becomes a paragraph break {%- endcomment -%}
+        {%- assign review = b.review | strip | replace: "<br/>", "<br />" | replace: "<br /><br />", "</p><p>" | prepend: "<p>" | append: "</p>" | replace: "<p><br />", "<p>" | replace: "<br /></p>", "</p>" | replace: "<p></p>", "" %}
+        <li class="book">
+          <a class="book-cover" href="{{ b.link | escape }}" aria-describedby="book-{{ forloop.index }}-meta">
+            <img src="{{ b.cover | escape }}" alt="{{ b.title | escape }} by {{ b.author | escape }}" width="318" height="477" loading="lazy" decoding="async">
+            <span class="book-fallback" aria-hidden="true"><span class="book-fallback-title">{{ b.title }}</span><span>{{ b.author }}</span></span>
+          </a>
+          <div class="pop" id="book-{{ forloop.index }}" hidden>
+            <div class="pop-head">
+              <p class="pop-title">{{ b.title }}</p>
+              <p class="pop-author">{{ b.author }}</p>
+              <p class="pop-meta" id="book-{{ forloop.index }}-meta">
+                {%- if r > 0 %}<span class="stars" role="img" aria-label="Rated {{ r }} out of 5"><span aria-hidden="true">{{ "★★★★★" | slice: 0, r }}</span><span class="stars-off" aria-hidden="true">{{ "★★★★★" | slice: 0, off }}</span></span>{% else %}<span>Not rated</span>{% endif %}
+                {%- if b.read_date and b.read_date != "" %}<span class="dot" aria-hidden="true">·</span><time datetime="{{ b.read_date | date: '%Y-%m-%d' }}"><span class="visually-hidden">Read in </span>{{ b.read_date | date: "%b %Y" }}</time>{% endif -%}
+              </p>
+            </div>
+            {%- if review != "" %}
+            <div class="pop-review" tabindex="0" role="region" aria-label="Review of {{ b.title | escape }}">{{ review }}</div>
+            {%- endif %}
+            <a class="pop-link" href="{{ b.link | escape }}" tabindex="-1">Read on Goodreads{% include icon.html name="arrow-up-right" %}</a>
+          </div>
+        </li>
+        {%- endfor %}
+      </ul>
+      <p class="shelf-foot"><a class="cap-link" href="{{ s.goodreads | escape }}">All my reviews on Goodreads{% include icon.html name="arrow-up-right" %}</a></p>
+
+      <dialog class="overlay sheet" aria-label="Book review">
+        <div class="sheet-panel">
+          <div class="sheet-grip" aria-hidden="true"></div>
+          <button class="round-btn sheet-close" type="button" aria-label="Close review">{% include icon.html name="close" %}</button>
+          <div class="sheet-body"></div>
+        </div>
+      </dialog>
+
+{%- when "mezcal" %}
+      <div class="prose"><p>{{ s.intro }}</p></div>
+      <ul class="cat-photos" aria-label="Three photos of Mezcal">
+        {%- for f in s.featured %}
+        <li><img src="{{ '/documents/cat/' | append: f | relative_url }}" alt="{{ s.alt[f] | default: 'Mezcal the cat' | escape }}" loading="lazy" decoding="async"></li>
+        {%- endfor %}
+      </ul>
+      <p class="cat-more"><a class="cap-link" href="{{ '/mezcal/' | relative_url }}">More photos{% include icon.html name="arrow-right" %}</a></p>
+      <aside class="note prose" aria-label="A clarification about the profile photo"><p>{{ s.note }}</p></aside>
+
+{%- when "cocktails" %}
+      <div class="prose"><p>{{ s.intro }}</p></div>
+      {%- comment -%} columns sized by each cover's own width, so all covers share one scale and are never cropped {%- endcomment -%}
+      {%- capture cols -%}{%- for m in site.data.cocktails -%}{%- assign stem = m.pdf | split: "/" | last | remove: ".pdf" -%}{%- assign size = site.data.menu_covers[stem] -%} minmax(0, {{ size[0] | default: 1 }}fr){%- endfor -%}{%- endcapture %}
+      <ul class="menus" style="grid-template-columns:{{ cols }}">
+        {%- for m in site.data.cocktails %}
+        {%- assign stem = m.pdf | split: "/" | last | remove: ".pdf" -%}
+        {%- assign size = site.data.menu_covers[stem] %}
+        <li>
+          {%- assign orientation = "portrait" -%}{%- if size and size[0] > size[1] -%}{%- assign orientation = "landscape" -%}{%- endif %}
+          <a class="menu menu--{{ orientation }}" href="{{ m.pdf | relative_url }}" title="{{ m.title | escape }} (PDF)">
+            <img class="menu-page" src="{{ '/assets/images/menus/' | append: stem | append: '.jpg' | relative_url }}" alt="{{ m.title | escape }} cocktail menu (PDF)"{% if size %} width="{{ size[0] }}" height="{{ size[1] }}"{% endif %} loading="lazy" decoding="async">
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+{%- endcase %}
+    </section>
+{%- endfor %}

@@ -1,22 +1,94 @@
-- title: "A Bayesian Spatial Model to Correct Under-Reporting in Urban Crowdsourcing"
-  venue: "The 38th Annual AAAI Conference on Artificial Intelligence"
-  date: "February 2024"
+# ─────────────────────────────────────────────────────────────────────────────
+#  TALKS  ·  newest first (within each type)
+#
+#  Fields:
+#    date:   shown exactly as typed, e.g. "Apr 2026"
+#    type:   "invited" (Invited talks & lectures) or "conference" (Conference talks)
+#    venue:  where, e.g. "Penn State University"
+#    event:  optional seminar / series / session name
+#    title:  optional talk title
+#    (venue, event and title can hold a link: "[EEPI Seminar](https://…)")
+#    Links (optional): slides, video, link
+# ─────────────────────────────────────────────────────────────────────────────
 
-- title: "Identifying Urban Morphology from Street Networks with Graphlet Analysis"
+# ── Invited talks & lectures ─────────────────────────────────────────────────
+
+- date: Apr 2026
+  type: invited
+  venue: "Penn State University"
+  event: "[EEPI Seminar](https://eesi.psu.edu/events/eeepi-seminars/eeepi-seminars-archive/eeepi-spring-2026/)"
+
+- date: Mar 2026
+  type: invited
+  venue: "New York University"
+  event: "Urban Lab: Immigration and Housing in Queens"
+
+- date: Nov 2025
+  type: invited
+  venue: "Vision Zero Initiative"
+  event: "[NYC Research on the Road](https://www.nyc.gov/site/ddc/about/research_VZ_8.page)"
+
+- date: Sep 2025
+  type: invited
+  venue: "Barnard College, Center for Computational Science"
+  event: "[CSC Workshop](https://csc.barnard.edu/events/csc-workshop-inferring-fine-grained-migration-flows-across-united-states)"
+
+- date: Sep 2025
+  type: invited
+  venue: "Cornell Tech"
+  event: "Urban Systems"
+
+- date: Sep 2025
+  type: invited
+  venue: "Cornell Tech"
+  event: "Applied Data Science"
+
+- date: Nov 2024
+  type: invited
+  venue: "Cornell Tech"
+  event: "Urban Data"
+
+- date: Oct 2024
+  type: invited
+  venue: "Cornell Tech"
+  event: "Urban Data"
+
+# ── Conference talks ─────────────────────────────────────────────────────────
+
+- date: Mar 2026
+  type: conference
+  venue: "AAG Annual Meeting, San Francisco"
+  title: "Inferring Fine-Grained Migration Flows across the United States"
+
+- date: Jun 2025
+  type: conference
+  venue: "CUPUM 2025, London"
+  title: "Inequalities in Mobility Patterns: Reconciling Access and Travel in American Cities"
+
+- date: Feb 2024
+  type: conference
+  venue: "The 38th Annual AAAI Conference on Artificial Intelligence, Vancouver"
+  title: "A Bayesian Spatial Model to Correct Under-Reporting in Urban Crowdsourcing"
+
+- date: Apr 2022
+  type: conference
   venue: "30th Annual Geographical Information Science Research UK (GISRUK)"
-  date: "April 2022"
-  link: "https://youtu.be/4PyglEmb1Jw"
+  title: "Identifying Urban Morphology from Street Networks with Graphlet Analysis"
+  video: "https://youtu.be/4PyglEmb1Jw"
 
-- title: "A Category-Theory Approach to Construction Ontologies in Subsurface Mass Transit"
+- date: Oct 2021
+  type: conference
   venue: "3D GeoInfo Conference"
-  date: "October 2021"
+  title: "A Category-Theory Approach to Construction Ontologies in Subsurface Mass Transit"
 
-- title: "Operationalizing Equity in the San Francisco Student School Assignment"
+- date: Aug 2021
+  type: conference
   venue: "Stanford Data Science for Social Good"
-  date: "August 2021"
-  link: "https://www.youtube.com/watch?v=48FYug28Bzw&t=3531s"
+  title: "Operationalizing Equity in the San Francisco Student School Assignment"
+  video: "https://www.youtube.com/watch?v=48FYug28Bzw&t=3531s"
 
-- title: "Knot Surgery and Integer Characterizing Slopes"
+- date: Aug 2019
+  type: conference
   venue: "Columbia University Mathematics Department"
-  date: "August 2019"
-  link: "https://youtu.be/0LLg-Lr_me4"
+  title: "Knot Surgery and Integer Characterizing Slopes"
+  video: "https://youtu.be/0LLg-Lr_me4"
