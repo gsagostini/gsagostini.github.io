@@ -251,7 +251,7 @@ main { min-width: 0; }
 .older > summary:hover .summary-label { text-decoration: underline; text-underline-offset: .22em; text-decoration-thickness: 1px; }
 .older .count { color: var(--muted); font-weight: var(--weight-body); font-variant-numeric: tabular-nums; }
 .older[open] .when-closed, .older:not([open]) .when-open { display: none; }
-.older > .news { margin: var(--sp-2) 0 0 calc(-1 * var(--date-col)); }
+.older > .news, .older > .talks { margin: var(--sp-2) 0 0 calc(-1 * var(--date-col)); }
 
 /* ---- Groups (Working papers / Publications, Invited / Conference) ---- */
 .group + .group { margin-top: var(--sp-7); }
@@ -335,7 +335,7 @@ main { min-width: 0; }
 @media (max-width: 559.98px) {
   .dated { grid-template-columns: minmax(0, 1fr); }
   .older { padding-left: 0; }
-  .older > .news { margin-left: 0; }
+  .older > .news, .older > .talks { margin-left: 0; }
   .news { gap: var(--sp-4); }
   .talks { gap: 18px; }
   .pubs { gap: 28px; }

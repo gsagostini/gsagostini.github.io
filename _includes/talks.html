@@ -1,6 +1,8 @@
 {%- comment -%}
   Talks · from _data/talks.yml (field guide at the top of that file).
   Grouped by `type`: "invited" → Invited talks & lectures; anything else → Conference talks.
+  Each group shows its newest site.talks_limit talks (default 5; _config.yml); the rest sit under a native
+  "Older talks" toggle, like News.
   Row = title (or the venue when there is no title) over venue/event, plus optional
   slides / video / link buttons. title, venue and event may contain Markdown links: [EEPI Seminar](https://…)
 {%- endcomment -%}
@@ -8,7 +10,9 @@
 {%- if talks.size > 0 -%}
 {%- assign invited = talks | where: "type", "invited" -%}
 {%- assign conference = talks | where_exp: "t", "t.type != 'invited'" -%}
-{%- assign link_keys = "slides,video,link" | split: "," %}
+{%- assign link_keys = "slides,video,link" | split: "," -%}
+{%- assign limit = site.talks_limit | default: 5 | plus: 0 -%}
+{%- if limit < 0 -%}{%- assign limit = 0 -%}{%- endif %}
     <section class="section" id="talks" aria-labelledby="talks-title">
       <div class="section-head"><h2 class="section-title" id="talks-title" data-heading>Talks</h2></div>
       {%- for g in (1..2) -%}
@@ -20,8 +24,15 @@
         {%- if items.size > 0 %}
       <div class="group">
         <h3 class="group-title">{{ group_title }}</h3>
+        {%- assign older = items.size | minus: limit %}
         <ol class="talks">
           {%- for t in items %}
+          {%- if forloop.index0 == limit %}
+        </ol>
+        <details class="older">
+          <summary>{% include icon.html name="chevron" %}<span class="summary-label"><span class="when-closed">Older talks</span><span class="when-open">Hide older talks</span></span> <span class="count">({{ older }})</span></summary>
+          <ol class="talks">
+          {%- endif %}
           {%- if t.title -%}
             {%- assign heading = t.title -%}
             {%- capture meta -%}{{ t.venue }}{% if t.venue and t.event %}, {% endif %}{{ t.event }}{%- endcapture -%}
@@ -48,6 +59,9 @@
           </li>
           {%- endfor %}
         </ol>
+        {%- if older > 0 %}
+        </details>
+        {%- endif %}
       </div>
         {%- endif -%}
       {%- endfor %}

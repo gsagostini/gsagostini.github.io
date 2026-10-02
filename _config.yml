@@ -44,6 +44,7 @@ profiles:
     icon: x
 
 news_limit: 5                     # news items shown before the "Older news" toggle
+talks_limit: 5                    # talks shown per group (invited / conference) before the "Older talks" toggle
 publications_note: "Click on a title to read the paper (when a draft is available)."   # shown under the Publications heading
 
 # Look & feel — change these lines to restyle the whole site.
