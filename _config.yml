@@ -12,7 +12,6 @@ title: Gabriel Agostini
 description: >-
   PhD student in Information Science at Cornell Tech. Spatial machine learning
   and new datasets to inform more equitable urban policies.
-tagline: PhD student in Information Science at Cornell Tech   # homepage title: "Gabriel Agostini | <tagline>"
 url: "https://gsagostini.github.io"
 baseurl: ""                       # empty: the site lives at the domain root
 lang: en

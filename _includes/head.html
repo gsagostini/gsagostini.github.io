@@ -1,7 +1,9 @@
 {%- comment -%} Shared <head>. Fonts load only for the preset chosen in _config.yml (style.font). {%- endcomment -%}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{% seo %}
+{% seo title=false %}
+{%- comment -%} Tab title: just the name on the homepage; "Page | Name" elsewhere (the plugin would add the tagline/description). {%- endcomment %}
+<title>{% if page.title and page.title != site.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
 <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
 <meta name="color-scheme" content="light">
 <script>
