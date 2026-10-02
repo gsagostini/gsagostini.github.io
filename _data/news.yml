@@ -13,6 +13,9 @@
 #    the rest are tucked under "Older news".
 # ─────────────────────────────────────────────────────────────────────────────
 
+- date: Sep 2026
+  text: "I wrote a [small reflection](https://backslash.org/art/Tianyi-sun-badwizard#collaborator-statement) about my (really fun!!!) experience producing a short film about urban data with the amazing [Tianyi Sun](https://mysterioussubmarine.com). Looking forward to sharing more soon! [Figure 2.3](https://gsagostini.github.io/fun/#film) was peer reviewed already."
+
 - date: Aug 2026
   text: "Our paper on bike route choice with large-scale e-bike GPS data will appear at [EAAMO 2026](https://eaamo.org) (non-archival). Reach out if you'll be there!"
 
@@ -27,6 +30,9 @@
 
 - date: Dec 2025
   text: "[Inferring fine-grained migration patterns across the United States](https://doi.org/10.1038/s41467-025-68019-2) is out in *Nature Communications*!"
+
+- date: Nov 2025
+  text: "I wrote a [blog post](https://www.pi.tech.cornell.edu/spotlight/the-bike-lane-not-taken-towards-building-a-bike-demand-model-from-large-scale-gps-e-bike-data) about my work with the NYC DOT on map-matching GPS pings for Citi Bike trips. We are now building a route choice model to understand cycling behavior in the city---stay tuned!"
 
 - date: Jun 2025
   text: "I joined the NYC DOT Cycling & Micromobility unit as a fellow. Excited to work in city government, contributing to better urban mobility infrastructure!"
