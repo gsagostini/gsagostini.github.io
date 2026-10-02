@@ -1,0 +1,49 @@
+{%- comment -%} Shared <head>. Fonts load only for the preset chosen in _config.yml (style.font). {%- endcomment -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% seo %}
+<link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+<meta name="color-scheme" content="light">
+<script>
+  /* Runs before the page paints. 1) Dark mode: the visitor's saved choice (the toggle), else style.theme
+     (light | dark | auto = follow the system). 2) Try a look without editing anything, e.g. ?font=inter
+     ?accent=forest  ?accent=336699  ?bg=white  ?bg=F4F4F4  ?profile=centered  ?bubbles=2-3  ?theme=dark
+     ?toggle=menu  (same switches as the review page; nothing is saved). */
+  (function () { try { var q = new URLSearchParams(location.search), h = document.documentElement;
+    var f = q.get('font'), a = q.get('accent'), pr = q.get('profile'), bu = q.get('bubbles'), bg = q.get('bg');
+    var th = q.get('theme'), tg = q.get('toggle'), saved = null, def = h.getAttribute('data-theme-default') || 'light';
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    if (!th) th = saved || (def === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : def);
+    h.setAttribute('data-theme', th === 'dark' ? 'dark' : 'light');
+    h.classList.add('js');
+    if (tg) h.setAttribute('data-toggle', tg);
+    var hex = function (v) { return /^#?[0-9a-f]{6}$/i.test(v) ? (v.charAt(0) === '#' ? v : '#' + v) : ''; };
+    var G = 'https://fonts.googleapis.com/css2?family=', W = { inter: G + 'Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&display=swap',
+      source: G + 'Source+Sans+3:ital,wght@0,300..700;1,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap' };
+    if (f) { h.setAttribute('data-font', f); if (W[f]) document.write('<link rel="stylesheet" href="' + W[f] + '">'); }
+    if (pr) h.setAttribute('data-profile', pr);
+    if (bu) h.setAttribute('data-bubbles', bu);
+    if (a) { if (hex(a)) h.style.setProperty('--brand', hex(a)); else { h.style.removeProperty('--brand'); h.setAttribute('data-accent', a); } }
+    if (bg) { if (hex(bg)) { h.setAttribute('data-bg', 'custom'); h.style.setProperty('--bg', hex(bg)); } else { h.style.removeProperty('--bg'); h.setAttribute('data-bg', bg); } }
+  } catch (e) {} })();
+</script>
+{%- assign font = site.style.font | default: "source" %}
+{%- if font != "original" %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{%- endif %}
+{%- if font == "inter" %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&display=swap">
+{%- elsif font == "source" %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300..700;1,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap">
+{%- endif %}
+<link rel="stylesheet" href="{{ '/assets/css/presets.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+{%- if page.body_class contains "fun" %}
+<link rel="stylesheet" href="{{ '/assets/css/fun.css' | relative_url }}">
+<noscript><style>.fun .js-only { display: none !important; }</style></noscript>
+{%- endif %}
+{%- assign accent = site.style.accent | default: "red" | append: "" %}
+{%- if accent contains "#" %}
+<style>:root { --brand: {{ accent }}; }</style>
+{%- endif %}

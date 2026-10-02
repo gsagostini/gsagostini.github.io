@@ -1,0 +1,99 @@
+{%- comment -%}
+  Publications · from _data/publications.yml (field guide at the top of that file).
+  "Working papers" (group: working) come first, then "Publications".
+  The site author's name (site.author.name) is bolded automatically; a trailing *
+  (equal contribution) stays outside the bold, and the "* denotes equal contribution"
+  note appears once, only if some author list uses it.
+  The title links to the paper (`paper:`, or the old `link:`); there is no separate paper button.
+  Link buttons, in this order: project, arxiv, code, data, poster, slides, video, bluesky, twitter.
+  The line under the heading is `publications_note` in _config.yml.
+{%- endcomment -%}
+{%- assign pubs = site.data.publications -%}
+{%- if pubs.size > 0 -%}
+{%- assign me = site.author.name | strip -%}
+{%- assign working = pubs | where: "group", "working" -%}
+{%- assign published = pubs | where_exp: "p", "p.group != 'working'" -%}
+{%- assign link_keys = "project,arxiv,code,data,poster,slides,video,bluesky,twitter" | split: "," -%}
+{%- assign equal = false -%}
+{%- for p in pubs -%}{%- if p.authors contains "*" -%}{%- assign equal = true -%}{%- endif -%}{%- endfor %}
+    <section class="section" id="publications" aria-labelledby="pubs-title">
+      <div class="section-head">
+        <h2 class="section-title" id="pubs-title" data-heading>Publications</h2>
+        {%- if equal %}
+        <p class="section-note">* denotes equal contribution</p>
+        {%- endif %}
+      </div>
+      {%- if site.publications_note %}
+      <p class="pubs-note">{{ site.publications_note }}</p>
+      {%- endif %}
+      {%- for g in (1..2) -%}
+        {%- if g == 1 -%}
+          {%- assign items = working -%}{%- assign group_title = "Working papers" -%}
+        {%- else -%}
+          {%- assign items = published -%}{%- assign group_title = "Publications" -%}
+        {%- endif -%}
+        {%- if items.size > 0 %}
+      <div class="group">
+        <h3 class="group-title">{{ group_title }}</h3>
+        <ol class="pubs">
+          {%- for p in items -%}
+          {%- assign paper = p.paper | default: p.link -%}
+          {%- assign venue = p.venue | default: p.journal %}
+          <li class="dated pub">
+            <span class="date pub-year">{{ p.year }}</span>
+            <div class="pub-body">
+              <h4 class="pub-title">{% if paper %}<a href="{{ paper | relative_url | escape }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h4>
+              {%- if p.authors %}
+              <p class="pub-authors">
+                {%- assign names = p.authors | split: "," -%}
+                {%- for raw in names -%}
+                  {%- assign name = raw | strip -%}
+                  {%- assign bare = name | remove: "<strong>" | remove: "</strong>" | remove: "<b>" | remove: "</b>" | remove: "*" | strip -%}
+                  <span class="au">{% if bare == me %}<strong>{{ bare }}</strong>{% if name contains "*" %}*{% endif %}{% else %}{{ name }}{% endif %}</span>{% unless forloop.last %}, {% endunless %}
+                {%- endfor -%}
+              </p>
+              {%- endif %}
+              {%- capture where -%}
+                {%- if venue -%}{{ venue }}{%- endif -%}
+                {%- if p.pages -%}{%- if venue -%}, {% endif -%}<span class="pages">pp.&nbsp;{{ p.pages | replace: "-", "–" }}</span>{%- endif -%}
+              {%- endcapture -%}
+              {%- if p.status or where != "" %}
+              <p class="pub-venue">{% if p.status %}<span class="pub-status">{{ p.status }}</span>{% if where != "" %}<span class="sep" aria-hidden="true"> &middot; </span>{% endif %}{% endif %}{{ where }}</p>
+              {%- endif %}
+              {%- capture pills -%}
+                {%- for key in link_keys -%}
+                  {%- assign url = p[key] -%}
+                  {%- if url -%}
+                    {%- case key -%}
+                      {%- when "project" -%}{%- assign label = p.project_label | default: "project & data" -%}
+                      {%- when "arxiv" -%}{%- assign label = "arXiv" -%}
+                      {%- else -%}{%- assign label = key -%}
+                    {%- endcase %}
+                  <li><a class="pill" href="{{ url | relative_url | escape }}">{{ label | escape }}</a></li>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endcapture -%}
+              {%- if p.badges.size > 0 or pills != "" %}
+              <div class="pub-extras">
+                {%- if p.badges.size > 0 %}
+                <ul class="badges" aria-label="Recognition">
+                  {%- for b in p.badges %}
+                  <li class="badge">{% if b contains "ward" or b contains "rize" or b contains "Best" or b contains "onorable" %}{% include icon.html name="award" %}{% else %}{% include icon.html name="mic" %}{% endif %}<span>{{ b }}</span></li>
+                  {%- endfor %}
+                </ul>
+                {%- endif %}
+                {%- if pills != "" %}
+                <ul class="pills" aria-label="Links">{{ pills }}
+                </ul>
+                {%- endif %}
+              </div>
+              {%- endif %}
+            </div>
+          </li>
+          {%- endfor %}
+        </ol>
+      </div>
+        {%- endif -%}
+      {%- endfor %}
+    </section>
+{%- endif -%}

@@ -1,0 +1,33 @@
+{%- comment -%}
+  News · from _data/news.yml (newest first; how-to at the top of that file).
+  The first site.news_limit items are shown; the rest sit under a native "Older news" toggle.
+  `text` is Markdown, rendered inline.
+{%- endcomment -%}
+{%- assign news = site.data.news -%}
+{%- if news.size > 0 -%}
+{%- assign limit = site.news_limit | default: 5 | plus: 0 -%}
+{%- if limit < 0 -%}{%- assign limit = 0 -%}{%- endif -%}
+{%- assign older = news.size | minus: limit -%}
+{%- comment -%} Site-internal links typed in `text` (e.g. [CV](/documents/Agostini_CV.pdf)) get the baseurl, like relative_url. {%- endcomment -%}
+{%- capture href_root -%}href="{{ '/' | relative_url }}{%- endcapture %}
+    <section class="section" id="news" aria-labelledby="news-title">
+      <div class="section-head"><h2 class="section-title" id="news-title" data-heading>News</h2></div>
+      <ol class="news">
+      {%- for item in news %}
+        {%- if forloop.index0 == limit %}
+      </ol>
+      <details class="older">
+        <summary>{% include icon.html name="chevron" %}<span class="summary-label"><span class="when-closed">Older news</span><span class="when-open">Hide older news</span></span> <span class="count">({{ older }})</span></summary>
+        <ol class="news">
+        {%- endif %}
+        <li class="dated news-item">
+          {% include date.html date=item.date %}
+          <p class="news-text">{{ item.text | markdownify | remove: "<p>" | remove: "</p>" | strip | replace: 'href="//', 'href="§§' | replace: 'href="/', href_root | replace: 'href="§§', 'href="//' }}</p>
+        </li>
+      {%- endfor %}
+      </ol>
+      {%- if older > 0 %}
+      </details>
+      {%- endif %}
+    </section>
+{%- endif -%}

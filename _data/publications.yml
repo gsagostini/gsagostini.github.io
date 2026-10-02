@@ -1,45 +1,85 @@
-- title: "Inferring fine-grained migration patterns across the United States"
-  authors: "<strong>Gabriel Agostini</strong>, Rachel Young, Maria Fitzpatrick, Nikhil Garg, Emma Pierson"
-  journal: "Nature Communications 17"
+# ─────────────────────────────────────────────────────────────────────────────
+#  PUBLICATIONS  ·  newest first (within each group)
+#
+#  Fields (only `title` and `authors` are required):
+#    title:    paper title
+#    authors:  plain text — "Gabriel Agostini" is bolded automatically.
+#              Put * after a name for equal contribution (e.g. "Gabriel Agostini*").
+#    venue:    journal / conference, shown in italics   (old files used `journal:` — still works)
+#    year:     e.g. 2026
+#    pages:    optional, e.g. "1–12"
+#    group:    "working" for Working papers; leave out for published work
+#    status:   optional label shown before the venue, e.g. "To appear", "Under review" (leave out for none)
+#    badges:   optional list, e.g. ["Oral presentation", "Best Paper Award"]
+#    paper:    link to the paper — the TITLE becomes this link (no paper = plain title). Old `link:` still works.
+#    Other links (all optional, shown as small buttons in this order):
+#      project, arxiv, code, data, poster, slides, video, bluesky, twitter
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Working papers ───────────────────────────────────────────────────────────
+
+- title: "Modeling Biker Preferences with Large-Scale E-Bike GPS Data"
+  authors: "Gabriel Agostini, Nikhil Garg, Emma Pierson"
+  venue: "EAAMO 2026"
   year: 2026
-  link: "https://gsagostini.github.io/MIGRATE/"
-  twitter: "https://x.com/gsagostini/status/1905641606327185901"
-  bluesky: "https://bsky.app/profile/gsagostini.bsky.social/post/3llh4qc4bss25"
+  group: working
+  status: "Non-archival"
+
+- title: "Quantifying Spatiotemporal Gaps in Accessibility with Fine-Grained, Open-Source Amenity Datasets"
+  authors: "Gabriel Agostini, Zhixuan Qi, Katelyn Liu, Shreya Sriram, Esther Li, Emma Pierson, Nikhil Garg"
+  group: working
+
+- title: "The Forest from the Trees: Lessons on Public-Sector Deployment from an Academic Collaboration with NYC Department of Parks and Recreation"
+  authors: "Erica Chiang, Katelyn Liu, Anum Ahmad, Zhi Liu, Gabriel Agostini, Tyler Gibson, Uma Bhandaram, Nikhil Garg"
+  group: working
+
+# ── Published ────────────────────────────────────────────────────────────────
+
+- title: "Inferring fine-grained migration patterns across the United States"
+  authors: "Gabriel Agostini, Rachel Young, Maria Fitzpatrick, Nikhil Garg, Emma Pierson"
+  venue: "Nature Communications 17, 1265"
+  year: 2026
+  badges: ["IPUMS Spatial Student Research Award", "AAG-IGIF Student Paper Award"]
+  paper: "https://doi.org/10.1038/s41467-025-68019-2"
+  project: "https://gsagostini.github.io/MIGRATE/"
   poster: "https://gsagostini.github.io/documents/poster.pdf"
+  bluesky: "https://bsky.app/profile/gsagostini.bsky.social/post/3llh4qc4bss25"
+  twitter: "https://x.com/gsagostini/status/1905641606327185901"
 
 - title: "Inequalities in Mobility Patterns: Reconciling Access and Travel in American Cities"
-  authors: "Talia Kaufmann*, <strong>Gabriel Agostini</strong>*, Trivik Verma, Dan O'Brien"
-  journal: "19th International Conference on Computational Urban Planning and Urban Management (CUPUM)"
-  pages: 1-12
+  authors: "Talia Kaufmann*, Gabriel Agostini*, Trivik Verma, Dan O'Brien"
+  venue: "19th International Conference on Computational Urban Planning and Urban Management (CUPUM)"
+  pages: "1–12"
   year: 2025
-  link: "https://osf.io/bfz7k"
+  paper: "https://osf.io/bfz7k"
 
-- title: "Topics, authors, and institutions in Large Language Model research: trends from 17K arXiv papers"
-  authors: "Rajiv Movva*, Sidhika Balachandar*, Kenny Peng*, <strong>Gabriel Agostini</strong>*, Nikhil Garg, Emma Pierson"
-  journal: "NAACL 2024"
-  pages: 1223-1243
+- title: "Topics, Authors, and Institutions in Large Language Model Research: Trends from 17K arXiv Papers"
+  authors: "Rajiv Movva*, Sidhika Balachandar*, Kenny Peng*, Gabriel Agostini*, Nikhil Garg, Emma Pierson"
+  venue: "NAACL 2024"
+  pages: "1223–1243"
   year: 2024
-  link: "https://arxiv.org/pdf/2307.10700"
+  paper: "https://aclanthology.org/2024.naacl-long.67/"
 
-- title: "A Bayesian spatial model to correct under-reporting in urban crowdsourcing"
-  authors: "<strong>Gabriel Agostini</strong>, Emma Pierson, Nikhil Garg"
-  journal: "Proceedings of the AAAI Conference on Artificial Intelligence"
-  pages: 21888-21896
+- title: "A Bayesian Spatial Model to Correct Under-Reporting in Urban Crowdsourcing"
+  authors: "Gabriel Agostini, Emma Pierson, Nikhil Garg"
+  venue: "Proceedings of the AAAI Conference on Artificial Intelligence 38"
+  pages: "21888–21896"
   year: 2024
-  link: "https://arxiv.org/abs/2312.11754"
+  badges: ["Oral presentation"]
+  paper: "https://arxiv.org/abs/2312.11754"
   twitter: "https://x.com/gsagostini/status/1737491820332949907"
-  notes: "**Oral presentation**"
 
 - title: "Identifying Urban Morphology from Street Networks with Graphlet Analysis"
-  authors: "<strong>Gabriel Agostini</strong>, Juliana Gonçalves, Trivik Verma"
-  journal: "Annual Geographical Information Science Research UK (GISRUK)"
-  pages: 1-6
-  year: 2021
-  link: "https://zenodo.org/records/6407124"
+  authors: "Gabriel Agostini, Juliana Gonçalves, Trivik Verma"
+  venue: "30th Annual Geographical Information Science Research UK (GISRUK)"
+  pages: "1–6"
+  year: 2022
+  paper: "https://zenodo.org/records/6407124"
+  video: "https://youtu.be/4PyglEmb1Jw"
 
-- title: "A Category-Theory Approach for Construction Ontologies in Subsurface Mass Transit"
-  authors: "<strong>Gabriel Agostini</strong>, Yushan Zhang, Debra Laefer"
-  journal: "The International Archives of Photogrammetry, Remote Sensing and Spatial Information Sciences"
-  pages: 125-130
+- title: "A Category-Theory Approach to Construction Ontologies in Subsurface Mass Transit"
+  authors: "Gabriel Agostini, Yushan Zhang, Debra Laefer"
+  venue: "International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences XLVI-4/W4"
+  pages: "125–130"
   year: 2021
-  link: "https://isprs-archives.copernicus.org/articles/XLVI-4-W4-2021/125/2021/isprs-archives-XLVI-4-W4-2021-125-2021.pdf"
+  paper: "https://isprs-archives.copernicus.org/articles/XLVI-4-W4-2021/125/2021/isprs-archives-XLVI-4-W4-2021-125-2021.pdf"

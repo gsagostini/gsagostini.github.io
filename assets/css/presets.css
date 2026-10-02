@@ -1,0 +1,94 @@
+/* ==========================================================================
+   SHARED STYLE PRESETS — round 2 (inline this block FIRST in every variation)
+   Switch with attributes on <html>:   data-font="original|inter|source"
+                                       data-accent="sage|fern|forest|spruce|moss|emerald|red"
+                                       data-bg="cream|white|gray|cool|stone|sand|mint|blush|custom"
+                                       data-theme="light|dark"   (dark mode; overrides the background)
+   or with URL params:   index.html?font=inter&accent=red&bg=white   (see presets.js; accent + bg also take a hex)
+   Pages must take ALL colors and type from these tokens — no hard-coded colors/fonts elsewhere.
+   ========================================================================== */
+:root {
+  /* neutrals (shared by every preset) */
+  --bg:        #FCFBF5;
+  --surface:   #F5F3EA;
+  --ink:       #1F2328;
+  --muted:     #5B6270;
+  --rule:      #E4E1D6;
+  --accent-ink:#FFFFFF;
+
+  /* accent: --brand is the colour you pick (preset or hex); --accent is what pages use. In light mode they
+     are the same; dark mode lightens it so links stay readable. --accent-soft follows ANY accent. */
+  --brand:       #2F5D46;
+  --accent:      var(--brand);
+  --accent-soft: color-mix(in srgb, var(--accent) 11%, var(--bg));
+  --shadow-ink:  var(--ink);   /* shadows are mixed from this (black in dark mode) */
+
+  /* type — default: the owner's original font */
+  --font-body:    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-head:    var(--font-body);
+  --weight-body:   300;
+  --weight-strong: 600;   /* 600 maps to real bold in Helvetica Neue, Helvetica and Arial (500 renders as regular in Arial) */
+  --weight-head:   500;
+
+  /* ONE size for all text (name + section headings excepted) */
+  --text: 18px;
+  --leading: 1.65;
+}
+@media (max-width: 600px) { :root { --text: 17px; } }
+
+/* accent presets (soft tints listed for browsers without color-mix) */
+:root[data-accent="sage"]    { --brand: #4E7A5D; } /* the current site's sage, deepened for readable text (soft ≈ #E9EDE4) */
+:root[data-accent="fern"]    { --brand: #3B7046; } /* soft ≈ #E7ECE2 */
+:root[data-accent="forest"]  { --brand: #2F5D46; } /* soft ≈ #E5EAE2 */
+:root[data-accent="spruce"]  { --brand: #1D5C57; } /* soft ≈ #E3EAE4 */
+:root[data-accent="moss"]    { --brand: #56682C; } /* soft ≈ #EAEBDF */
+:root[data-accent="emerald"] { --brand: #1B6B45; } /* soft ≈ #E3EBE2 */
+:root[data-accent="red"]     { --brand: #B51700; } /* exact red of the research-statement figure (soft ≈ #F4E2DA) */
+@supports not (color: color-mix(in srgb, red 50%, white)) {
+  :root { --accent-soft: #E5EAE2; }
+  :root[data-accent="sage"] { --accent-soft: #E9EDE4; }   :root[data-accent="fern"] { --accent-soft: #E7ECE2; }
+  :root[data-accent="spruce"] { --accent-soft: #E3EAE4; } :root[data-accent="moss"] { --accent-soft: #EAEBDF; }
+  :root[data-accent="emerald"] { --accent-soft: #E3EBE2; } :root[data-accent="red"] { --accent-soft: #F4E2DA; }
+}
+
+/* background presets: cream is the default (no attribute needed). Any other background, incl. data-bg="custom"
+   with an inline --bg hex, gets its panel (--surface) and line (--rule) tints mixed from the ink automatically. */
+:root[data-bg]         { --surface: color-mix(in srgb, var(--ink) 4%, var(--bg));
+                         --rule:    color-mix(in srgb, var(--ink) 12%, var(--bg)); }
+:root[data-bg="cream"] { --bg: #FCFBF5; --surface: #F5F3EA; --rule: #E4E1D6; }  /* the current look */
+:root[data-bg="white"] { --bg: #FFFFFF; }
+:root[data-bg="gray"]  { --bg: #F2F2F2; }
+:root[data-bg="cool"]  { --bg: #F0F2F5; }  /* cool gray */
+:root[data-bg="stone"] { --bg: #F1EFEA; }  /* warm gray */
+:root[data-bg="sand"]  { --bg: #F5EFE3; }
+:root[data-bg="mint"]  { --bg: #EFF4EE; }
+:root[data-bg="blush"] { --bg: #FBF1EE; }
+
+/* font presets */
+:root[data-font="original"] {   /* exactly the current site: Helvetica Neue Light on Macs, Arial elsewhere */
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif; --font-head: var(--font-body);
+  --weight-body: 300; --weight-strong: 600; --weight-head: 500;
+}
+:root[data-font="inter"] {
+  --font-body: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif; --font-head: var(--font-body);
+  --weight-body: 400; --weight-strong: 600; --weight-head: 600;
+}
+:root[data-font="source"] {
+  --font-body: "Source Sans 3", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-head: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --weight-body: 400; --weight-strong: 600; --weight-head: 600;
+}
+
+/* ===== Dark mode: <html data-theme="dark"> — set by the toggle (remembered per visitor), ?theme=dark, or
+   style.theme in _config.yml. It replaces the background preset (!important also beats a custom --bg set inline). */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg:      #1A1A18 !important;
+  --surface: #23231F !important;
+  --rule:    #36352F !important;
+  --ink:     #ECE9E1;
+  --muted:   #A9A79F;
+  --accent:  color-mix(in srgb, var(--brand) 55%, #FFFFFF);   /* e.g. red #B51700 -> #D67F73 */
+  --accent-ink: #1A1A18;                                       /* text on accent-filled buttons */
+  --shadow-ink: #000000;
+}

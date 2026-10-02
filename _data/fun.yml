@@ -1,0 +1,100 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  FUN PAGE (/fun/) · one block per section, shown in THIS order — move a block to reorder.
+#  Text fields are HTML (use <a href="…">…</a>, <i>…</i>, <b>…</b>).
+#  Essays: the title is the link (url:); add a new essay by copying one and editing it.
+#  Cocktail menus are listed in _data/cocktails.yml; Goodreads books update themselves daily.
+#  Mezcal: "featured" = the three photos on this page; the Mezcal page (/mezcal/) shows every
+#  photo in documents/cat/ — to add one, just put the photo in that folder.
+# ─────────────────────────────────────────────────────────────────────────────
+click_hint: "Click on the titles to read."   # shown above each list of essays
+
+sections:
+  - id: film
+    title: Film
+    name: BADWIZARD
+    subtitle: "Short film with Tianyi Sun · Backslash at Cornell Tech · 2026"
+    html: >-
+      What happens when data is returned to the real world via art? I am currently producing a short film about urban data in collaboration with New York based multimedia artist <a href="https://mysterioussubmarine.com">Tianyi Sun</a> through Cornell Tech's <a href="https://backslash.org">Backslash Fellowship</a>&mdash;which pairs PhD students with artists engaged with new technologies. We are working on <a href="https://backslash.org/art/Tianyi-sun-badwizard">BADWIZARD</a>, an experimental piece about how an urban dataset of complaints and requests fabricates a shared civic memory among citizens and data scientists.
+    video:                       # the teaser (YouTube); nothing loads from YouTube until Play is pressed
+      id: VRru7tU6zLw
+      title: "BADWIZARD by Tianyi Sun 2026 (teaser)"
+      channel: "Backslash at Cornell Tech"
+    links:
+      - label: "Read our reflections"
+        url: "https://backslash.org/art/Tianyi-sun-badwizard#collaborator-statement"
+
+  - id: urban
+    title: "Urban+"
+    intro: >-
+      I have written a lot about cities and geography during my undergrad. Here is some of that work:
+    groups:
+      - title: "Brazilian urban planning"
+        essays:
+          - title: "Naturally Artificial: Continuity and Change in the Street Network of Rio de Janeiro"
+            url: "/documents/urban/rio.pdf"
+            html: >-
+              I use street network analysis on historical maps to study the change in the street layout of Rio de Janeiro during the colonial period.
+          - title: "Confluences of the Past in Brasília: Another Plano Piloto for Brazilian Modernist Urbanism"
+            url: "/documents/urban/confluences.pdf"
+            html: >-
+              I look at the eurocentric historiography that predominantly constrained Brazilian Modernism and propose alternative, de-colonial avenues for future research rooted within Brazil's own city-planning tradition. Published in the <a href="https://www.bcurbanreview.com">Barnard Columbia Urban Review</a>, Fall 2021.
+          - title: "What Cannibals Eat For Dessert: Aftermaths of Modernism in Latin American Urban Planning"
+            url: "/documents/urban/cannibalism.pdf"
+            html: >-
+              A review essay on the same topic.
+      - title: "Architecture and urban planning through art and fiction"
+        essays:
+          - title: "The Life of Yellowing Papers: Participatory Urban Planning in Archigram's Living City"
+            url: "/documents/urban/archigram.pdf"
+            html: >-
+              Still looking at modernism (and Brasília!), I discuss the dissonances between the British architectural collective <a href="https://www.archigram.net/about-archigram">Archigram</a> and modernist town planning.
+          - title: "OH, FUCK ALL THIS WALKING! The Metafictional Geography of Movement in Albert Angelo"
+            url: "/documents/urban/f-walking.pdf"
+            html: >-
+              Continuing on the theme of British literature and architecture, I use spatial analysis and GIS to study movement in B.S. Johnson's brutalist novel <i>Albert Angelo</i>.
+
+  - id: books
+    title: Books
+    intro: >-
+      When it comes to books, I am a fierce reviewer #2. Check my <a href="https://www.goodreads.com/user/show/156196841">Goodreads</a> profile to follow my literary criticism. Here are some recent additions to my shelf&mdash;click on a cover to read more!
+    goodreads: "https://www.goodreads.com/user/show/156196841"
+
+  - id: swift
+    title: "Taylor Swift"
+    intro: >-
+      I spend too much time not only listening but analyzing Taylor Swift songs. I also produce academic research on her music. Because I unfortunately have not yet found a reputable journal on Taylor Swift Studies to publish my work, you can read the preprints below:
+    essays:
+      - title: "Look What You Made Me Redo: Memory and Meaning in Taylor Swift's Rerecordings"
+        url: "/documents/taylorswift/CC.pdf"
+        html: >-
+          Written for Columbia's <a href="https://www.college.columbia.edu/core-curriculum/classes/contemporary-civilization">Contemporary Civilization</a> class in 2021, this essay investigates Swift's re-recordings and their ontological implications in Aesthetics. I use canonical texts from Western philosophy, such as Marx and Nietzsche, to support my point.
+      - title: "Look What You Made Me Listen To: The Musical Journey of Taylor Swift"
+        url: "/documents/taylorswift/UW.pdf"
+        html: >-
+          I had been thinking about these ideas much earlier in my Swiftie career: this essay from 2017 focuses on the themes of memory and repetition in Taylor Swift's music as she released <i>reputation</i>.
+
+  - id: mezcal
+    title: Mezcal
+    name: "Mezcal the cat"           # the heading of the Mezcal page
+    intro: >-
+      Mezcal is my adorable yet sometimes grudgy cat.
+    featured:                  # the three photos shown on the Fun page (file names in documents/cat/)
+      - chair.JPG
+      - hiding_spot.JPG
+      - box2.JPG
+    alt:                       # optional: what each photo shows (read aloud by screen readers)
+      nap.JPG: "Mezcal, a tabby with white paws, napping on a grey sofa"
+      mittens.JPG: "Mezcal stretched out on a table by a brick wall, white paws dangling over the edge"
+      chair.JPG: "Mezcal sitting in a grey armchair, looking at the camera"
+      cat_grass.JPG: "Mezcal lounging on a sunny windowsill next to a pot of cat grass"
+      hiding_spot.JPG: "Mezcal peeking out of a fabric cat cube"
+      mittens2.JPG: "Mezcal reaching one white paw over the edge of a table"
+      box2.JPG: "Mezcal lying upside down on a wooden floor beside a cardboard box"
+    note: >-
+      <b>Important clarification:</b> The cat in my profile picture is not Mezcal. That is Scotty, one of my feline godchildren. Mezcal would be extremely upset if I tried to put him on my shoulders. I have tried.
+
+  - id: cocktails
+    title: Cocktails
+    intro: >-
+      I'm an amateur mixologist and enjoy creating themed cocktail menus. Follow my cocktail adventures on <a href="https://www.instagram.com/tabbycocktails/">Instagram</a>. Check out my Pumpkin Party menu (which is a yearly holiday I celebrate) and my Oscars 2025 menu.
+    # the menus themselves: _data/cocktails.yml

@@ -1,0 +1,55 @@
+{%- comment -%}
+  Talks · from _data/talks.yml (field guide at the top of that file).
+  Grouped by `type`: "invited" → Invited talks & lectures; anything else → Conference talks.
+  Row = title (or the venue when there is no title) over venue/event, plus optional
+  slides / video / link buttons. title, venue and event may contain Markdown links: [EEPI Seminar](https://…)
+{%- endcomment -%}
+{%- assign talks = site.data.talks -%}
+{%- if talks.size > 0 -%}
+{%- assign invited = talks | where: "type", "invited" -%}
+{%- assign conference = talks | where_exp: "t", "t.type != 'invited'" -%}
+{%- assign link_keys = "slides,video,link" | split: "," %}
+    <section class="section" id="talks" aria-labelledby="talks-title">
+      <div class="section-head"><h2 class="section-title" id="talks-title" data-heading>Talks</h2></div>
+      {%- for g in (1..2) -%}
+        {%- if g == 1 -%}
+          {%- assign items = invited -%}{%- assign group_title = "Invited talks &amp; lectures" -%}
+        {%- else -%}
+          {%- assign items = conference -%}{%- assign group_title = "Conference talks" -%}
+        {%- endif -%}
+        {%- if items.size > 0 %}
+      <div class="group">
+        <h3 class="group-title">{{ group_title }}</h3>
+        <ol class="talks">
+          {%- for t in items %}
+          {%- if t.title -%}
+            {%- assign heading = t.title -%}
+            {%- capture meta -%}{{ t.venue }}{% if t.venue and t.event %}, {% endif %}{{ t.event }}{%- endcapture -%}
+          {%- elsif t.venue -%}
+            {%- assign heading = t.venue -%}
+            {%- assign meta = t.event | default: "" -%}
+          {%- else -%}
+            {%- assign heading = t.event -%}
+            {%- assign meta = "" -%}
+          {%- endif -%}
+          {%- capture links -%}
+            {%- for key in link_keys -%}
+              {%- if t[key] -%}<a class="pill pill-inline" href="{{ t[key] | relative_url | escape }}">{{ key }}</a>{%- endif -%}
+            {%- endfor -%}
+          {%- endcapture %}
+          <li class="dated talk">
+            {% include date.html date=t.date %}
+            <div class="talk-body">
+              <p class="talk-title">{{ heading | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+              {%- if meta != "" or links != "" %}
+              <p class="talk-meta">{% if meta != "" %}<span class="talk-venue">{{ meta | markdownify | remove: "<p>" | remove: "</p>" | strip }}</span>{% endif %}{% if links != "" %} <span class="talk-links">{{ links }}</span>{% endif %}</p>
+              {%- endif %}
+            </div>
+          </li>
+          {%- endfor %}
+        </ol>
+      </div>
+        {%- endif -%}
+      {%- endfor %}
+    </section>
+{%- endif -%}

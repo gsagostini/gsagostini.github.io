@@ -1,0 +1,608 @@
+/* Site chrome + homepage. Copied from the approved mockup (mockups/b2-sidebar/template.html.j2).
+   Colours and type come from presets.css (loaded first); look options are attributes on <html>:
+   data-profile="left|centered", data-bubbles="row-below|2-3|3-3|2-3-pill|row|row-cv", data-bg, data-font, data-accent. */
+/* =========================================================================
+   B2 layout tokens. No colours or fonts here: every colour and every
+   type setting comes from the shared preset tokens above.
+   ========================================================================= */
+:root {
+  /* derived tints, mixed from the tokens so any preset carries through */
+  --rule-strong: var(--rule);
+  --accent-line: var(--accent);
+
+  /* spacing scale */
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 24px;
+  --sp-6: 32px; --sp-7: 48px; --sp-8: 64px;
+
+  --gutter: 20px;          /* page side padding (phones) */
+  --date-col: 6em;         /* the date "rail" in News / Publications / Talks */
+  --radius: 6px;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+
+  /* headings are the only text allowed to be larger than var(--text) */
+  --name-size: calc(var(--text) * 1.75);
+  --h2-size: calc(var(--text) * 1.45);
+
+  /* photo + bubbles (the original site's round icon buttons) */
+  --avatar: 160px;
+  --bubble-gap: clamp(6px, (100vw - 300px) / 9, 10px);
+  --bubble: clamp(38px, (100vw - 2 * var(--gutter) - 5 * var(--bubble-gap)) / 6, 44px);
+  --bubble-row: calc(6 * var(--bubble) + 5 * var(--bubble-gap));
+  --bubble-border: 2px;
+  --bubble-icon: 20px;
+}
+@supports (color: color-mix(in srgb, currentColor 50%, transparent)) {
+  :root {
+    --rule-strong: color-mix(in srgb, var(--ink) 18%, var(--bg));
+    --accent-line: color-mix(in srgb, var(--accent) 42%, var(--bg));
+  }
+}
+
+/* =========================================================================
+   Base
+   ========================================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--text);
+  font-weight: var(--weight-body);
+  line-height: var(--leading);
+  font-kerning: normal;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
+}
+/* one size for all text: reset every element that browsers would otherwise scale */
+h1, h2, h3, h4, p, ul, ol { margin: 0; }
+h3, h4, summary, time, small, button { font-size: var(--text); }
+b, strong { font-weight: var(--weight-strong); }
+img { display: block; max-width: 100%; height: auto; }
+svg { flex: none; }
+a { color: inherit; }
+ul, ol { list-style: none; padding: 0; }
+::selection { background: var(--accent-soft); color: var(--ink); }
+
+a:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.skip-link {
+  position: absolute; z-index: 50; left: var(--sp-4); top: var(--sp-4);
+  padding: 10px 16px; border-radius: var(--radius);
+  background: var(--ink); color: var(--bg); font-weight: var(--weight-strong); text-decoration: none;
+  transform: translateY(-160%);
+}
+.skip-link:focus { transform: none; }
+
+/* underlined text links (bio, news) */
+.prose a, .news-text a, .talk-title a, .talk-venue a {
+  color: var(--accent);
+  text-decoration-line: underline;
+  text-decoration-color: var(--accent-line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: .22em;
+  transition: text-decoration-color .15s var(--ease);
+}
+.prose a:hover, .news-text a:hover, .talk-title a:hover, .talk-venue a:hover { text-decoration-color: currentColor; }
+
+/* =========================================================================
+   Page frame (phones first: profile, sticky section bar, content)
+   ========================================================================= */
+.page {
+  max-width: calc(40rem + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+/* the rail wrapper only exists for the desktop column; on small screens its children
+   join the page flow so the section bar can stay stuck for the whole page */
+.rail { display: contents; }
+
+/* ---- Profile: photo, bubbles directly under it, then name ------------- */
+.profile {
+  display: flex; flex-direction: column; align-items: center;
+  padding-block: var(--sp-6) var(--sp-5);
+  text-align: center;
+}
+.portrait { display: flex; flex-direction: column; align-items: center; }
+.avatar {
+  width: var(--avatar); height: var(--avatar);
+  border-radius: 50%;
+  object-fit: cover; object-position: 50% 50%;  /* the whole square photo, no zoom */
+  background: var(--surface);
+}
+.bubbles {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: var(--bubble-gap);
+  margin-top: var(--sp-4);
+}
+.bubble {
+  display: grid; place-items: center;
+  width: var(--bubble); height: var(--bubble);
+  border: var(--bubble-border) solid var(--ink);
+  border-radius: 50%;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color .18s var(--ease), border-color .18s var(--ease), background-color .18s var(--ease);
+}
+.bubble svg { width: var(--bubble-icon); height: var(--bubble-icon); }
+.bubble:hover, .bubble:focus-visible {
+  background: var(--accent); border-color: var(--accent); color: var(--accent-ink);
+}
+.bubble:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.identity { margin-top: var(--sp-5); min-width: 0; }
+.name {
+  font-family: var(--font-head);
+  font-weight: var(--weight-head);
+  font-size: var(--name-size);
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  white-space: nowrap;
+}
+.role { margin-top: var(--sp-2); }
+.affil { color: var(--muted); }
+
+/* ---- Section nav: sticky slim bar on small screens ------------------- */
+.toc {
+  /* tab padding tightens on narrow phones so all five tabs fit; the bar's own padding
+     shrinks to match, so "About" stays on the content edge */
+  --tab-pad: clamp(3px, (100vw - 300px) / 10, 10px);
+  position: sticky; top: 0; z-index: 10;
+  margin-inline: calc(-1 * var(--gutter));
+  padding-inline: calc(var(--gutter) - var(--tab-pad));
+  background: var(--bg);
+  border-block: 1px solid var(--rule);
+  /* full-bleed background + hairlines when the page column is narrower than the screen
+     (shadow and border-image outset are ink overflow, so they never cause sideways scroll) */
+  box-shadow: 0 0 0 100vmax var(--bg);
+  clip-path: inset(0 -100vmax);
+  border-image: linear-gradient(var(--rule), var(--rule)) 1 / 1px 0 / 0 100vmax;
+}
+.toc ul {
+  position: relative;
+  display: flex; justify-content: space-between;
+  overflow-x: auto; scrollbar-width: none;
+}
+.toc ul::-webkit-scrollbar { display: none; }
+.toc a,
+.toc .toc-btn {
+  display: flex; align-items: center; gap: 3px;
+  min-height: 48px; padding: 0 var(--tab-pad);
+  color: var(--muted);
+  font-weight: var(--weight-strong);
+  text-decoration: none; white-space: nowrap;
+  transition: color .2s var(--ease), box-shadow .2s var(--ease);
+}
+.toc a:hover,
+.toc .toc-btn:hover { color: var(--ink); }
+.toc a.is-active,
+.toc .toc-btn.is-active { color: var(--accent); box-shadow: inset 0 -2px 0 var(--accent); }
+.toc a:focus-visible,
+.toc .toc-btn:focus-visible { outline-offset: -2px; border-radius: 4px; }
+.toc a svg,
+.toc .toc-btn svg { width: 14px; height: 14px; }
+
+/* =========================================================================
+   Main content
+   ========================================================================= */
+main { min-width: 0; }
+.section {
+  padding-block: var(--sp-7);
+  border-top: 1px solid var(--rule);
+  scroll-margin-top: 49px;
+}
+.section:first-child { border-top: 0; padding-top: var(--sp-6); }
+.section-head {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  gap: var(--sp-1) var(--sp-4);
+  margin-bottom: var(--sp-5);
+}
+.section-title {
+  font-family: var(--font-head);
+  font-weight: var(--weight-head);
+  font-size: var(--h2-size);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.section-note { color: var(--muted); font-style: italic; }
+
+/* ---- About (prose) ---------------------------------------------------- */
+.prose { max-width: 62ch; }  /* ≈ 66–72 characters per full line in every font preset */
+.prose p { text-wrap: pretty; }
+.prose p + p { margin-top: .9em; }
+
+/* ---- Dated rows (shared by news, publications, talks) ---------------- */
+.dated {
+  display: grid;
+  grid-template-columns: var(--date-col) minmax(0, 1fr);
+  align-items: baseline;
+}
+.date {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums lining-nums;
+  white-space: nowrap;
+}
+
+/* ---- News ------------------------------------------------------------- */
+.news { display: grid; gap: var(--sp-3); }
+.news-text { text-wrap: pretty; }
+.older { margin-top: var(--sp-3); padding-left: var(--date-col); }
+.older > summary {
+  display: inline-flex; align-items: center; gap: 6px;
+  min-height: 40px;
+  color: var(--accent);
+  font-weight: var(--weight-strong);
+  list-style: none; cursor: pointer;
+  border-radius: 4px;
+}
+.older > summary::-webkit-details-marker { display: none; }
+.older > summary svg { width: 16px; height: 16px; transition: transform .2s var(--ease); }
+.older[open] > summary svg { transform: rotate(90deg); }
+.older > summary:hover .summary-label { text-decoration: underline; text-underline-offset: .22em; text-decoration-thickness: 1px; }
+.older .count { color: var(--muted); font-weight: var(--weight-body); font-variant-numeric: tabular-nums; }
+.older[open] .when-closed, .older:not([open]) .when-open { display: none; }
+.older > .news { margin: var(--sp-2) 0 0 calc(-1 * var(--date-col)); }
+
+/* ---- Groups (Working papers / Publications, Invited / Conference) ---- */
+.group + .group { margin-top: var(--sp-7); }
+.group-title {
+  display: flex; align-items: center; gap: var(--sp-4);
+  margin: 0 0 var(--sp-4);
+  color: var(--muted);
+  font-family: var(--font-head);
+  font-weight: var(--weight-head);
+}
+.group-title::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+
+/* ---- Publications ----------------------------------------------------- */
+.pubs { display: grid; gap: var(--sp-6); }
+.pub-title {
+  font-weight: var(--weight-strong);
+  line-height: calc(var(--leading) - .2);
+  text-wrap: pretty;
+}
+.pub-title a {
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .2em;
+  transition: color .15s var(--ease), text-decoration-color .15s var(--ease);
+}
+.pub-title a:hover { color: var(--accent); text-decoration-color: currentColor; }
+.pub-authors { margin-top: 2px; color: var(--muted); }
+.pub-authors strong { color: var(--ink); }
+.au { white-space: nowrap; }
+.pub-venue { color: var(--muted); font-style: italic; }
+.pub-extras { display: grid; justify-items: start; gap: var(--sp-2); margin-top: var(--sp-2); }
+.pills { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+
+.pill {
+  position: relative;
+  display: inline-flex; align-items: center;
+  min-height: 32px; padding: 1px 12px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  color: var(--ink);
+  line-height: 1.25;
+  text-decoration: none; white-space: nowrap;
+  transition: color .15s var(--ease), border-color .15s var(--ease), background-color .15s var(--ease);
+}
+.pill::after { content: ""; position: absolute; inset: -6px -3px; }  /* larger touch target */
+.pill:hover, .pill:focus-visible { color: var(--accent-ink); border-color: var(--accent); background: var(--accent); }
+/* awards / oral: quiet accent lines (icon + text), so link pills are the only chips */
+.badges { display: grid; }
+.badge { display: flex; align-items: center; gap: 8px; color: var(--accent); }
+.badge svg { width: 18px; height: 18px; }
+
+/* ---- Talks ------------------------------------------------------------ */
+.talks { display: grid; gap: var(--sp-4); }
+.talk-title { font-weight: var(--weight-strong); line-height: calc(var(--leading) - .2); text-wrap: pretty; }
+.talk-meta { color: var(--muted); }
+/* the gap before inline pills lives on the venue's end, so a pill that wraps starts flush left */
+.talk-venue:not(:last-child) { margin-right: .35em; }
+.talk-links { white-space: nowrap; }
+.pill-inline { min-height: 28px; padding: 0 10px; vertical-align: 1px; }
+.pill-inline + .pill-inline { margin-left: 6px; }
+
+/* ---- Footer ----------------------------------------------------------- */
+.foot {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: var(--sp-2) var(--sp-5);
+  padding-block: var(--sp-5) var(--sp-7);
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+}
+.foot a { text-decoration-color: var(--rule-strong); text-underline-offset: .22em; transition: color .15s var(--ease); }
+.foot a:hover { color: var(--accent); text-decoration-color: currentColor; }
+.foot .sep { margin-inline: .2em; opacity: .6; }
+.foot .updated { white-space: nowrap; }
+.to-top { display: inline-flex; align-items: center; gap: 6px; text-decoration: none; }
+.to-top svg { width: 16px; height: 16px; }
+
+/* =========================================================================
+   Phones: stack dates above their rows
+   ========================================================================= */
+@media (max-width: 559.98px) {
+  .dated { grid-template-columns: minmax(0, 1fr); }
+  .older { padding-left: 0; }
+  .older > .news { margin-left: 0; }
+  .news { gap: var(--sp-4); }
+  .talks { gap: 18px; }
+  .pubs { gap: 28px; }
+  /* footer: "Last updated" gets its own line; links get a 44px-tall hit area that doesn't move the text */
+  .foot .sep-last { display: none; }
+  .foot .updated { display: block; }
+  .foot a { position: relative; }
+  .foot a::after { content: ""; position: absolute; inset: -10px -4px; }
+}
+
+/* =========================================================================
+   Tablet: same stack, more air; side by side once there is room
+   ========================================================================= */
+@media (min-width: 600px) and (max-width: 979.98px) {
+  :root { --gutter: 40px; --avatar: 200px; --name-size: calc(var(--text) * 2); --h2-size: calc(var(--text) * 1.5); }
+  .page { max-width: calc(38em + 2 * var(--gutter)); }
+  .profile { padding-block: var(--sp-7) var(--sp-6); }
+  .toc ul { justify-content: flex-start; gap: 8px; }
+}
+@media (min-width: 720px) and (max-width: 979.98px) {
+  /* the original site's arrangement: photo + bubbles on the left, the name beside them */
+  .profile {
+    display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center;
+    column-gap: clamp(28px, 5vw, 48px);
+    text-align: left;
+  }
+  .identity { margin-top: 0; }
+}
+
+/* =========================================================================
+   Desktop: two columns — sticky profile rail + reading column
+   ========================================================================= */
+@media (min-width: 980px) {
+  :root {
+    --gutter: 48px;
+    /* 240px photo over a 280px row of 40px bubbles: centred over the row, the photo sits
+       only 20px inside the text edge, so photo, bubbles and name read as one column */
+    --avatar: clamp(200px, 31vh, 240px);  /* full size from ~775px tall; the rail still fits at 640px */
+    --bubble: 40px;
+    --bubble-gap: 8px;
+    --name-size: calc(var(--text) * 2);
+    --h2-size: calc(var(--text) * 1.5);
+  }
+  .page {
+    /* a little wider than the bubble row, so "PhD student in Information Science" stays on
+       one line in every font preset (Inter is the widest) */
+    --side: clamp(316px, 22vw, 332px);
+    --gap: clamp(64px, 8vw, 136px);
+    --main: 36em;
+    /* the rail breathes with the window height so it always fits while sticky */
+    --rail-top: clamp(32px, 6.5vh, 64px);
+    display: grid;
+    grid-template-columns: var(--side) minmax(0, var(--main));
+    grid-template-rows: 1fr auto;
+    column-gap: var(--gap);
+    justify-content: center;
+    max-width: none;
+  }
+  .rail {
+    display: block;
+    grid-column: 1; grid-row: 1 / span 2;
+    align-self: start;
+    position: sticky; top: 0;
+    max-height: 100vh; max-height: 100dvh;
+    overflow-y: auto;  /* safety net only: the vh clamps keep the rail within the viewport */
+    scrollbar-width: thin; scrollbar-color: var(--rule-strong) transparent;
+    padding-block: var(--rail-top) var(--sp-5);
+    /* a scroll box clips at its padding edge: this room lets focus rings draw in full,
+       and the negative margin keeps the rail's content exactly on the grid line */
+    padding-inline: var(--sp-3);
+    margin-inline: calc(-1 * var(--sp-3));
+  }
+  main { grid-column: 2; grid-row: 1; padding-top: var(--rail-top); }
+  .foot { grid-column: 2; grid-row: 2; }
+
+  .profile { display: block; padding: 0; text-align: left; }
+  .portrait { width: var(--bubble-row); }
+  .bubbles { flex-wrap: nowrap; justify-content: flex-start; margin-top: clamp(12px, 2vh, 18px); }
+  .identity { margin-top: clamp(18px, 3.2vh, 28px); }
+  .role { margin-top: 6px; }
+
+  .toc {
+    position: static;
+    width: var(--bubble-row);  /* the rule spans exactly the bubble row */
+    margin: clamp(16px, 3vh, 28px) 0 0; padding: clamp(10px, 2vh, 18px) 0 0;
+    background: none; border: 0; border-top: 1px solid var(--rule);
+    box-shadow: none; clip-path: none; border-image: none;
+  }
+  .toc ul { display: grid; overflow: visible; justify-content: start; }
+  .toc a,
+  .toc .toc-btn {
+    gap: 14px; min-height: clamp(32px, 4.3vh, 38px); padding: 0;
+    font-weight: var(--weight-body);
+  }
+  .toc a::before,
+  .toc .toc-btn::before {
+    content: ""; width: 18px; height: 1px; background: currentColor;
+    transition: width .3s var(--ease), background-color .3s var(--ease), height .3s var(--ease);
+  }
+  .toc a:hover::before,
+  .toc .toc-btn:hover::before { width: 28px; }
+  .toc a svg,
+  .toc .toc-btn svg { margin-left: -10px; }  /* keep the external-link arrow close to "Fun" despite the 14px gap */
+  .toc a:focus-visible,  /* keep the external-link arrow close to "Fun" despite the 14px gap */
+  .toc .toc-btn:focus-visible { outline-offset: 4px; border-radius: 2px; }
+  .toc a.is-active,
+  .toc .toc-btn.is-active { box-shadow: none; font-weight: var(--weight-strong); }
+  .toc a.is-active::before,
+  .toc .toc-btn.is-active::before { width: 36px; height: 2px; background: var(--accent); }
+
+  .section { padding-block: var(--sp-7); scroll-margin-top: 0; }
+  .section:first-child { padding-top: 0; scroll-margin-top: var(--rail-top); }
+  .section:first-child .section-title { margin-top: -.28em; }  /* cap height meets the top of the photo */
+}
+
+/* very short windows: let the rail scroll away with the page instead of sticking */
+@media (min-width: 980px) and (max-height: 640px) {
+  .rail { position: static; max-height: none; overflow: visible; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+/* =========================================================================
+   Contact bubbles — arrangement options (owner: "scholar, github should be top line.
+   bluesky, twitter, email in bottom line. No CV button ... and then an option with the CV button")
+   <html data-bubbles="2-3">      Scholar · GitHub  /  Bluesky · X · Email   (no CV bubble; the bio links the CV)
+   <html data-bubbles="3-3">      Scholar · GitHub · CV  /  Bluesky · X · Email
+   <html data-bubbles="2-3-pill"> the 2-3 rows + a small "CV" pill button under them
+   <html data-bubbles="row">      one row of five (no CV)      <html data-bubbles="row-cv">  one row of six
+   Rows are centered under the photo in both profile looks.
+   ========================================================================= */
+.bubbles { display: flex; flex-direction: column; align-items: center; gap: var(--bubble-gap); }
+.brow { display: flex; justify-content: center; gap: var(--bubble-gap); }
+.bi { display: flex; }
+html[data-bubbles="2-3"] .bi--cv, html[data-bubbles="2-3-pill"] .bi--cv, html[data-bubbles="row"] .bi--cv { display: none; }
+html[data-bubbles="row"] .bubbles, html[data-bubbles="row-cv"] .bubbles { flex-direction: row; justify-content: center; }
+html[data-bubbles="row"] .brow, html[data-bubbles="row-cv"] .brow { display: contents; }
+html[data-bubbles="row-cv"] .bi--cv { order: 9; }
+@media (min-width: 980px) {
+  .bubbles { flex-wrap: nowrap; align-items: center; justify-content: center; }
+}
+/* two bubble rows (and the pill) cost height: let the photo give a little back on short screens
+   so the sticky rail always fits (checked at 1280x720, 1366x768, 1440x900, 1920x1080) */
+@media (min-width: 980px) {
+  html[data-bubbles="2-3"], html[data-bubbles="3-3"] { --avatar: clamp(176px, 27vh, 240px); }
+  html[data-bubbles="2-3-pill"] { --avatar: clamp(160px, 24.5vh, 240px); }
+}
+@media (min-width: 980px) and (max-height: 820px) {
+  html[data-bubbles="2-3-pill"] .toc a,
+  html[data-bubbles="2-3-pill"] .toc .toc-btn, html[data-bubbles="2-3"] .toc a, html[data-bubbles="2-3"] .toc .toc-btn, html[data-bubbles="3-3"] .toc a, html[data-bubbles="3-3"] .toc .toc-btn { min-height: clamp(28px, 4vh, 38px); }
+  html[data-bubbles="2-3-pill"] .identity { margin-top: clamp(14px, 2.4vh, 28px); }
+  html[data-bubbles="2-3-pill"] .toc { margin-top: clamp(12px, 2.2vh, 28px); padding-top: clamp(8px, 1.6vh, 18px); }
+}
+.cv-pill { display: none; }
+html[data-bubbles="2-3-pill"] .cv-pill {
+  display: inline-flex; align-items: center; gap: 8px; align-self: center;
+  margin-top: var(--bubble-gap); padding: 0 18px; min-height: 40px;
+  border: var(--bubble-border) solid var(--ink); border-radius: 999px;
+  color: var(--ink); text-decoration: none; font-weight: var(--weight-strong);
+  transition: color .18s var(--ease), border-color .18s var(--ease), background-color .18s var(--ease);
+}
+html[data-bubbles="2-3-pill"] .cv-pill svg { width: 18px; height: 18px; }
+html[data-bubbles="2-3-pill"] .cv-pill:hover, html[data-bubbles="2-3-pill"] .cv-pill:focus-visible {
+  background: var(--accent); border-color: var(--accent); color: var(--accent-ink);
+}
+
+/* ---- data-bubbles="row-below": photo, name, role + affiliation, THEN the five bubbles in one row,
+        then the nav (owner: "so its photo, name, phd student, bubble, menu"). No CV bubble. ---------- */
+html[data-bubbles="row-below"] .portrait { display: contents; }
+html[data-bubbles="row-below"] .profile { display: flex; flex-direction: column; align-items: center; }
+html[data-bubbles="row-below"] .avatar   { order: 1; }
+html[data-bubbles="row-below"] .identity { order: 2; }
+html[data-bubbles="row-below"] .bubbles  { order: 3; flex-direction: row; margin-top: var(--sp-4); }
+html[data-bubbles="row-below"] .brow { display: contents; }
+html[data-bubbles="row-below"] .bi--cv, html[data-bubbles="row-below"] .cv-pill { display: none; }
+@media (min-width: 720px) and (max-width: 979.98px) {
+  html[data-bubbles="row-below"] .profile {
+    display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-rows: auto auto;
+    column-gap: clamp(28px, 5vw, 48px); align-items: center; text-align: left;
+  }
+  html[data-bubbles="row-below"] .avatar   { grid-row: 1 / span 2; }
+  html[data-bubbles="row-below"] .identity { align-self: end; margin-top: 0; }
+  html[data-bubbles="row-below"] .bubbles  { align-self: start; justify-content: flex-start; }
+}
+@media (min-width: 980px) {
+  html[data-bubbles="row-below"] .profile { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+  html[data-bubbles="row-below"] .identity { margin-top: clamp(16px, 2.8vh, 26px); }
+  html[data-bubbles="row-below"] .bubbles  { justify-content: flex-start; margin-top: clamp(14px, 2.4vh, 22px); }
+}
+
+/* =========================================================================
+   Profile alignment — the ONLY difference between the two looks.
+   <html data-profile="left">      photo, bubbles, name and nav left-aligned (B2)
+   <html data-profile="centered">  the same rail, centered (B3)
+   Phones already stack the profile centered in both looks.
+   ========================================================================= */
+@media (min-width: 720px) and (max-width: 979.98px) {
+  html[data-profile="centered"] .profile {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+  }
+  html[data-profile="centered"] .identity { margin-top: var(--sp-5); }
+}
+@media (min-width: 980px) {
+  html[data-profile="centered"] .profile { text-align: center; }
+  html[data-profile="centered"] .portrait { margin-inline: auto; }
+  html[data-profile="centered"] .bubbles { justify-content: center; }
+  html[data-profile="centered"] .toc { margin-inline: auto; border-top: 0; }
+  html[data-profile="centered"] .toc::before {
+    content: ""; display: block; width: 48px; height: 1px; margin: 0 auto clamp(10px, 2vh, 18px);
+    background: var(--rule-strong);
+  }
+  html[data-profile="centered"] .toc ul { justify-content: center; justify-items: center; }
+  html[data-profile="centered"] .toc a,
+  html[data-profile="centered"] .toc .toc-btn { justify-content: center; gap: 4px; }
+  html[data-profile="centered"] .toc a::before,
+  html[data-profile="centered"] .toc .toc-btn::before { display: none; }
+  html[data-profile="centered"] .toc a svg,
+  html[data-profile="centered"] .toc .toc-btn svg { margin-left: 0; }
+}
+
+/* row-below + centered: the same stack, centered */
+html[data-profile="centered"][data-bubbles="row-below"] .profile { display: flex; flex-direction: column; align-items: center; text-align: center; }
+html[data-profile="centered"][data-bubbles="row-below"] .bubbles { justify-content: center; }
+html[data-profile="centered"][data-bubbles="row-below"] .identity { margin-top: var(--sp-5); }
+@media (min-width: 980px) {
+  html[data-profile="centered"][data-bubbles="row-below"] .identity { margin-top: clamp(16px, 2.8vh, 26px); }
+}
+
+@media print {
+  .toc, .skip-link, .to-top, .older > summary, .bubbles { display: none; }
+  .rail { position: static; max-height: none; }
+}
+
+/* ===== Jekyll extras (not in the mockup): screen-reader-only text, the working-paper status label ===== */
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden;
+                   clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+.pub-status { color: var(--accent); font-weight: var(--weight-strong); }
+.pubs-note { color: var(--muted); margin: calc(-1 * var(--sp-2)) 0 var(--sp-5); }   /* "Click on a title to read the paper…" */
+/* titles that open a paper carry a faint underline, so "click on a title" is visible at a glance */
+.pub-title a { text-decoration-color: var(--rule-strong); }
+
+/* ===== Dark-mode toggle =====================================================================
+   One button per possible placement is in the markup; <html data-toggle="..."> shows exactly one
+   (style.toggle in _config.yml, or ?toggle= to try others): corner · top · bubbles · menu · bottom · none.
+   Without JavaScript the toggle can't work, so none is shown. */
+.tt-slot { display: none !important; }
+html.js[data-toggle="corner"] .tt--corner, html.js[data-toggle="top"] .tt--top,
+html.js[data-toggle="bottom"] .tt--bottom, html.js[data-toggle="menu"] .tt--menu { display: block !important; }
+html.js[data-toggle="bubbles"] .tt--bubbles { display: flex !important; }
+.theme-toggle { font: inherit; cursor: pointer; padding: 0; }
+.theme-toggle .i-sun, html[data-theme="dark"] .theme-toggle .i-moon { display: none; }
+html[data-theme="dark"] .theme-toggle .i-sun { display: inline; }
+button.bubble { background: transparent; }
+/* the floating buttons (corner, top, bottom) are bubbles with their own background, so they read over content */
+.tt-float .bubble { background: var(--bg); }
+.tt-float .bubble:hover, .tt-float .bubble:focus-visible { background: var(--accent); }
+.page { position: relative; }
+.tt--corner, .tt--top { position: absolute; z-index: 30; top: 12px; right: var(--gutter); }   /* phones: top of the page */
+.tt--bottom { position: fixed; z-index: 30; right: 16px; bottom: 16px; }
+.tt--bubbles { order: 20; }
+/* the menu entry: a button dressed exactly like the menu links (see the .toc .toc-btn rules) */
+.toc .toc-btn { width: 100%; background: none; border: 0; text-align: left; }
+@media (min-width: 980px) {
+  .tt--corner { position: fixed; top: 18px; right: 22px; }          /* the window's top-right corner, always there */
+  main { position: relative; }
+  .tt--top { top: var(--rail-top); right: 0; }                      /* top-right of the text column, level with the first heading */
+  .tt--bottom { right: 22px; bottom: 22px; }
+}

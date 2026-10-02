@@ -1,44 +1,90 @@
-# Site settings
-title: Gabriel Agostini
-description: Personal academic website
-baseurl: ""  # Empty because the site is at the root
-url: "https://gsagostini.github.io"  # Your GitHub Pages URL
-author:
-  name: Gabriel Agostini
-  email: gsagostini@infosci.cornell.edu
+# ─────────────────────────────────────────────────────────────────────────────
+#  SITE SETTINGS
+#  Day-to-day edits happen elsewhere:
+#    · bio ............ index.md
+#    · news ........... _data/news.yml
+#    · publications ... _data/publications.yml
+#    · talks .......... _data/talks.yml
+#  This file holds things that rarely change.
+# ─────────────────────────────────────────────────────────────────────────────
 
-# Plugins (optional, but useful)
+title: Gabriel Agostini
+description: >-
+  PhD student in Information Science at Cornell Tech. Spatial machine learning
+  and new datasets to inform more equitable urban policies.
+tagline: PhD student in Information Science at Cornell Tech   # homepage title: "Gabriel Agostini | <tagline>"
+url: "https://gsagostini.github.io"
+baseurl: ""                       # empty: the site lives at the domain root
+lang: en
+
+author:
+  name: Gabriel Agostini          # this exact name is bolded in author lists
+  email: gsagostini@infosci.cornell.edu
+  role: PhD student in Information Science
+  affiliation: Cornell Tech, Cornell University
+  photo: /assets/images/cat_profile_pic.jpg
+  photo_alt: "Gabriel Agostini smiling, with Scotty the black-and-white cat perched on one shoulder"
+  cv: /documents/Agostini_CV.pdf  # replace that PDF to update your CV (linked from the bio)
+  twitter: gsagostini             # link previews credit this handle (twitter:creator)
+
+# Profile links, shown as icons (delete an entry to hide it).
+# icon: one of scholar, github, bluesky, x, orcid, mail
+profiles:
+  - name: Google Scholar
+    url: https://scholar.google.com/citations?user=5PQDJ1gAAAAJ
+    icon: scholar
+  - name: GitHub
+    url: https://github.com/gsagostini
+    icon: github
+  - name: Bluesky
+    url: https://bsky.app/profile/gsagostini.bsky.social
+    icon: bluesky
+  - name: X / Twitter
+    url: https://x.com/gsagostini
+    icon: x
+
+news_limit: 5                     # news items shown before the "Older news" toggle
+publications_note: "Click on a title to read the paper (when a draft is available)."   # shown under the Publications heading
+
+# Look & feel — change these lines to restyle the whole site.
+style:
+  font: original      # original (Helvetica Neue, like the old site) | inter | source
+  accent: red       # sage | fern | forest | spruce | moss | emerald | red — or any hex color, e.g. "#2F5D46"
+  bg: white         # cream | white | gray | cool | stone | sand | mint | blush — or any hex color, e.g. "#FFFFFF"
+  profile: centered     # left (photo + text left-aligned in the sidebar) | centered
+  bubbles: row-below  # row-below (one row of five under your name) | 2-3 | 3-3 (with CV) | 2-3-pill | row | row-cv
+  theme: light      # light | dark | auto (follow each visitor's system setting); visitors can still flip it
+  toggle: corner    # where the dark-mode button sits: corner | top | bubbles | menu | bottom | none
+
+# Used by jekyll-seo-tag for link previews (Slack, Bluesky, X, search engines)
+image: /assets/images/cat_profile_pic.jpg
+twitter:
+  username: gsagostini
+
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
 
-# Navigation links
-navigation:
-  - name: Home
-    url: /
-  - name: Publications
-    url: /publications
-  - name: Fun
-    url: /fun
-
-# Include additional directories
 include:
-  - _pages  # Include the _pages directory for custom pages
+  - _pages
 
-# Exclude unnecessary files from the build
 exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - ReadMe.md
+  - License.md
   - vendor
+  - scripts
   - .gitignore
   - .github
 
-# Markdown settings
 markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
 
-# Build settings
-timezone: America/New_York  # Set your timezone
-future: true  # Show future-dated posts
+timezone: America/New_York
+future: true

@@ -1,0 +1,18 @@
+---
+layout: default
+---
+{%- comment -%}
+  Homepage: About (the Markdown of index.md) · News · Publications · Talks.
+  The lists come from _data/news.yml, _data/publications.yml and _data/talks.yml.
+  The word joiner (U+2060) before em dashes is invisible; it only stops a line from
+  starting with "—".
+{%- endcomment %}
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="section-head"><h2 class="section-title" id="about-title" data-heading>About</h2></div>
+      <div class="prose">
+{{ content | replace: "&mdash;", "&#8288;&mdash;" | replace: "—", "&#8288;—" }}
+      </div>
+    </section>
+{% include news.html %}
+{% include publications.html %}
+{% include talks.html %}

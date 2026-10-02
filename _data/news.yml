@@ -1,0 +1,32 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  NEWS  ·  newest first
+#
+#  To add an item, paste these two lines at the TOP of the list:
+#
+#    - date: Oct 2026
+#      text: "Something happened! Markdown works: **bold**, *italic*, [a link](https://example.com)"
+#
+#  · `date` is shown exactly as you type it (e.g. "Oct 2026", "Fall 2026").
+#  · Keep `text` inside "double quotes". Inside it, use 'single quotes' or *italics* —
+#    if you really need a double quote, write \"
+#  · The homepage shows the first `news_limit` items (see _config.yml);
+#    the rest are tucked under "Older news".
+# ─────────────────────────────────────────────────────────────────────────────
+
+- date: Aug 2026
+  text: "Our paper on bike route choice with large-scale e-bike GPS data will appear at [EAAMO 2026](https://eaamo.org) (non-archival). Reach out if you'll be there!"
+
+- date: Apr 2026
+  text: "MIGRATE received the [**IPUMS Spatial Student Research Award**](https://www.ipums.org/impact/ipums-research-award#spatial)."
+
+- date: Apr 2026
+  text: "I will be giving a talk at Penn State's [EEPI Seminar](https://eesi.psu.edu/events/eeepi-seminars/eeepi-seminars-archive/eeepi-spring-2026/) on April 1st!"
+
+- date: Mar 2026
+  text: "MIGRATE received the **IGIF Student Paper Award** from the American Association of Geographers! If you will be in SF for the AAG annual meeting, let's chat!"
+
+- date: Dec 2025
+  text: "[Inferring fine-grained migration patterns across the United States](https://doi.org/10.1038/s41467-025-68019-2) is out in *Nature Communications*!"
+
+- date: Jun 2025
+  text: "I joined the NYC DOT Cycling & Micromobility unit as a fellow. Excited to work in city government, contributing to better urban mobility infrastructure!"
