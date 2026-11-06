@@ -48,7 +48,7 @@ Delete a line to remove that piece (e.g. delete `arxiv:` to drop the arXiv butto
 
 ### Things that update themselves
 
-- **Goodreads books** (Fun page): `.github/workflows/goodreads.yml` refreshes `_data/goodreads_books.json` daily.
+- **Goodreads books** (Fun page): `.github/workflows/goodreads.yml` refreshes `_data/goodreads_books.json` daily from Goodreads' public custom widget. Goodreads retired RSS in October 2026; the widget still provides recent books, covers, ratings, and review excerpts. Previously saved full reviews are kept when their opening matches the excerpt. New reviews appear as excerpts because Goodreads requires sign-in to view the full review pages. If the widget fails or returns incomplete data, the Action fails without replacing the saved shelf.
 - **Cocktail-menu covers**: when a PDF in `documents/cocktails/` is pushed, `.github/workflows/menu-thumbnails.yml`
   renders its first page to `assets/images/menus/<name>.jpg` (and its size to `_data/menu_covers.json`).
 

@@ -2,7 +2,7 @@
 #  FUN PAGE (/fun/) · one block per section, shown in THIS order — move a block to reorder.
 #  Text fields are HTML (use <a href="…">…</a>, <i>…</i>, <b>…</b>).
 #  Essays: the title is the link (url:); add a new essay by copying one and editing it.
-#  Cocktail menus are listed in _data/cocktails.yml; Goodreads books update themselves daily.
+#  Cocktail menus are listed in _data/cocktails.yml; Goodreads books update daily.
 #  Mezcal: "featured" = the three photos on this page; the Mezcal page (/mezcal/) shows every
 #  photo in documents/cat/ — to add one, just put the photo in that folder.
 # ─────────────────────────────────────────────────────────────────────────────

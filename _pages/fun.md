@@ -1,6 +1,6 @@
 ---
 # The Fun page. Its content is in _data/fun.yml (sections, essays, Mezcal) and _data/cocktails.yml (menus);
-# the Goodreads books update themselves. Layout: _layouts/fun.html.
+# the Goodreads shelf updates daily. Layout: _layouts/fun.html.
 layout: fun
 title: Fun
 permalink: /fun/
